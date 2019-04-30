@@ -161,17 +161,5 @@ var	punisherT = {
 	// 		sellingPrice: 2606000
 	// 	}			
 };
-	
-var punisherTMk2 = {
-	mk2: {}
-};
 
-punisherTMk2.mk2 = function() {
-	for (var i = 0; i <= 12; i++) {
-		punisherTMk2.mk2 = {
-			"lv"[i]: punisherT.mk1.lv[i];
-		}
-	}
-};
 
-console.log(punisherTMk2.mk2.lv1);
