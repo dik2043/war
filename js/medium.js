@@ -1,6 +1,9 @@
 var weaponsObj = {};        /* пустой объект для дальнейшей работы */
 weaponsObj.medium = {};
+weaponsObj.light = {};
+
 var mediumWeaponsArr = window.medium.weapons.split('/%');     /* массив всех средних орудий */
+var lightWeaponsArr = window.light.weapons.split('/%');
 // var blabla = weaponsArr[2].split('/');
 // var time = "7d 4h 4m";
 
@@ -63,7 +66,7 @@ var createLvlsMk2Less = function (obj, forMk, count) {
 };
 
 
-/* как создать объекты в объекте */
+/* как создать объекты в объекте средних орудий */
 var createMediumWeaponObj = function (arr, count) {
     var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива оружий */
     /* имя объекта = берем массив всех оружий, делим строки по ';;' и берем первую фразу - название оружия */
@@ -71,6 +74,16 @@ var createMediumWeaponObj = function (arr, count) {
     
     /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';' */
     createObjProperties(weaponsObj.medium[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
+};
+
+/* как создать объекты в объекте легких орудий */
+var createLightWeaponObj = function (arr, count) {
+    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива оружий */
+    /* имя объекта = берем массив всех оружий, делим строки по ';;' и берем первую фразу - название оружия */
+    weaponsObj.light[name] = {};
+
+    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';' */
+    createObjProperties(weaponsObj.light[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
 };
 
 /* как создать свойства в объекте, который в объекте :) */
@@ -111,5 +124,9 @@ for (var i = 0; i < mediumWeaponsArr.length; i++) {
     createMediumWeaponObj(mediumWeaponsArr, i);
 }
 
+for (var i = 0; i < lightWeaponsArr.length; i++) {
+    createLightWeaponObj(lightWeaponsArr, i);
+}
 
-console.log(weaponsObj.medium);
+console.log(weaponsObj.medium.vortex);
+console.log((weaponsObj.medium.vortex.mk1.lvl11.upgradeCost) * 4);

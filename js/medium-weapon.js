@@ -214,30 +214,30 @@
         'Storm MK2;;2;10;MEDIUM;Kinetic;Straight;500;10610;8;15707;15950;11.00;x2;16000000;8400000;3D 12H 00M;;/' +
         'Storm MK2;;2;11;MEDIUM;Kinetic;Straight;500;11670;8;15707;15950;11.00;x2;26000000;9600000;4D 18H 00M;;/' +
         'Storm MK2;;2;12;MEDIUM;Kinetic;Straight;500;12820;8;15707;15950;11.00;x2;0;11600000;0D 0H 00M;;/%' +
-        'Vortex;;1;1;MEDIUM;Explosive;Homing;350;11600;6;6.00;0.00;10.00;;100000;2000000;0D 3H 30M;;/' +
-        'Vortex;;1;2;MEDIUM;Explosive;Homing;350;12800;6;6.00;0.00;10.00;;200000;2004000;0D 6H 00M;;/' +
-        'Vortex;;1;3;MEDIUM;Explosive;Homing;350;14000;6;6.00;0.00;10.00;;400000;2007000;0D 12H 00M;;/' +
-        'Vortex;;1;4;MEDIUM;Explosive;Homing;350;15400;6;6.00;0.00;10.00;;2000000;2014000;0D 18H 00M;;/' +
-        'Vortex;;1;5;MEDIUM;Explosive;Homing;350;16900;6;6.00;0.00;10.00;;3000000;2072000;1D 0H 00M;;/' +
-        'Vortex;;1;6;MEDIUM;Explosive;Homing;350;18600;6;6.00;0.00;10.00;;4000000;2144000;2D 0H 00M;;/' +
-        'Vortex;;1;7;MEDIUM;Explosive;Homing;350;20400;6;6.00;0.00;10.00;;8000000;2288000;3D 0H 00M;;/' +
-        'Vortex;;1;8;MEDIUM;Explosive;Homing;350;22400;6;6.00;0.00;10.00;;13000000;2552000;4D 0H 00M;;/' +
-        'Vortex;;1;9;MEDIUM;Explosive;Homing;350;24600;6;6.00;0.00;10.00;;25000000;3080000;5D 0H 00M;;/' +
-        'Vortex;;1;10;MEDIUM;Explosive;Homing;350;27000;6;6.00;0.00;10.00;;35000000;3800000;6D 0H 00M;;/' +
-        'Vortex;;1;11;MEDIUM;Explosive;Homing;350;29700;6;6.00;0.00;10.00;;45000000;4880000;7D 0H 00M;;/' +
-        'Vortex;;1;12;MEDIUM;Explosive;Homing;350;32700;6;6.00;0.00;10.00;;0;6680000;0D 0H 00M;;/' +
-        'Vortex MK2;;2;1;MEDIUM;Explosive;Homing;350;13900;6;6.00;0.00;10.00;;100000;6880000;0D 3H 30M;;/' +
-        'Vortex MK2;;2;2;MEDIUM;Explosive;Homing;350;15300;6;6.00;0.00;10.00;;200000;6884000;0D 6H 00M;;/' +
-        'Vortex MK2;;2;3;MEDIUM;Explosive;Homing;350;16800;6;6.00;0.00;10.00;;400000;6887000;0D 12H 00M;;/' +
-        'Vortex MK2;;2;4;MEDIUM;Explosive;Homing;350;18500;6;6.00;0.00;10.00;;2000000;6894000;0D 18H 00M;;/' +
-        'Vortex MK2;;2;5;MEDIUM;Explosive;Homing;350;20300;6;6.00;0.00;10.00;;3000000;6952000;1D 0H 00M;;/' +
-        'Vortex MK2;;2;6;MEDIUM;Explosive;Homing;350;22300;6;6.00;0.00;10.00;;4000000;7024000;2D 0H 00M;;/' +
-        'Vortex MK2;;2;7;MEDIUM;Explosive;Homing;350;24500;6;6.00;0.00;10.00;;8000000;7168000;3D 0H 00M;;/' +
-        'Vortex MK2;;2;8;MEDIUM;Explosive;Homing;350;26900;6;6.00;0.00;10.00;;13000000;7432000;4D 0H 00M;;/' +
-        'Vortex MK2;;2;9;MEDIUM;Explosive;Homing;350;29600;6;6.00;0.00;10.00;;25000000;7960000;5D 0H 00M;;/' +
-        'Vortex MK2;;2;10;MEDIUM;Explosive;Homing;350;32500;6;6.00;0.00;10.00;;35000000;8680000;6D 0H 00M;;/' +
-        'Vortex MK2;;2;11;MEDIUM;Explosive;Homing;350;35700;6;6.00;0.00;10.00;;45000000;9760000;7D 0H 00M;;/' +
-        'Vortex MK2;;2;12;MEDIUM;Explosive;Homing;350;39200;6;6.00;0.00;10.00;;0;11560000;0D 0H 00M;;/%' +
+        'Vortex;;1;1;MEDIUM;Explosive;Homing;350;1933;6;6.00;0.00;10.00;;100000;2000000;0D 3H 30M;;/' +
+        'Vortex;;1;2;MEDIUM;Explosive;Homing;350;2133;6;6.00;0.00;10.00;;200000;2004000;0D 6H 00M;;/' +
+        'Vortex;;1;3;MEDIUM;Explosive;Homing;350;2333;6;6.00;0.00;10.00;;400000;2007000;0D 12H 00M;;/' +
+        'Vortex;;1;4;MEDIUM;Explosive;Homing;350;2566;6;6.00;0.00;10.00;;2000000;2014000;0D 18H 00M;;/' +
+        'Vortex;;1;5;MEDIUM;Explosive;Homing;350;2816;6;6.00;0.00;10.00;;3000000;2072000;1D 0H 00M;;/' +
+        'Vortex;;1;6;MEDIUM;Explosive;Homing;350;3100;6;6.00;0.00;10.00;;4000000;2144000;2D 0H 00M;;/' +
+        'Vortex;;1;7;MEDIUM;Explosive;Homing;350;3400;6;6.00;0.00;10.00;;8000000;2288000;3D 0H 00M;;/' +
+        'Vortex;;1;8;MEDIUM;Explosive;Homing;350;3733;6;6.00;0.00;10.00;;13000000;2552000;4D 0H 00M;;/' +
+        'Vortex;;1;9;MEDIUM;Explosive;Homing;350;4100;6;6.00;0.00;10.00;;25000000;3080000;5D 0H 00M;;/' +
+        'Vortex;;1;10;MEDIUM;Explosive;Homing;350;4500;6;6.00;0.00;10.00;;35000000;3800000;6D 0H 00M;;/' +
+        'Vortex;;1;11;MEDIUM;Explosive;Homing;350;4950;6;6.00;0.00;10.00;;45000000;4880000;7D 0H 00M;;/' +
+        'Vortex;;1;12;MEDIUM;Explosive;Homing;350;5450;6;6.00;0.00;10.00;;0;6680000;0D 0H 00M;;/' +
+        'Vortex MK2;;2;1;MEDIUM;Explosive;Homing;350;2316;6;6.00;0.00;10.00;;100000;6880000;0D 3H 30M;;/' +
+        'Vortex MK2;;2;2;MEDIUM;Explosive;Homing;350;2550;6;6.00;0.00;10.00;;200000;6884000;0D 6H 00M;;/' +
+        'Vortex MK2;;2;3;MEDIUM;Explosive;Homing;350;2800;6;6.00;0.00;10.00;;400000;6887000;0D 12H 00M;;/' +
+        'Vortex MK2;;2;4;MEDIUM;Explosive;Homing;350;3083;6;6.00;0.00;10.00;;2000000;6894000;0D 18H 00M;;/' +
+        'Vortex MK2;;2;5;MEDIUM;Explosive;Homing;350;3383;6;6.00;0.00;10.00;;3000000;6952000;1D 0H 00M;;/' +
+        'Vortex MK2;;2;6;MEDIUM;Explosive;Homing;350;3716;6;6.00;0.00;10.00;;4000000;7024000;2D 0H 00M;;/' +
+        'Vortex MK2;;2;7;MEDIUM;Explosive;Homing;350;4083;6;6.00;0.00;10.00;;8000000;7168000;3D 0H 00M;;/' +
+        'Vortex MK2;;2;8;MEDIUM;Explosive;Homing;350;4483;6;6.00;0.00;10.00;;13000000;7432000;4D 0H 00M;;/' +
+        'Vortex MK2;;2;9;MEDIUM;Explosive;Homing;350;4933;6;6.00;0.00;10.00;;25000000;7960000;5D 0H 00M;;/' +
+        'Vortex MK2;;2;10;MEDIUM;Explosive;Homing;350;5416;6;6.00;0.00;10.00;;35000000;8680000;6D 0H 00M;;/' +
+        'Vortex MK2;;2;11;MEDIUM;Explosive;Homing;350;5950;6;6.00;0.00;10.00;;45000000;9760000;7D 0H 00M;;/' +
+        'Vortex MK2;;2;12;MEDIUM;Explosive;Homing;350;6533;6;6.00;0.00;10.00;;0;11560000;0D 0H 00M;;/%' +
         'Ion;;1;1;MEDIUM;Energy;Homing;600;4480;10;10.00;1.00;5.00;;100000;2000000;0D 3H 30M;;/' +
         'Ion;;1;2;MEDIUM;Energy;Homing;600;4920;10;10.00;1.00;5.00;;200000;2004000;0D 6H 00M;;/' +
         'Ion;;1;3;MEDIUM;Energy;Homing;600;5410;10;10.00;1.00;5.00;;400000;2007000;0D 12H 00M;;/' +
@@ -357,7 +357,29 @@
         'Wasp MK2;;2;9;MEDIUM;Kinetic;Straight;600;3000;5;1.00;4.00;5.00;x2;32000000;17720000;7D 0H 00M;1645;5/' +
         'Wasp MK2;;2;10;MEDIUM;Kinetic;Straight;600;3296;5;1.00;4.00;5.00;x2;43000000;20720000;8D 0H 00M;1810;5/' +
         'Wasp MK2;;2;11;MEDIUM;Kinetic;Straight;600;3623;5;1.00;4.00;5.00;x2;55000000;22920000;9D 0H 00M;1985;5/' +
-        'Wasp MK2;;2;12;MEDIUM;Kinetic;Straight;600;3980;5;1.00;4.00;5.00;x2;0;25320000;0D 0H 00M;2185;5';
+        'Wasp MK2;;2;12;MEDIUM;Kinetic;Straight;600;3980;5;1.00;4.00;5.00;x2;0;25320000;0D 0H 00M;2185;5/%' +
+        'Ecu;;1;3;MEDIUM;;;;;;;;;;40000;10000;0D 1H 00M;;/' +
+        'Ecu;;1;4;MEDIUM;;;;;;;;;;200000;18000;0D 4H 00M;;/' +
+        'Ecu;;1;5;MEDIUM;;;;;;;;;;400000;50000;0D 8H 00M;;/' +
+        'Ecu;;1;6;MEDIUM;;;;;;;;;;800000;90000;0D 17H 00M;;/' +
+        'Ecu;;1;7;MEDIUM;;;;;;;;;;1500000;170000;0D 21H 00M;;/' +
+        'Ecu;;1;8;MEDIUM;;;;;;;;;;3000000;310000;1D 1H 00M;;/' +
+        'Ecu;;1;9;MEDIUM;;;;;;;;;;5000000;610000;1D 7H 00M;;/' +
+        'Ecu;;1;10;MEDIUM;;;;;;;;;;8000000;1010000;1D 18H 00M;;/' +
+        'Ecu;;1;11;MEDIUM;;;;;;;;;;13000000;1610000;2D 9H 00M;;/' +
+        'Ecu;;1;12;MEDIUM;;;;;;;;;;0;2610000;0D 0H 00M;;/' +
+        'Ecu MK2;;2;1;MEDIUM;;;;;;;;;;10000;2810000;0D 0H 05M;;/' +
+        'Ecu MK2;;2;2;MEDIUM;;;;;;;;;;20000;2812000;0D 0H 30M;;/' +
+        'Ecu MK2;;2;3;MEDIUM;;;;;;;;;;40000;2814000;0D 1H 00M;;/' +
+        'Ecu MK2;;2;4;MEDIUM;;;;;;;;;;200000;2818000;0D 4H 00M;;/' +
+        'Ecu MK2;;2;5;MEDIUM;;;;;;;;;;400000;2850000;0D 8H 00M;;/' +
+        'Ecu MK2;;2;6;MEDIUM;;;;;;;;;;800000;2890000;0D 17H 00M;;/' +
+        'Ecu MK2;;2;7;MEDIUM;;;;;;;;;;1500000;2970000;0D 21H 00M;;/' +
+        'Ecu MK2;;2;8;MEDIUM;;;;;;;;;;3000000;3110000;1D 1H 00M;;/' +
+        'Ecu MK2;;2;9;MEDIUM;;;;;;;;;;5000000;3410000;1D 7H 00M;;/' +
+        'Ecu MK2;;2;10;MEDIUM;;;;;;;;;;8000000;3810000;1D 18H 00M;;/' +
+        'Ecu MK2;;2;11;MEDIUM;;;;;;;;;;13000000;4410000;2D 9H 00M;;/' +
+        'Ecu MK2;;2;12;MEDIUM;;;;;;;;;;0;5410000;0D 0H 00M;;';
 
 })();
 
