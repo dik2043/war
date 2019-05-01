@@ -6,7 +6,7 @@
 
     window.medium = {};
     
-    window.medium.weapons = 'Punisher T;;1;1;MEDIUM;Kinetic;Straight;500;260;220;43780;19,71;10.00;x2;10000;6000;0D 0H 05M;;/' +
+    window.medium.weapons = 'Punisher T;;1;1;MEDIUM;Kinetic;Straight;500;260;220;43780;19,71;10.00;x2;10000;6000;0D 0H 05M;;;0/' +
         'Punisher T;;1;2;MEDIUM;Kinetic;Straight;500;290;220;43780;19,71;10.00;x2;20000;8000;0D 0H 30M;;/' +
         'Punisher T;;1;3;MEDIUM;Kinetic;Straight;500;320;220;43780;19,71;10.00;x2;40000;10000;0D 1H 00M;;/' +
         'Punisher T;;1;4;MEDIUM;Kinetic;Straight;500;350;220;43780;19,71;10.00;x2;200000;14000;0D 4H 00M;;/' +
@@ -30,7 +30,7 @@
         'Punisher T MK2;;2;10;MEDIUM;Kinetic;Straight;500;756;220;43780;19,71;10.00;x2;8000000;3806000;1D 18H 00M;;/' +
         'Punisher T MK2;;2;11;MEDIUM;Kinetic;Straight;500;828;220;43780;19,71;10.00;x2;13000000;4406000;2D 9H 00M;;/' +
         'Punisher T MK2;;2;12;MEDIUM;Kinetic;Straight;500;912;220;43780;19,71;10.00;x2;0;5406000;0D 0H 00M;;/%' +
-        'Molot T;;1;1;MEDIUM;Kinetic;Straight;800;420;70;23833;14,84;10.00;x2;10000;6000;0D 0H 05M;;/' +
+        'Molot T;;1;1;MEDIUM;Kinetic;Straight;800;420;70;23833;14,84;10.00;x2;10000;6000;0D 0H 05M;;;0/' +
         'Molot T;;1;2;MEDIUM;Kinetic;Straight;800;460;70;23833;14,84;10.00;x2;20000;8000;0D 0H 30M;;/' +
         'Molot T;;1;3;MEDIUM;Kinetic;Straight;800;510;70;23833;14,84;10.00;x2;40000;10000;0D 1H 00M;;/' +
         'Molot T;;1;4;MEDIUM;Kinetic;Straight;800;550;70;23833;14,84;10.00;x2;200000;14000;0D 4H 00M;;/' +
@@ -54,7 +54,7 @@
         'Molot T MK2;;2;10;MEDIUM;Kinetic;Straight;800;1160;70;23833;14,84;10.00;x2;8000000;3806000;1D 18H 00M;;/' +
         'Molot T MK2;;2;11;MEDIUM;Kinetic;Straight;800;1280;70;23833;14,84;10.00;x2;13000000;4406000;2D 9H 00M;;/' +
         'Molot T MK2;;2;12;MEDIUM;Kinetic;Straight;800;1410;70;23833;14,84;10.00;x2;0;5406000;0D 0H 00M;;/%' +
-        'Orkan;;1;5;MEDIUM;Explosive;Straight;300;860;32;8.33;4.5;23.00;;800000;480000;0D 16H 48M;;/' +
+        'Orkan;;1;5;MEDIUM;Explosive;Straight;300;860;32;8.33;4.5;23.00;;800000;480000;0D 16H 48M;;;1/' +
         'Orkan;;1;6;MEDIUM;Explosive;Straight;300;950;32;8.33;4.5;23.00;;1600000;640000;1D 9H 00M;;/' +
         'Orkan;;1;7;MEDIUM;Explosive;Straight;300;1040;32;8.33;4.5;23.00;;3000000;800000;1D 18H 00M;;/' +
         'Orkan;;1;8;MEDIUM;Explosive;Straight;300;1150;32;8.33;4.5;23.00;;6000000;1080000;2D 2H 24M;;/' +
@@ -74,7 +74,7 @@
         'Orkan MK2;;2;10;MEDIUM;Explosive;Straight;300;1660;32;8.33;4.5;23.00;;16000000;7880000;3D 12H 00M;;/' +
         'Orkan MK2;;2;11;MEDIUM;Explosive;Straight;300;1820;32;8.33;4.5;23.00;;26000000;9080000;4D 18H 00M;;/' +
         'Orkan MK2;;2;12;MEDIUM;Explosive;Straight;300;2000;32;8.33;4.5;23.00;;0;11080000;0D 0H 00M;;/%' +
-        'Tulumbas;;1;5;MEDIUM;Explosive;Straight;500;1350;8;12875;22282;18.00;;800000;87000;0D 16H 48M;;/' +
+        'Tulumbas;;1;5;MEDIUM;Explosive;Straight;500;1350;8;12875;22282;18.00;;800000;87000;0D 16H 48M;;;1/' +
         'Tulumbas;;1;6;MEDIUM;Explosive;Straight;500;1480;8;12875;22282;18.00;;1600000;247000;1D 9H 00M;;/' +
         'Tulumbas;;1;7;MEDIUM;Explosive;Straight;500;1630;8;12875;22282;18.00;;3000000;407000;1D 18H 00M;;/' +
         'Tulumbas;;1;8;MEDIUM;Explosive;Straight;500;1790;8;12875;22282;18.00;;6000000;687000;2D 2H 24M;;/' +
@@ -94,7 +94,7 @@
         'Tulumbas MK2;;2;10;MEDIUM;Explosive;Straight;500;2604;8;12875;22282;18.00;;16000000;7487000;3D 12H 00M;;/' +
         'Tulumbas MK2;;2;11;MEDIUM;Explosive;Straight;500;2856;8;12875;22282;18.00;;26000000;8687000;4D 18H 00M;;/' +
         'Tulumbas MK2;;2;12;MEDIUM;Explosive;Straight;500;3132;8;12875;22282;18.00;;0;10687000;0D 0H 00M;;/%' +
-        'Taran;;1;1;MEDIUM;Energy;Straight;350;800;32;43101;27576;5.00;;20000;600000;0D 0H 10M;;/' +
+        'Taran;;1;1;MEDIUM;Energy;Straight;350;800;32;43101;27576;5.00;;20000;600000;0D 0H 10M;;;0/' +
         'Taran;;1;2;MEDIUM;Energy;Straight;350;880;32;43101;27576;5.00;;40000;604000;0D 1H 00M;;/' +
         'Taran;;1;3;MEDIUM;Energy;Straight;350;970;32;43101;27576;5.00;;80000;608000;0D 2H 00M;;/' +
         'Taran;;1;4;MEDIUM;Energy;Straight;350;1060;32;43101;27576;5.00;;400000;616000;0D 8H 00M;;/' +
@@ -118,7 +118,7 @@
         'Taran MK2;;2;10;MEDIUM;Energy;Straight;350;2240;32;43101;27576;5.00;;16000000;8000000;3D 12H 00M;;/' +
         'Taran MK2;;2;11;MEDIUM;Energy;Straight;350;2460;32;43101;27576;5.00;;26000000;9200000;4D 18H 00M;;/' +
         'Taran MK2;;2;12;MEDIUM;Energy;Straight;350;2700;32;43101;27576;5.00;;0;11200000;0D 0H 00M;;/%' +
-        'Hydra;;1;1;MEDIUM;Explosive;Homing;600;930;6;0.91;4.00;12.00;;20000;600000;0D 0H 10M;;/' +
+        'Hydra;;1;1;MEDIUM;Explosive;Homing;600;930;6;0.91;4.00;12.00;;20000;600000;0D 0H 10M;;;0/' +
         'Hydra;;1;2;MEDIUM;Explosive;Homing;600;1020;6;0.91;4.00;12.00;;40000;604000;0D 1H 00M;;/' +
         'Hydra;;1;3;MEDIUM;Explosive;Homing;600;1120;6;0.91;4.00;12.00;;80000;608000;0D 2H 00M;;/' +
         'Hydra;;1;4;MEDIUM;Explosive;Homing;600;1230;6;0.91;4.00;12.00;;400000;616000;0D 8H 00M;;/' +
@@ -142,7 +142,7 @@
         'Hydra MK2;;2;10;MEDIUM;Explosive;Homing;600;2604;6;0.91;4.00;12.00;;16000000;8000000;3D 12H 00M;;/' +
         'Hydra MK2;;2;11;MEDIUM;Explosive;Homing;600;2856;6;0.91;4.00;12.00;;26000000;9200000;4D 18H 00M;;/' +
         'Hydra MK2;;2;12;MEDIUM;Explosive;Homing;600;3144;6;0.91;4.00;12.00;;0;11200000;0D 0H 00M;;/%' +
-        'Scourge;;1;1;MEDIUM;Energy;Straight;600;1680;100;10.00;10.00;5.00;;100000;2000000;0D 3H 30M;;/' +
+        'Scourge;;1;1;MEDIUM;Energy;Straight;600;1680;100;10.00;10.00;5.00;;100000;2000000;0D 3H 30M;;;0/' +
         'Scourge;;1;2;MEDIUM;Energy;Straight;600;1850;100;10.00;10.00;5.00;;200000;2020000;0D 6H 00M;;/' +
         'Scourge;;1;3;MEDIUM;Energy;Straight;600;2030;100;10.00;10.00;5.00;;400000;2040000;0D 12H 00M;;/' +
         'Scourge;;1;4;MEDIUM;Energy;Straight;600;2230;100;10.00;10.00;5.00;;2000000;2080000;0D 18H 00M;;/' +
@@ -166,7 +166,7 @@
         'Scourge MK2;;2;10;MEDIUM;Energy;Straight;600;4700;100;10.00;10.00;5.00;;35000000;16200000;6D 0H 00M;;/' +
         'Scourge MK2;;2;11;MEDIUM;Energy;Straight;600;5160;100;10.00;10.00;5.00;;45000000;18200000;7D 0H 00M;;/' +
         'Scourge MK2;;2;12;MEDIUM;Energy;Straight;600;5670;100;10.00;10.00;5.00;;0;20200000;0D 0H 00M;;/%' +
-        'Shocktrain;;1;1;MEDIUM;Energy;Homing;500;4760;1;1.00;0.00;10.00;;100000;5600000;0D 5H 00M;;/' +
+        'Shocktrain;;1;1;MEDIUM;Energy;Homing;500;4760;1;1.00;0.00;10.00;;100000;5600000;0D 5H 00M;;;0/' +
         'Shocktrain;;1;2;MEDIUM;Energy;Homing;500;5250;1;1.00;0.00;10.00;;200000;5620000;0D 12H 00M;;/' +
         'Shocktrain;;1;3;MEDIUM;Energy;Homing;500;5810;1;1.00;0.00;10.00;;400000;5640000;1D 0H 00M;;/' +
         'Shocktrain;;1;4;MEDIUM;Energy;Homing;500;6370;1;1.00;0.00;10.00;;2000000;5680000;2D 0H 00M;;/' +
@@ -190,7 +190,7 @@
         'Shocktrain MK2;;2;10;MEDIUM;Energy;Homing;500;13370;1;1.00;0.00;10.00;;43000000;23200000;8D 0H 00M;;/' +
         'Shocktrain MK2;;2;11;MEDIUM;Energy;Homing;500;14700;1;1.00;0.00;10.00;;55000000;25400000;9D 0H 00M;;/' +
         'Shocktrain MK2;;2;12;MEDIUM;Energy;Homing;500;16100;1;1.00;0.00;10.00;;0;27800000;0D 0H 00M;;/%' +
-        'Storm;;1;1;MEDIUM;Kinetic;Straight;500;3780;8;15707;15950;11.00;x2;20000;1000000;0D 0H 10M;;/' +
+        'Storm;;1;1;MEDIUM;Kinetic;Straight;500;3780;8;15707;15950;11.00;x2;20000;1000000;0D 0H 10M;;;1/' +
         'Storm;;1;2;MEDIUM;Kinetic;Straight;500;4160;8;15707;15950;11.00;x2;40000;1004000;0D 1H 00M;;/' +
         'Storm;;1;3;MEDIUM;Kinetic;Straight;500;4570;8;15707;15950;11.00;x2;80000;1008000;0D 2H 00M;;/' +
         'Storm;;1;4;MEDIUM;Kinetic;Straight;500;5020;8;15707;15950;11.00;x2;400000;1016000;0D 8H 00M;;/' +
@@ -214,55 +214,55 @@
         'Storm MK2;;2;10;MEDIUM;Kinetic;Straight;500;10610;8;15707;15950;11.00;x2;16000000;8400000;3D 12H 00M;;/' +
         'Storm MK2;;2;11;MEDIUM;Kinetic;Straight;500;11670;8;15707;15950;11.00;x2;26000000;9600000;4D 18H 00M;;/' +
         'Storm MK2;;2;12;MEDIUM;Kinetic;Straight;500;12820;8;15707;15950;11.00;x2;0;11600000;0D 0H 00M;;/%' +
-        'Vortex;;1;1;MEDIUM;Explosive;Homing;350;1933;6;6.00;0.00;10.00;;100000;2000000;0D 3H 30M;;/' +
-        'Vortex;;1;2;MEDIUM;Explosive;Homing;350;2133;6;6.00;0.00;10.00;;200000;2004000;0D 6H 00M;;/' +
-        'Vortex;;1;3;MEDIUM;Explosive;Homing;350;2333;6;6.00;0.00;10.00;;400000;2007000;0D 12H 00M;;/' +
-        'Vortex;;1;4;MEDIUM;Explosive;Homing;350;2566;6;6.00;0.00;10.00;;2000000;2014000;0D 18H 00M;;/' +
-        'Vortex;;1;5;MEDIUM;Explosive;Homing;350;2816;6;6.00;0.00;10.00;;3000000;2072000;1D 0H 00M;;/' +
-        'Vortex;;1;6;MEDIUM;Explosive;Homing;350;3100;6;6.00;0.00;10.00;;4000000;2144000;2D 0H 00M;;/' +
-        'Vortex;;1;7;MEDIUM;Explosive;Homing;350;3400;6;6.00;0.00;10.00;;8000000;2288000;3D 0H 00M;;/' +
-        'Vortex;;1;8;MEDIUM;Explosive;Homing;350;3733;6;6.00;0.00;10.00;;13000000;2552000;4D 0H 00M;;/' +
-        'Vortex;;1;9;MEDIUM;Explosive;Homing;350;4100;6;6.00;0.00;10.00;;25000000;3080000;5D 0H 00M;;/' +
-        'Vortex;;1;10;MEDIUM;Explosive;Homing;350;4500;6;6.00;0.00;10.00;;35000000;3800000;6D 0H 00M;;/' +
-        'Vortex;;1;11;MEDIUM;Explosive;Homing;350;4950;6;6.00;0.00;10.00;;45000000;4880000;7D 0H 00M;;/' +
-        'Vortex;;1;12;MEDIUM;Explosive;Homing;350;5450;6;6.00;0.00;10.00;;0;6680000;0D 0H 00M;;/' +
-        'Vortex MK2;;2;1;MEDIUM;Explosive;Homing;350;2316;6;6.00;0.00;10.00;;100000;6880000;0D 3H 30M;;/' +
-        'Vortex MK2;;2;2;MEDIUM;Explosive;Homing;350;2550;6;6.00;0.00;10.00;;200000;6884000;0D 6H 00M;;/' +
-        'Vortex MK2;;2;3;MEDIUM;Explosive;Homing;350;2800;6;6.00;0.00;10.00;;400000;6887000;0D 12H 00M;;/' +
-        'Vortex MK2;;2;4;MEDIUM;Explosive;Homing;350;3083;6;6.00;0.00;10.00;;2000000;6894000;0D 18H 00M;;/' +
-        'Vortex MK2;;2;5;MEDIUM;Explosive;Homing;350;3383;6;6.00;0.00;10.00;;3000000;6952000;1D 0H 00M;;/' +
-        'Vortex MK2;;2;6;MEDIUM;Explosive;Homing;350;3716;6;6.00;0.00;10.00;;4000000;7024000;2D 0H 00M;;/' +
-        'Vortex MK2;;2;7;MEDIUM;Explosive;Homing;350;4083;6;6.00;0.00;10.00;;8000000;7168000;3D 0H 00M;;/' +
-        'Vortex MK2;;2;8;MEDIUM;Explosive;Homing;350;4483;6;6.00;0.00;10.00;;13000000;7432000;4D 0H 00M;;/' +
-        'Vortex MK2;;2;9;MEDIUM;Explosive;Homing;350;4933;6;6.00;0.00;10.00;;25000000;7960000;5D 0H 00M;;/' +
-        'Vortex MK2;;2;10;MEDIUM;Explosive;Homing;350;5416;6;6.00;0.00;10.00;;35000000;8680000;6D 0H 00M;;/' +
-        'Vortex MK2;;2;11;MEDIUM;Explosive;Homing;350;5950;6;6.00;0.00;10.00;;45000000;9760000;7D 0H 00M;;/' +
-        'Vortex MK2;;2;12;MEDIUM;Explosive;Homing;350;6533;6;6.00;0.00;10.00;;0;11560000;0D 0H 00M;;/%' +
-        'Ion;;1;1;MEDIUM;Energy;Homing;600;4480;10;10.00;1.00;5.00;;100000;2000000;0D 3H 30M;;/' +
-        'Ion;;1;2;MEDIUM;Energy;Homing;600;4920;10;10.00;1.00;5.00;;200000;2004000;0D 6H 00M;;/' +
-        'Ion;;1;3;MEDIUM;Energy;Homing;600;5410;10;10.00;1.00;5.00;;400000;2007000;0D 12H 00M;;/' +
-        'Ion;;1;4;MEDIUM;Energy;Homing;600;5940;10;10.00;1.00;5.00;;2000000;2014000;0D 18H 00M;;/' +
-        'Ion;;1;5;MEDIUM;Energy;Homing;600;6530;10;10.00;1.00;5.00;;3000000;2072000;1D 0H 00M;;/' +
-        'Ion;;1;6;MEDIUM;Energy;Homing;600;7180;10;10.00;1.00;5.00;;4000000;2144000;2D 0H 00M;;/' +
-        'Ion;;1;7;MEDIUM;Energy;Homing;600;7890;10;10.00;1.00;5.00;;8000000;2288000;3D 0H 00M;;/' +
-        'Ion;;1;8;MEDIUM;Energy;Homing;600;8670;10;10.00;1.00;5.00;;13000000;2552000;4D 0H 00M;;/' +
-        'Ion;;1;9;MEDIUM;Energy;Homing;600;9530;10;10.00;1.00;5.00;;25000000;3080000;5D 0H 00M;;/' +
-        'Ion;;1;10;MEDIUM;Energy;Homing;600;10470;10;10.00;1.00;5.00;;35000000;3800000;6D 0H 00M;;/' +
-        'Ion;;1;11;MEDIUM;Energy;Homing;600;11510;10;10.00;1.00;5.00;;45000000;4880000;7D 0H 00M;;/' +
-        'Ion;;1;12;MEDIUM;Energy;Homing;600;12650;10;10.00;1.00;5.00;;0;6680000;0D 0H 00M;;/' +
-        'Ion MK2;;2;1;MEDIUM;Energy;Homing;600;5380;10;10.00;1.00;5.00;;100000;6880000;0D 3H 30M;;/' +
-        'Ion MK2;;2;2;MEDIUM;Energy;Homing;600;5910;10;10.00;1.00;5.00;;200000;6884000;0D 6H 00M;;/' +
-        'Ion MK2;;2;3;MEDIUM;Energy;Homing;600;6490;10;10.00;1.00;5.00;;400000;6887000;0D 12H 00M;;/' +
-        'Ion MK2;;2;4;MEDIUM;Energy;Homing;600;7130;10;10.00;1.00;5.00;;2000000;6894000;0D 18H 00M;;/' +
-        'Ion MK2;;2;5;MEDIUM;Energy;Homing;600;7840;10;10.00;1.00;5.00;;3000000;6952000;1D 0H 00M;;/' +
-        'Ion MK2;;2;6;MEDIUM;Energy;Homing;600;8620;10;10.00;1.00;5.00;;4000000;7024000;2D 0H 00M;;/' +
-        'Ion MK2;;2;7;MEDIUM;Energy;Homing;600;9470;10;10.00;1.00;5.00;;8000000;7168000;3D 0H 00M;;/' +
-        'Ion MK2;;2;8;MEDIUM;Energy;Homing;600;10410;10;10.00;1.00;5.00;;13000000;7432000;4D 0H 00M;;/' +
-        'Ion MK2;;2;9;MEDIUM;Energy;Homing;600;11440;10;10.00;1.00;5.00;;25000000;7960000;5D 0H 00M;;/' +
-        'Ion MK2;;2;10;MEDIUM;Energy;Homing;600;12570;10;10.00;1.00;5.00;;35000000;8680000;6D 0H 00M;;/' +
-        'Ion MK2;;2;11;MEDIUM;Energy;Homing;600;13810;10;10.00;1.00;5.00;;45000000;9760000;7D 0H 00M;;/' +
-        'Ion MK2;;2;12;MEDIUM;Energy;Homing;600;15180;10;10.00;1.00;5.00;;0;11560000;0D 0H 00M;;/%' +
-        'Ballista;;1;1;MEDIUM;Energy;Straight;1100;2700;1;1.00;0.00;6.00;;20000;1000000;0D 0H 10M;;/' +
+        'Vortex;;1;1;MEDIUM;Explosive;Homing;350;11600;1;1.00;0.00;10.00;;100000;2000000;0D 3H 30M;;;0/' +
+        'Vortex;;1;2;MEDIUM;Explosive;Homing;350;12800;1;1.00;0.00;10.00;;200000;2004000;0D 6H 00M;;/' +
+        'Vortex;;1;3;MEDIUM;Explosive;Homing;350;14000;1;1.00;0.00;10.00;;400000;2007000;0D 12H 00M;;/' +
+        'Vortex;;1;4;MEDIUM;Explosive;Homing;350;15400;1;1.00;0.00;10.00;;2000000;2014000;0D 18H 00M;;/' +
+        'Vortex;;1;5;MEDIUM;Explosive;Homing;350;16900;1;1.00;0.00;10.00;;3000000;2072000;1D 0H 00M;;/' +
+        'Vortex;;1;6;MEDIUM;Explosive;Homing;350;18600;1;1.00;0.00;10.00;;4000000;2144000;2D 0H 00M;;/' +
+        'Vortex;;1;7;MEDIUM;Explosive;Homing;350;20400;1;1.00;0.00;10.00;;8000000;2288000;3D 0H 00M;;/' +
+        'Vortex;;1;8;MEDIUM;Explosive;Homing;350;22400;1;1.00;0.00;10.00;;13000000;2552000;4D 0H 00M;;/' +
+        'Vortex;;1;9;MEDIUM;Explosive;Homing;350;24600;1;1.00;0.00;10.00;;25000000;3080000;5D 0H 00M;;/' +
+        'Vortex;;1;10;MEDIUM;Explosive;Homing;350;27000;1;1.00;0.00;10.00;;35000000;3800000;6D 0H 00M;;/' +
+        'Vortex;;1;11;MEDIUM;Explosive;Homing;350;29700;1;1.00;0.00;10.00;;45000000;4880000;7D 0H 00M;;/' +
+        'Vortex;;1;12;MEDIUM;Explosive;Homing;350;32700;1;1.00;0.00;10.00;;0;6680000;0D 0H 00M;;/' +
+        'Vortex MK2;;2;1;MEDIUM;Explosive;Homing;350;13900;1;1.00;0.00;10.00;;100000;6880000;0D 3H 30M;;/' +
+        'Vortex MK2;;2;2;MEDIUM;Explosive;Homing;350;15300;1;1.00;0.00;10.00;;200000;6884000;0D 6H 00M;;/' +
+        'Vortex MK2;;2;3;MEDIUM;Explosive;Homing;350;16800;1;1.00;0.00;10.00;;400000;6887000;0D 12H 00M;;/' +
+        'Vortex MK2;;2;4;MEDIUM;Explosive;Homing;350;18500;1;1.00;0.00;10.00;;2000000;6894000;0D 18H 00M;;/' +
+        'Vortex MK2;;2;5;MEDIUM;Explosive;Homing;350;20300;1;1.00;0.00;10.00;;3000000;6952000;1D 0H 00M;;/' +
+        'Vortex MK2;;2;6;MEDIUM;Explosive;Homing;350;22300;1;1.00;0.00;10.00;;4000000;7024000;2D 0H 00M;;/' +
+        'Vortex MK2;;2;7;MEDIUM;Explosive;Homing;350;24500;1;1.00;0.00;10.00;;8000000;7168000;3D 0H 00M;;/' +
+        'Vortex MK2;;2;8;MEDIUM;Explosive;Homing;350;26900;1;1.00;0.00;10.00;;13000000;7432000;4D 0H 00M;;/' +
+        'Vortex MK2;;2;9;MEDIUM;Explosive;Homing;350;29600;1;1.00;0.00;10.00;;25000000;7960000;5D 0H 00M;;/' +
+        'Vortex MK2;;2;10;MEDIUM;Explosive;Homing;350;32500;1;1.00;0.00;10.00;;35000000;8680000;6D 0H 00M;;/' +
+        'Vortex MK2;;2;11;MEDIUM;Explosive;Homing;350;35700;1;1.00;0.00;10.00;;45000000;9760000;7D 0H 00M;;/' +
+        'Vortex MK2;;2;12;MEDIUM;Explosive;Homing;350;39200;1;1.00;0.00;10.00;;0;11560000;0D 0H 00M;;/%' +
+        'Ion;;1;1;MEDIUM;Energy;Homing;600;4480;1;1.00;1.00;5.00;;100000;2000000;0D 3H 30M;;;0/' +
+        'Ion;;1;2;MEDIUM;Energy;Homing;600;4920;1;1.00;1.00;5.00;;200000;2004000;0D 6H 00M;;/' +
+        'Ion;;1;3;MEDIUM;Energy;Homing;600;5410;1;1.00;1.00;5.00;;400000;2007000;0D 12H 00M;;/' +
+        'Ion;;1;4;MEDIUM;Energy;Homing;600;5940;1;1.00;1.00;5.00;;2000000;2014000;0D 18H 00M;;/' +
+        'Ion;;1;5;MEDIUM;Energy;Homing;600;6530;1;1.00;1.00;5.00;;3000000;2072000;1D 0H 00M;;/' +
+        'Ion;;1;6;MEDIUM;Energy;Homing;600;7180;1;1.00;1.00;5.00;;4000000;2144000;2D 0H 00M;;/' +
+        'Ion;;1;7;MEDIUM;Energy;Homing;600;7890;1;1.00;1.00;5.00;;8000000;2288000;3D 0H 00M;;/' +
+        'Ion;;1;8;MEDIUM;Energy;Homing;600;8670;1;1.00;1.00;5.00;;13000000;2552000;4D 0H 00M;;/' +
+        'Ion;;1;9;MEDIUM;Energy;Homing;600;9530;1;1.00;1.00;5.00;;25000000;3080000;5D 0H 00M;;/' +
+        'Ion;;1;10;MEDIUM;Energy;Homing;600;10470;1;1.00;1.00;5.00;;35000000;3800000;6D 0H 00M;;/' +
+        'Ion;;1;11;MEDIUM;Energy;Homing;600;11510;1;1.00;1.00;5.00;;45000000;4880000;7D 0H 00M;;/' +
+        'Ion;;1;12;MEDIUM;Energy;Homing;600;12650;1;1.00;1.00;5.00;;0;6680000;0D 0H 00M;;/' +
+        'Ion MK2;;2;1;MEDIUM;Energy;Homing;600;5380;1;1.00;1.00;5.00;;100000;6880000;0D 3H 30M;;/' +
+        'Ion MK2;;2;2;MEDIUM;Energy;Homing;600;5910;1;1.00;1.00;5.00;;200000;6884000;0D 6H 00M;;/' +
+        'Ion MK2;;2;3;MEDIUM;Energy;Homing;600;6490;1;1.00;1.00;5.00;;400000;6887000;0D 12H 00M;;/' +
+        'Ion MK2;;2;4;MEDIUM;Energy;Homing;600;7130;1;1.00;1.00;5.00;;2000000;6894000;0D 18H 00M;;/' +
+        'Ion MK2;;2;5;MEDIUM;Energy;Homing;600;7840;1;1.00;1.00;5.00;;3000000;6952000;1D 0H 00M;;/' +
+        'Ion MK2;;2;6;MEDIUM;Energy;Homing;600;8620;1;1.00;1.00;5.00;;4000000;7024000;2D 0H 00M;;/' +
+        'Ion MK2;;2;7;MEDIUM;Energy;Homing;600;9470;1;1.00;1.00;5.00;;8000000;7168000;3D 0H 00M;;/' +
+        'Ion MK2;;2;8;MEDIUM;Energy;Homing;600;10410;1;1.00;1.00;5.00;;13000000;7432000;4D 0H 00M;;/' +
+        'Ion MK2;;2;9;MEDIUM;Energy;Homing;600;11440;1;1.00;1.00;5.00;;25000000;7960000;5D 0H 00M;;/' +
+        'Ion MK2;;2;10;MEDIUM;Energy;Homing;600;12570;1;1.00;1.00;5.00;;35000000;8680000;6D 0H 00M;;/' +
+        'Ion MK2;;2;11;MEDIUM;Energy;Homing;600;13810;1;1.00;1.00;5.00;;45000000;9760000;7D 0H 00M;;/' +
+        'Ion MK2;;2;12;MEDIUM;Energy;Homing;600;15180;1;1.00;1.00;5.00;;0;11560000;0D 0H 00M;;/%' +
+        'Ballista;;1;1;MEDIUM;Energy;Straight;1100;2700;1;1.00;0.00;6.00;;20000;1000000;0D 0H 10M;;;0/' +
         'Ballista;;1;2;MEDIUM;Energy;Straight;1100;3000;1;1.00;0.00;6.00;;40000;1014000;0D 1H 00M;;/' +
         'Ballista;;1;3;MEDIUM;Energy;Straight;1100;3400;1;1.00;0.00;6.00;;80000;1020000;0D 2H 00M;;/' +
         'Ballista;;1;4;MEDIUM;Energy;Straight;1100;3700;1;1.00;0.00;6.00;;400000;1040000;0D 8H 00M;;/' +
@@ -286,31 +286,31 @@
         'Ballista MK2;;2;10;MEDIUM;Energy;Straight;1100;7800;1;1.00;0.00;6.00;;16000000;11800000;3D 12H 00M;;/' +
         'Ballista MK2;;2;11;MEDIUM;Energy;Straight;1100;8500;1;1.00;0.00;6.00;;26000000;13400000;4D 18H 00M;;/' +
         'Ballista MK2;;2;12;MEDIUM;Energy;Straight;1100;9400;1;1.00;0.00;6.00;;0;15200000;0D 0H 00M;;/%' +
-        'Pulsar;;1;1;MEDIUM;Energy;Straight;600;560;24;25628;7.00;5.00;;100000;3120000;0D 5H 00M;;5/' +
-        'Pulsar;;1;2;MEDIUM;Energy;Straight;600;620;24;25628;7.00;5.00;;200000;3140000;0D 12H 00M;;5/' +
-        'Pulsar;;1;3;MEDIUM;Energy;Straight;600;670;24;25628;7.00;5.00;;400000;3160000;1D 0H 00M;;5/' +
-        'Pulsar;;1;4;MEDIUM;Energy;Straight;600;740;24;25628;7.00;5.00;;2000000;3200000;2D 0H 00M;;5/' +
-        'Pulsar;;1;5;MEDIUM;Energy;Straight;600;810;24;25628;7.00;5.00;;4000000;3920000;3D 0H 00M;;5/' +
-        'Pulsar;;1;6;MEDIUM;Energy;Straight;600;880;24;25628;7.00;5.00;;6000000;3920000;4D 0H 00M;;5/' +
-        'Pulsar;;1;7;MEDIUM;Energy;Straight;600;970;24;25628;7.00;5.00;;11000000;4320000;5D 0H 00M;;5/' +
-        'Pulsar;;1;8;MEDIUM;Energy;Straight;600;1070;24;25628;7.00;5.00;;17000000;5320000;6D 0H 00M;;5/' +
-        'Pulsar;;1;9;MEDIUM;Energy;Straight;600;1170;24;25628;7.00;5.00;;32000000;6520000;7D 0H 00M;;5/' +
-        'Pulsar;;1;10;MEDIUM;Energy;Straight;600;1290;24;25628;7.00;5.00;;43000000;9520000;8D 0H 00M;;5/' +
-        'Pulsar;;1;11;MEDIUM;Energy;Straight;600;1410;24;25628;7.00;5.00;;55000000;11720000;9D 0H 00M;;5/' +
-        'Pulsar;;1;12;MEDIUM;Energy;Straight;600;1550;24;25628;7.00;5.00;;0;14120000;0D 0H 00M;;5/' +
-        'Pulsar MK2;;2;1;MEDIUM;Energy;Straight;600;670;24;25628;7.00;5.00;;100000;14140000;0D 5H 00M;;5/' +
-        'Pulsar MK2;;2;2;MEDIUM;Energy;Straight;600;740;24;25628;7.00;5.00;;200000;14140000;0D 12H 00M;;5/' +
-        'Pulsar MK2;;2;3;MEDIUM;Energy;Straight;600;810;24;25628;7.00;5.00;;400000;14160000;1D 0H 00M;;5/' +
-        'Pulsar MK2;;2;4;MEDIUM;Energy;Straight;600;890;24;25628;7.00;5.00;;2000000;14200000;2D 0H 00M;;5/' +
-        'Pulsar MK2;;2;5;MEDIUM;Energy;Straight;600;970;24;25628;7.00;5.00;;4000000;14520000;3D 0H 00M;;5/' +
-        'Pulsar MK2;;2;6;MEDIUM;Energy;Straight;600;1060;24;25628;7.00;5.00;;6000000;14920000;4D 0H 00M;;5/' +
-        'Pulsar MK2;;2;7;MEDIUM;Energy;Straight;600;1170;24;25628;7.00;5.00;;11000000;15320000;5D 0H 00M;;5/' +
-        'Pulsar MK2;;2;8;MEDIUM;Energy;Straight;600;1290;24;25628;7.00;5.00;;17000000;16320000;6D 0H 00M;;5/' +
-        'Pulsar MK2;;2;9;MEDIUM;Energy;Straight;600;1410;24;25628;7.00;5.00;;32000000;17520000;7D 0H 00M;;5/' +
-        'Pulsar MK2;;2;10;MEDIUM;Energy;Straight;600;1540;24;25628;7.00;5.00;;43000000;20520000;8D 0H 00M;;5/' +
-        'Pulsar MK2;;2;11;MEDIUM;Energy;Straight;600;1690;24;25628;7.00;5.00;;55000000;22720000;9D 0H 00M;;5/' +
-        'Pulsar MK2;;2;12;MEDIUM;Energy;Straight;600;1860;24;25628;7.00;5.00;;0;25120000;0D 0H 00M;;5/%' +
-        'Corona;;1;1;MEDIUM;Energy;Straight;500;3130;5;15707;18445;7.00;;100000;3120000;0D 5H 00M;;5/' +
+        'Pulsar;;1;1;MEDIUM;Energy;Straight;600;560;24;3.43;7.00;5.00;;100000;3120000;0D 5H 00M;;5;0/' +
+        'Pulsar;;1;2;MEDIUM;Energy;Straight;600;620;24;3.43;7.00;5.00;;200000;3140000;0D 12H 00M;;5/' +
+        'Pulsar;;1;3;MEDIUM;Energy;Straight;600;670;24;3.43;7.00;5.00;;400000;3160000;1D 0H 00M;;5/' +
+        'Pulsar;;1;4;MEDIUM;Energy;Straight;600;740;24;3.43;7.00;5.00;;2000000;3200000;2D 0H 00M;;5/' +
+        'Pulsar;;1;5;MEDIUM;Energy;Straight;600;810;24;3.43;7.00;5.00;;4000000;3920000;3D 0H 00M;;5/' +
+        'Pulsar;;1;6;MEDIUM;Energy;Straight;600;880;24;3.43;7.00;5.00;;6000000;3920000;4D 0H 00M;;5/' +
+        'Pulsar;;1;7;MEDIUM;Energy;Straight;600;970;24;3.43;7.00;5.00;;11000000;4320000;5D 0H 00M;;5/' +
+        'Pulsar;;1;8;MEDIUM;Energy;Straight;600;1070;24;3.43;7.00;5.00;;17000000;5320000;6D 0H 00M;;5/' +
+        'Pulsar;;1;9;MEDIUM;Energy;Straight;600;1170;24;3.43;7.00;5.00;;32000000;6520000;7D 0H 00M;;5/' +
+        'Pulsar;;1;10;MEDIUM;Energy;Straight;600;1290;24;3.43;7.00;5.00;;43000000;9520000;8D 0H 00M;;5/' +
+        'Pulsar;;1;11;MEDIUM;Energy;Straight;600;1410;24;3.43;7.00;5.00;;55000000;11720000;9D 0H 00M;;5/' +
+        'Pulsar;;1;12;MEDIUM;Energy;Straight;600;1550;24;3.43;7.00;5.00;;0;14120000;0D 0H 00M;;5/' +
+        'Pulsar MK2;;2;1;MEDIUM;Energy;Straight;600;670;24;3.43;7.00;5.00;;100000;14140000;0D 5H 00M;;5/' +
+        'Pulsar MK2;;2;2;MEDIUM;Energy;Straight;600;740;24;3.43;7.00;5.00;;200000;14140000;0D 12H 00M;;5/' +
+        'Pulsar MK2;;2;3;MEDIUM;Energy;Straight;600;810;24;3.43;7.00;5.00;;400000;14160000;1D 0H 00M;;5/' +
+        'Pulsar MK2;;2;4;MEDIUM;Energy;Straight;600;890;24;3.43;7.00;5.00;;2000000;14200000;2D 0H 00M;;5/' +
+        'Pulsar MK2;;2;5;MEDIUM;Energy;Straight;600;970;24;3.43;7.00;5.00;;4000000;14520000;3D 0H 00M;;5/' +
+        'Pulsar MK2;;2;6;MEDIUM;Energy;Straight;600;1060;24;3.43;7.00;5.00;;6000000;14920000;4D 0H 00M;;5/' +
+        'Pulsar MK2;;2;7;MEDIUM;Energy;Straight;600;1170;24;3.43;7.00;5.00;;11000000;15320000;5D 0H 00M;;5/' +
+        'Pulsar MK2;;2;8;MEDIUM;Energy;Straight;600;1290;24;3.43;7.00;5.00;;17000000;16320000;6D 0H 00M;;5/' +
+        'Pulsar MK2;;2;9;MEDIUM;Energy;Straight;600;1410;24;3.43;7.00;5.00;;32000000;17520000;7D 0H 00M;;5/' +
+        'Pulsar MK2;;2;10;MEDIUM;Energy;Straight;600;1540;24;3.43;7.00;5.00;;43000000;20520000;8D 0H 00M;;5/' +
+        'Pulsar MK2;;2;11;MEDIUM;Energy;Straight;600;1690;24;3.43;7.00;5.00;;55000000;22720000;9D 0H 00M;;5/' +
+        'Pulsar MK2;;2;12;MEDIUM;Energy;Straight;600;1860;24;3.43;7.00;5.00;;0;25120000;0D 0H 00M;;5/%' +
+        'Corona;;1;1;MEDIUM;Energy;Straight;500;3130;5;15707;18445;7.00;;100000;3120000;0D 5H 00M;;5;1/' +
         'Corona;;1;2;MEDIUM;Energy;Straight;500;3450;5;15707;18445;7.00;;200000;3140000;0D 12H 00M;;5/' +
         'Corona;;1;3;MEDIUM;Energy;Straight;500;3790;5;15707;18445;7.00;;400000;3160000;1D 0H 00M;;5/' +
         'Corona;;1;4;MEDIUM;Energy;Straight;500;4160;5;15707;18445;7.00;;2000000;3200000;2D 0H 00M;;5/' +
@@ -334,7 +334,7 @@
         'Corona MK2;;2;10;MEDIUM;Energy;Straight;500;8800;5;15707;18445;7.00;;43000000;20520000;8D 0H 00M;;5/' +
         'Corona MK2;;2;11;MEDIUM;Energy;Straight;500;9650;5;15707;18445;7.00;;55000000;22720000;9D 0H 00M;;5/' +
         'Corona MK2;;2;12;MEDIUM;Energy;Straight;500;10620;5;15707;18445;7.00;;0;25120000;0D 0H 00M;;5/%' +
-        'Wasp;;1;1;MEDIUM;Kinetic;Straight;600;1175;5;1.00;4.00;5.00;x2;100000;3120000;0D 5H 00M;645;5/' +
+        'Wasp;;1;1;MEDIUM;Kinetic;Straight;600;1175;5;1.00;4.00;5.00;x2;100000;3120000;0D 5H 00M;645;5;0/' +
         'Wasp;;1;2;MEDIUM;Kinetic;Straight;600;1292;5;1.00;4.00;5.00;x2;200000;3140000;0D 12H 00M;710;5/' +
         'Wasp;;1;3;MEDIUM;Kinetic;Straight;600;1420;5;1.00;4.00;5.00;x2;400000;3160000;1D 0H 00M;780;5/' +
         'Wasp;;1;4;MEDIUM;Kinetic;Straight;600;1560;5;1.00;4.00;5.00;x2;2000000;3200000;2D 0H 00M;855;5/' +
@@ -358,28 +358,28 @@
         'Wasp MK2;;2;10;MEDIUM;Kinetic;Straight;600;3296;5;1.00;4.00;5.00;x2;43000000;20720000;8D 0H 00M;1810;5/' +
         'Wasp MK2;;2;11;MEDIUM;Kinetic;Straight;600;3623;5;1.00;4.00;5.00;x2;55000000;22920000;9D 0H 00M;1985;5/' +
         'Wasp MK2;;2;12;MEDIUM;Kinetic;Straight;600;3980;5;1.00;4.00;5.00;x2;0;25320000;0D 0H 00M;2185;5/%' +
-        'Ecu;;1;3;MEDIUM;;;;;;;;;;40000;10000;0D 1H 00M;;/' +
-        'Ecu;;1;4;MEDIUM;;;;;;;;;;200000;18000;0D 4H 00M;;/' +
-        'Ecu;;1;5;MEDIUM;;;;;;;;;;400000;50000;0D 8H 00M;;/' +
-        'Ecu;;1;6;MEDIUM;;;;;;;;;;800000;90000;0D 17H 00M;;/' +
-        'Ecu;;1;7;MEDIUM;;;;;;;;;;1500000;170000;0D 21H 00M;;/' +
-        'Ecu;;1;8;MEDIUM;;;;;;;;;;3000000;310000;1D 1H 00M;;/' +
-        'Ecu;;1;9;MEDIUM;;;;;;;;;;5000000;610000;1D 7H 00M;;/' +
-        'Ecu;;1;10;MEDIUM;;;;;;;;;;8000000;1010000;1D 18H 00M;;/' +
-        'Ecu;;1;11;MEDIUM;;;;;;;;;;13000000;1610000;2D 9H 00M;;/' +
-        'Ecu;;1;12;MEDIUM;;;;;;;;;;0;2610000;0D 0H 00M;;/' +
-        'Ecu MK2;;2;1;MEDIUM;;;;;;;;;;10000;2810000;0D 0H 05M;;/' +
-        'Ecu MK2;;2;2;MEDIUM;;;;;;;;;;20000;2812000;0D 0H 30M;;/' +
-        'Ecu MK2;;2;3;MEDIUM;;;;;;;;;;40000;2814000;0D 1H 00M;;/' +
-        'Ecu MK2;;2;4;MEDIUM;;;;;;;;;;200000;2818000;0D 4H 00M;;/' +
-        'Ecu MK2;;2;5;MEDIUM;;;;;;;;;;400000;2850000;0D 8H 00M;;/' +
-        'Ecu MK2;;2;6;MEDIUM;;;;;;;;;;800000;2890000;0D 17H 00M;;/' +
-        'Ecu MK2;;2;7;MEDIUM;;;;;;;;;;1500000;2970000;0D 21H 00M;;/' +
-        'Ecu MK2;;2;8;MEDIUM;;;;;;;;;;3000000;3110000;1D 1H 00M;;/' +
-        'Ecu MK2;;2;9;MEDIUM;;;;;;;;;;5000000;3410000;1D 7H 00M;;/' +
-        'Ecu MK2;;2;10;MEDIUM;;;;;;;;;;8000000;3810000;1D 18H 00M;;/' +
-        'Ecu MK2;;2;11;MEDIUM;;;;;;;;;;13000000;4410000;2D 9H 00M;;/' +
-        'Ecu MK2;;2;12;MEDIUM;;;;;;;;;;0;5410000;0D 0H 00M;;';
+        'Ecu;;1;3;MEDIUM;;;;;;;;;;40000;10000;0D 1H 00M;;;;84000/' +
+        'Ecu;;1;4;MEDIUM;;;;;;;;;;200000;18000;0D 4H 00M;;;;93000/' +
+        'Ecu;;1;5;MEDIUM;;;;;;;;;;400000;50000;0D 8H 00M;;;;102000/' +
+        'Ecu;;1;6;MEDIUM;;;;;;;;;;800000;90000;0D 17H 00M;;;;112000/' +
+        'Ecu;;1;7;MEDIUM;;;;;;;;;;1500000;170000;0D 21H 00M;;;;123000/' +
+        'Ecu;;1;8;MEDIUM;;;;;;;;;;3000000;310000;1D 1H 00M;;;;135000/' +
+        'Ecu;;1;9;MEDIUM;;;;;;;;;;5000000;610000;1D 7H 00M;;;;148000/' +
+        'Ecu;;1;10;MEDIUM;;;;;;;;;;8000000;1010000;1D 18H 00M;;;;163000/' +
+        'Ecu;;1;11;MEDIUM;;;;;;;;;;13000000;1610000;2D 9H 00M;;;;179000/' +
+        'Ecu;;1;12;MEDIUM;;;;;;;;;;0;2610000;0D 0H 00M;;;;197000/' +
+        'Ecu MK2;;2;1;MEDIUM;;;;;;;;;;10000;2810000;0D 0H 05M;;;;84000/' +
+        'Ecu MK2;;2;2;MEDIUM;;;;;;;;;;20000;2812000;0D 0H 30M;;;;92000/' +
+        'Ecu MK2;;2;3;MEDIUM;;;;;;;;;;40000;2814000;0D 1H 00M;;;;101000/' +
+        'Ecu MK2;;2;4;MEDIUM;;;;;;;;;;200000;2818000;0D 4H 00M;;;;112000/' +
+        'Ecu MK2;;2;5;MEDIUM;;;;;;;;;;400000;2850000;0D 8H 00M;;;;122000/' +
+        'Ecu MK2;;2;6;MEDIUM;;;;;;;;;;800000;2890000;0D 17H 00M;;;;134000/' +
+        'Ecu MK2;;2;7;MEDIUM;;;;;;;;;;1500000;2970000;0D 21H 00M;;;;147000/' +
+        'Ecu MK2;;2;8;MEDIUM;;;;;;;;;;3000000;3110000;1D 1H 00M;;;;162000/' +
+        'Ecu MK2;;2;9;MEDIUM;;;;;;;;;;5000000;3410000;1D 7H 00M;;;;178000/' +
+        'Ecu MK2;;2;10;MEDIUM;;;;;;;;;;8000000;3810000;1D 18H 00M;;;;195000/' +
+        'Ecu MK2;;2;11;MEDIUM;;;;;;;;;;13000000;4410000;2D 9H 00M;;;;215000/' +
+        'Ecu MK2;;2;12;MEDIUM;;;;;;;;;;0;5410000;0D 0H 00M;;;;236000';
 
 })();
 
