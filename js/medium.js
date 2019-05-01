@@ -5,9 +5,53 @@ weaponsObj.light = {};      /* пустой объект легких оруди
 var mediumWeaponsArr = window.medium.weapons.split('/%');     /* массив всех средних орудий */
 var lightWeaponsArr = window.light.weapons.split('/%');
 
-
-
-
+var shotgunGustAccuracy = {
+    '100': 100,
+    '150': 90,
+    '200': 63,
+    '250': 46,
+    '300': 31,
+    '350': 21,
+    '400': 17,
+    '450': 10,
+    '500': 4
+};
+var shotgunStormAccuracy = {
+    50: 100,
+    100: 80,
+    150: 57,
+    200: 34,
+    250: 19,
+    300: 9,
+    350: 8,
+    400: 8,
+    450: 7,
+    500: 3
+};
+var shotgunThunderAccuracy = {
+    50: 100,
+    100: 85,
+    150: 48,
+    200: 27,
+    250: 15,
+    300: 9,
+    350: 11,
+    400: 8,
+    450: 8,
+    500: 4
+};
+var shotgunShredderAccuracy = {
+    50: 100,
+    100: 100,
+    150: 100,
+    200: 94,
+    250: 88,
+    300: 69,
+    350: 49,
+    400: 29,
+    450: 24,
+    500: 19
+};
 
 /* как получить количество минут из формата "*d *h *m" */
 var getNumberFromTime = function (elem) {
@@ -120,10 +164,13 @@ var createObjProperties = function (obj, str, forMk) {  /* obj - куда вно
     obj.range = Number(str[7]);
     obj.ammo = Number(str[9]);
     obj.fireRate = Number(str[10]);
-    obj.unload = Number(str[11]);
+    obj.unloadBurst = Number(str[11]);
+    obj.unloadClip = Number(str[21]);
     obj.reload = Number(str[12]);
+    obj.reloadRound = Number(str[20]);
     obj.chargeUp = Number(str[19]);
     obj.damageToPhysical = +str[13].toLowerCase();
+    obj.accuracy = Number(str[22]);
     obj.mk1 = {};
     obj.mk2 = {};
     if (forMk.length === 24) {      
@@ -160,7 +207,7 @@ for (var i = 0; i < lightWeaponsArr.length; i++) {
     createLightWeaponObj(lightWeaponsArr, i);
 }
 
-console.log(window.medium.weapons.split('/%')[0].split('/')[0].split(';'));
+console.log(window.light.weapons.split('/%')[9].split('/')[0].split(';'));
 
-console.log(weaponsObj.medium.ecu);
-console.log(weaponsObj.light.shredder);
+console.log(weaponsObj.light.arbalest);
+console.log(shotgunStormAccuracy[300]);
