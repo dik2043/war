@@ -5,7 +5,7 @@ weaponsObj.light = {};      /* пустой объект легких оруди
 var mediumWeaponsArr = window.medium.weapons.split('/%');     /* массив всех средних орудий */
 var lightWeaponsArr = window.light.weapons.split('/%');
 
-var shotgunGustAccuracy = {
+var accuracyGust = {
     '100': 100,
     '150': 90,
     '200': 63,
@@ -16,7 +16,7 @@ var shotgunGustAccuracy = {
     '450': 10,
     '500': 4
 };
-var shotgunStormAccuracy = {
+var accuracyStorm = {
     50: 100,
     100: 80,
     150: 57,
@@ -28,7 +28,7 @@ var shotgunStormAccuracy = {
     450: 7,
     500: 3
 };
-var shotgunThunderAccuracy = {
+var accuracyThunder = {
     50: 100,
     100: 85,
     150: 48,
@@ -40,7 +40,7 @@ var shotgunThunderAccuracy = {
     450: 8,
     500: 4
 };
-var shotgunShredderAccuracy = {
+var accuracyShredder = {
     50: 100,
     100: 100,
     150: 100,
@@ -52,6 +52,69 @@ var shotgunShredderAccuracy = {
     450: 24,
     500: 19
 };
+var accuracyCorona = {
+    50: 100,
+    100: 74,
+    150: 47,
+    200: 39,
+    250: 30,
+    300: 27,
+    350: 21,
+    400: 20,
+    450: 16,
+    500: 7
+};
+var accuracySpark = {
+    50: 237,
+    100: 222,
+    150: 183,
+    200: 171,
+    250: 160,
+    300: 134,
+    350: 111,
+    400: 100,
+    450: 77,
+    500: 60,
+    550: 50,
+    600: 23
+};
+var accuracyPulsar = {
+    500: 100,
+    550: 91,
+    600: 87
+};
+var accuracyScourge = {
+    50: 237,
+    100: 222,
+    150: 183,
+    200: 171,
+    250: 160,
+    300: 134,
+    350: 111,
+    400: 100,
+    450: 77,
+    500: 60,
+    550: 50,
+    600: 23
+};
+var accuracyPunisher = {
+    200: 100,
+    250: 90,
+    300: 66,
+    350: 51,
+    400: 34,
+    450: 33,
+    500: 25
+};
+var accuracyMolot = {
+    300: 100,
+    400: 91,
+    500: 68,
+    600: 50,
+    700: 44,
+    800: 24
+};
+
 
 /* как получить количество минут из формата "*d *h *m" */
 var getNumberFromTime = function (elem) {
@@ -170,7 +233,7 @@ var createObjProperties = function (obj, str, forMk) {  /* obj - куда вно
     obj.reloadRound = Number(str[20]);
     obj.chargeUp = Number(str[19]);
     obj.damageToPhysical = +str[13].toLowerCase();
-    obj.accuracy = Number(str[22]);
+    obj.spreading = Number(str[22]);
     obj.mk1 = {};
     obj.mk2 = {};
     if (forMk.length === 24) {      
@@ -207,7 +270,8 @@ for (var i = 0; i < lightWeaponsArr.length; i++) {
     createLightWeaponObj(lightWeaponsArr, i);
 }
 
-console.log(window.light.weapons.split('/%')[9].split('/')[0].split(';'));
+console.log(window.light.weapons.split('/%')[8].split('/')[0].split(';'));
 
-console.log(weaponsObj.light.arbalest);
-console.log(shotgunStormAccuracy[300]);
+console.log(weaponsObj);
+console.log(weaponsObj.medium.pulsar);
+

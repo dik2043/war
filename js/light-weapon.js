@@ -6,7 +6,7 @@
 
     window.light = {};
 
-    window.light.weapons = 'Punisher;;1;1;LIGHT;Kinetic;Straight;500;160;220.00;11.11;19.71;10;x2;10000;4000.00;0D 0H 05M;;;0;;;/' +
+    window.light.weapons = 'Punisher;;1;1;LIGHT;Kinetic;Straight;500;160;220.00;11.11;19.71;10;x2;10000;4000.00;0D 0H 05M;;;0;;;1/' +
         'Punisher;;1;2;LIGHT;Kinetic;Straight;500;180;220.00;11.11;19.71;10;x2;20000;6000.00;0D 0H 30M;;/' +
         'Punisher;;1;3;LIGHT;Kinetic;Straight;500;200;220.00;11.11;19.71;10;x2;40000;8000.00;0D 1H 00M;;/' +
         'Punisher;;1;4;LIGHT;Kinetic;Straight;500;220;220.00;11.11;19.71;10;x2;200000;12000.00;0D 4H 00M;;/' +
@@ -30,7 +30,7 @@
         'Punisher MK2;;2;10;LIGHT;Kinetic;Straight;500;468;220.00;11.11;19.71;10;x2;8000000;3804000.00;1D 18H 00M;;/' +
         'Punisher MK2;;2;11;LIGHT;Kinetic;Straight;500;516;220.00;11.11;19.71;10;x2;13000000;4404000.00;2D 9H 00M;;/' +
         'Punisher MK2;;2;12;LIGHT;Kinetic;Straight;500;564;220.00;11.11;19.71;10;x2;0;5404000.00;0D 0H 00M;;/%' +
-        'Molot;;1;1;LIGHT;Kinetic;Straight;800;279;70.00;4.65;14.84;10;x2;10000;4000.00;0D 0H 05M;;;0;;;/' +
+        'Molot;;1;1;LIGHT;Kinetic;Straight;800;279;70.00;4.65;14.84;10;x2;10000;4000.00;0D 0H 05M;;;0;;;1/' +
         'Molot;;1;2;LIGHT;Kinetic;Straight;800;303;70.00;4.65;14.84;10;x2;20000;6000.00;0D 0H 30M;;/' +
         'Molot;;1;3;LIGHT;Kinetic;Straight;800;327;70.00;4.65;14.84;10;x2;40000;8000.00;0D 1H 00M;;/' +
         'Molot;;1;4;LIGHT;Kinetic;Straight;800;363;70.00;4.65;14.84;10;x2;200000;12000.00;0D 4H 00M;;/' +
@@ -250,7 +250,7 @@
         'Magnum MK2;;2;10;LIGHT;Energy;Straight;350;2450;1.00;1.82;0;0.55;;8000000;4200000.00;1D 18H 00M;;/' +
         'Magnum MK2;;2;11;LIGHT;Energy;Straight;350;2690;1.00;1.82;0;0.55;;13000000;4800000.00;2D 9H 00M;;/' +
         'Magnum MK2;;2;12;LIGHT;Energy;Straight;350;2950;1.00;1.82;0;0.55;;0;5800000.00;0D 0H 00M;;/%' +
-        'Spark;;1;1;LIGHT;Energy;Homing;600;137;100.00;10.00;10;5;;100000;1500000.00;0D 3H 30M;;;0;;;/' +
+        'Spark;;1;1;LIGHT;Energy;Homing;600;137;100.00;10.00;10;5;;100000;1500000.00;0D 3H 30M;;;0;;;1/' +
         'Spark;;1;2;LIGHT;Energy;Homing;600;151;100.00;10.00;10;5;;200000;1520000.00;0D 6H 00M;;/' +
         'Spark;;1;3;LIGHT;Energy;Homing;600;165;100.00;10.00;10;5;;400000;1540000.00;0D 12H 00M;;/' +
         'Spark;;1;4;LIGHT;Energy;Homing;600;181;100.00;10.00;10;5;;2000000;1580000.00;0D 18H 00M;;/' +
@@ -274,31 +274,31 @@
         'Spark MK2;;2;10;LIGHT;Energy;Homing;600;382;100.00;10.00;10;5;;35000000;15700000.00;6D 0H 00M;;/' +
         'Spark MK2;;2;11;LIGHT;Energy;Homing;600;420;100.00;10.00;10;5;;45000000;17700000.00;7D 0H 00M;;/' +
         'Spark MK2;;2;12;LIGHT;Energy;Homing;600;462;100.00;10.00;10;5;;0;19700000.00;0D 0H 00M;;/%' +
-        'Shredder;;1;1;LIGHT;Energy;Straight;500;354;40.00;18598;4;3;;100000;2000000.00;0D 3H 30M;;5;0;;;/' +
-        'Shredder;;1;2;LIGHT;Energy;Straight;500;387;40.00;18598;4;3;;200000;2020000.00;0D 6H 00M;;5/' +
-        'Shredder;;1;3;LIGHT;Energy;Straight;500;430;40.00;18598;4;3;;400000;2040000.00;0D 12H 00M;;5/' +
-        'Shredder;;1;4;LIGHT;Energy;Straight;500;473;40.00;18598;4;3;;2000000;2080000.00;0D 18H 00M;;5/' +
-        'Shredder;;1;5;LIGHT;Energy;Straight;500;516;40.00;18598;4;3;;3000000;2600000.00;1D 0H 00M;;5/' +
-        'Shredder;;1;6;LIGHT;Energy;Straight;500;569;40.00;18598;4;3;;4000000;2600000.00;2D 0H 00M;;5/' +
-        'Shredder;;1;7;LIGHT;Energy;Straight;500;624;40.00;18598;4;3;;8000000;2800000.00;3D 0H 00M;;5/' +
-        'Shredder;;1;8;LIGHT;Energy;Straight;500;688;40.00;18598;4;3;;13000000;3600000.00;4D 0H 00M;;5/' +
-        'Shredder;;1;9;LIGHT;Energy;Straight;500;753;40.00;18598;4;3;;25000000;4600000.00;5D 0H 00M;;5/' +
-        'Shredder;;1;10;LIGHT;Energy;Straight;500;827;40.00;18598;4;3;;35000000;7000000.00;6D 0H 00M;;5/' +
-        'Shredder;;1;11;LIGHT;Energy;Straight;500;913;40.00;18598;4;3;;45000000;9000000.00;7D 0H 00M;;5/' +
-        'Shredder;;1;12;LIGHT;Energy;Straight;500;1005;40.00;18598;4;3;;0;11000000.00;0D 0H 00M;;5/' +
-        'Shredder MK2;;2;1;LIGHT;Energy;Straight;500;425;40.00;18598;4;3;;100000;11020000.00;0D 3H 30M;;5/' +
-        'Shredder MK2;;2;2;LIGHT;Energy;Straight;500;465;40.00;18598;4;3;;200000;11020000.00;0D 6H 00M;;5/' +
-        'Shredder MK2;;2;3;LIGHT;Energy;Straight;500;516;40.00;18598;4;3;;400000;11040000.00;0D 12H 00M;;5/' +
-        'Shredder MK2;;2;4;LIGHT;Energy;Straight;500;567;40.00;18598;4;3;;2000000;11080000.00;0D 18H 00M;;5/' +
-        'Shredder MK2;;2;5;LIGHT;Energy;Straight;500;619;40.00;18598;4;3;;3000000;11400000.00;1D 0H 00M;;5/' +
-        'Shredder MK2;;2;6;LIGHT;Energy;Straight;500;683;40.00;18598;4;3;;4000000;11600000.00;2D 0H 00M;;5/' +
-        'Shredder MK2;;2;7;LIGHT;Energy;Straight;500;748;40.00;18598;4;3;;8000000;11800000.00;3D 0H 00M;;5/' +
-        'Shredder MK2;;2;8;LIGHT;Energy;Straight;500;826;40.00;18598;4;3;;13000000;12600000.00;4D 0H 00M;;5/' +
-        'Shredder MK2;;2;9;LIGHT;Energy;Straight;500;903;40.00;18598;4;3;;25000000;13600000.00;5D 0H 00M;;5/' +
-        'Shredder MK2;;2;10;LIGHT;Energy;Straight;500;993;40.00;18598;4;3;;35000000;16000000.00;6D 0H 00M;;5/' +
-        'Shredder MK2;;2;11;LIGHT;Energy;Straight;500;1097;40.00;18598;4;3;;45000000;18000000.00;7D 0H 00M;;5/' +
-        'Shredder MK2;;2;12;LIGHT;Energy;Straight;500;1206;40.00;18598;4;3;;0;20000000.00;0D 0H 00M;;5/%' +
-        'Halo;;1;1;LIGHT;Energy;Straight;500;2150;5.00;2.00;5;5;;100000;2000000.00;0D 3H 30M;;5;1/' +
+        'Shredder;;1;1;LIGHT;Energy;Straight;500;354;40.00;12.50;4;3;;100000;2000000.00;0D 3H 30M;;5;0;;;1/' +
+        'Shredder;;1;2;LIGHT;Energy;Straight;500;387;40.00;12.50;4;3;;200000;2020000.00;0D 6H 00M;;5/' +
+        'Shredder;;1;3;LIGHT;Energy;Straight;500;430;40.00;12.50;4;3;;400000;2040000.00;0D 12H 00M;;5/' +
+        'Shredder;;1;4;LIGHT;Energy;Straight;500;473;40.00;12.50;4;3;;2000000;2080000.00;0D 18H 00M;;5/' +
+        'Shredder;;1;5;LIGHT;Energy;Straight;500;516;40.00;12.50;4;3;;3000000;2600000.00;1D 0H 00M;;5/' +
+        'Shredder;;1;6;LIGHT;Energy;Straight;500;569;40.00;12.50;4;3;;4000000;2600000.00;2D 0H 00M;;5/' +
+        'Shredder;;1;7;LIGHT;Energy;Straight;500;624;40.00;12.50;4;3;;8000000;2800000.00;3D 0H 00M;;5/' +
+        'Shredder;;1;8;LIGHT;Energy;Straight;500;688;40.00;12.50;4;3;;13000000;3600000.00;4D 0H 00M;;5/' +
+        'Shredder;;1;9;LIGHT;Energy;Straight;500;753;40.00;12.50;4;3;;25000000;4600000.00;5D 0H 00M;;5/' +
+        'Shredder;;1;10;LIGHT;Energy;Straight;500;827;40.00;12.50;4;3;;35000000;7000000.00;6D 0H 00M;;5/' +
+        'Shredder;;1;11;LIGHT;Energy;Straight;500;913;40.00;12.50;4;3;;45000000;9000000.00;7D 0H 00M;;5/' +
+        'Shredder;;1;12;LIGHT;Energy;Straight;500;1005;40.00;12.50;4;3;;0;11000000.00;0D 0H 00M;;5/' +
+        'Shredder MK2;;2;1;LIGHT;Energy;Straight;500;425;40.00;12.50;4;3;;100000;11020000.00;0D 3H 30M;;5/' +
+        'Shredder MK2;;2;2;LIGHT;Energy;Straight;500;465;40.00;12.50;4;3;;200000;11020000.00;0D 6H 00M;;5/' +
+        'Shredder MK2;;2;3;LIGHT;Energy;Straight;500;516;40.00;12.50;4;3;;400000;11040000.00;0D 12H 00M;;5/' +
+        'Shredder MK2;;2;4;LIGHT;Energy;Straight;500;567;40.00;12.50;4;3;;2000000;11080000.00;0D 18H 00M;;5/' +
+        'Shredder MK2;;2;5;LIGHT;Energy;Straight;500;619;40.00;12.50;4;3;;3000000;11400000.00;1D 0H 00M;;5/' +
+        'Shredder MK2;;2;6;LIGHT;Energy;Straight;500;683;40.00;12.50;4;3;;4000000;11600000.00;2D 0H 00M;;5/' +
+        'Shredder MK2;;2;7;LIGHT;Energy;Straight;500;748;40.00;12.50;4;3;;8000000;11800000.00;3D 0H 00M;;5/' +
+        'Shredder MK2;;2;8;LIGHT;Energy;Straight;500;826;40.00;12.50;4;3;;13000000;12600000.00;4D 0H 00M;;5/' +
+        'Shredder MK2;;2;9;LIGHT;Energy;Straight;500;903;40.00;12.50;4;3;;25000000;13600000.00;5D 0H 00M;;5/' +
+        'Shredder MK2;;2;10;LIGHT;Energy;Straight;500;993;40.00;12.50;4;3;;35000000;16000000.00;6D 0H 00M;;5/' +
+        'Shredder MK2;;2;11;LIGHT;Energy;Straight;500;1097;40.00;12.50;4;3;;45000000;18000000.00;7D 0H 00M;;5/' +
+        'Shredder MK2;;2;12;LIGHT;Energy;Straight;500;1206;40.00;12.50;4;3;;0;20000000.00;0D 0H 00M;;5/%' +
+        'Halo;;1;1;LIGHT;Energy;Straight;500;2150;5.00;2.00;5;5;;100000;2000000.00;0D 3H 30M;;5;1;1;2;1/' +
         'Halo;;1;2;LIGHT;Energy;Straight;500;2350;5.00;2.00;5;5;;200000;2020000.00;0D 6H 00M;;5/' +
         'Halo;;1;3;LIGHT;Energy;Straight;500;2590;5.00;2.00;5;5;;400000;2040000.00;0D 12H 00M;;5/' +
         'Halo;;1;4;LIGHT;Energy;Straight;500;2850;5.00;2.00;5;5;;2000000;2080000.00;0D 18H 00M;;5/' +
@@ -322,7 +322,7 @@
         'Halo MK2;;2;10;LIGHT;Energy;Straight;500;6020;5.00;2.00;5;5;;35000000;16000000;6D 0H 00M;;5/' +
         'Halo MK2;;2;11;LIGHT;Energy;Straight;500;6610;5.00;2.00;5;5;;45000000;18000000;7D 0H 00M;;5/' +
         'Halo MK2;;2;12;LIGHT;Energy;Straight;500;7260;5.00;2.00;5;5;;0;20000000;0D 0H 00M;;5/%' +
-        'Sting;;1;1;LIGHT;Kinetic;Straight;600;440;5.00;5.00;0.4;3;x2;20000;1000000.0;0D 0H 10M;200;5;0/' +
+        'Sting;;1;1;LIGHT;Kinetic;Straight;600;440;5.00;5.00;0.4;3;x2;20000;1000000.0;0D 0H 10M;200;5;0;;;/' +
         'Sting;;1;2;LIGHT;Kinetic;Straight;600;483;5.00;5.00;0.4;3;x2;40000;1014000.0;0D 1H 00M;225;5/' +
         'Sting;;1;3;LIGHT;Kinetic;Straight;600;530;5.00;5.00;0.4;3;x2;80000;1020000.0;0D 2H 00M;245;5/' +
         'Sting;;1;4;LIGHT;Kinetic;Straight;600;583;5.00;5.00;0.4;3;x2;400000;1040000.0;0D 8H 00M;270;5/' +
