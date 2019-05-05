@@ -3,9 +3,17 @@ weaponsObj.medium = {};     /* пустой объект средних оруд
 weaponsObj.light = {};      /* пустой объект легких орудий для дальнейшей работы */
 weaponsObj.heavy = {};      /* пустой объект легких орудий для дальнейшей работы */
 
+var robotsObj = {};         /* пустой объект всех орудий для дальнейшей работы */
+robotsObj.robotsAF = {};          /* пустой объект всех орудий для дальнейшей работы */
+
+
+var afRobotsArr = window.robots.aF.split('//%');              /* массив всех роботов с A по F */
+
 var heavyWeaponsArr = window.heavy.weapons.split('/%');       /* массив всех тяжелых орудий */
 var mediumWeaponsArr = window.medium.weapons.split('/%');     /* массив всех средних орудий */
 var lightWeaponsArr = window.light.weapons.split('/%');       /* массив всех легких орудий */
+
+
 
 
 
@@ -352,6 +360,136 @@ var createObjProperties = function (obj, str, forMk) {  /* obj - куда вно
 };
 
 
+//  -------------------------------------------------------------------------------------------------
+/* как добавлять уровни в роботов (у всех порядок свойств должен быть одинаков, функция одна на всех) */
+var createRobotsLvls = function (obj, forMk, count, step, mk) {
+    obj['mk'+ mk]['lvl' + (count + step)] = {
+        hp: Number(forMk[count].split(';')[4]),
+        speed: Number(forMk[count].split(';')[6]),
+        speedAccelerated: Number(forMk[count].split(';')[7]),
+        durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
+        durabilityEnergyShield: Number(forMk[count].split(';')[10]),
+        regenerationShield: Number(forMk[count].split(';')[11]),
+        threshold: Number(forMk[count].split(';')[12]),
+        damageAbility: Number(forMk[count].split(';')[16]),
+        upgrateCost: Number(forMk[count].split(';')[19]),
+        upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
+        sellingPrice: Number(forMk[count].split(';')[22])
+    }
+};
+
+
+// /* как добавлять mk1 уровни в роботов, у которого первый уровень - "1" */
+// var createRobotsLvlsMk1Full = function (obj, forMk, count) {
+//     obj.mk1['lvl' + (count + 1)] = {
+//         hp: Number(forMk[count].split(';')[4]),
+//         speed: Number(forMk[count].split(';')[6]),
+//         speedAccelerated: Number(forMk[count].split(';')[7]),
+//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
+//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
+//         regenerationShield: Number(forMk[count].split(';')[11]),
+//         threshold: Number(forMk[count].split(';')[12]),
+//         damageAbility: Number(forMk[count].split(';')[16]),
+//         upgrateCost: Number(forMk[count].split(';')[19]),
+//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
+//         sellingPrice: Number(forMk[count].split(';')[22])
+//     }
+// };
+// /* как добавлять mk1 уровни в роботов, у которого первый уровень - "5" */
+// var createRobotsLvlsMk1Less = function (obj, forMk, count) {
+//     obj.mk1['lvl' + (count + 6)] = {
+//         hp: Number(forMk[count].split(';')[4]),
+//         speed: Number(forMk[count].split(';')[6]),
+//         speedAccelerated: Number(forMk[count].split(';')[7]),
+//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
+//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
+//         regenerationShield: Number(forMk[count].split(';')[11]),
+//         threshold: Number(forMk[count].split(';')[12]),
+//         damageAbility: Number(forMk[count].split(';')[16]),
+//         upgrateCost: Number(forMk[count].split(';')[19]),
+//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
+//         sellingPrice: Number(forMk[count].split(';')[22])
+//     }
+// };
+//
+// /* как добавлять mk2 уровни в роботов, у которого первый уровень - "1" */
+// var createRobotsLvlsMk2Full = function (obj, forMk, count) {
+//     obj.mk2['lvl' + (count - 11)] = {
+//         hp: Number(forMk[count].split(';')[4]),
+//         speed: Number(forMk[count].split(';')[6]),
+//         speedAccelerated: Number(forMk[count].split(';')[7]),
+//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
+//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
+//         regenerationShield: Number(forMk[count].split(';')[11]),
+//         threshold: Number(forMk[count].split(';')[12]),
+//         damageAbility: Number(forMk[count].split(';')[16]),
+//         upgrateCost: Number(forMk[count].split(';')[19]),
+//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
+//         sellingPrice: Number(forMk[count].split(';')[22])
+//     }
+// };
+// /* как добавлять mk2 уровни в роботов, у которого первый уровень - "5" */
+// var createRobotsLvlsMk2Less = function (obj, forMk, count) {
+//     // console.log(getNumberFromTime(forMk[count].split(';')[21].toLowerCase()));
+//     obj.mk2['lvl' + (count - 6)] = {
+//         hp: Number(forMk[count].split(';')[4]),
+//         speed: Number(forMk[count].split(';')[6]),
+//         speedAccelerated: Number(forMk[count].split(';')[7]),
+//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
+//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
+//         regenerationShield: Number(forMk[count].split(';')[11]),
+//         threshold: Number(forMk[count].split(';')[12]),
+//         damageAbility: Number(forMk[count].split(';')[16]),
+//         upgrateCost: Number(forMk[count].split(';')[19]),
+//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
+//         sellingPrice: Number(forMk[count].split(';')[22])
+//     }
+// };
+
+
+/* как создать объекты в объекте тяжелых орудий */
+var createAFRobotsObj = function (arr, count) {
+    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива роботов */
+    /* имя объекта = берем массив всех роботов, делим строки по ';;' и берем первую фразу - название робота */
+    robotsObj.robotsAF[name] = {};
+
+    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';',
+     * третий - одна строчка со всеми свойствами */
+    createRobotsObjProperties(robotsObj.robotsAF[name], arr[count].split('//')[0].split(';'), arr[count].split('//'));
+};
+
+
+var createRobotsObjProperties = function (obj, str, forMk) {  /* obj - куда вносим, str - откуда вносим */
+    obj.name = str[0].toLowerCase();
+    obj.slots = str[5];
+    obj.shields = str[8];
+    obj.ability = str[13].toLowerCase();
+    obj.abilityDuration = str[14];
+    obj.abilityCooldown = str[15];
+    obj.cost = str[23];
+    obj.days = str[24];
+
+    obj.mk1 = {};
+    obj.mk2 = {};
+    if (forMk.length === 24) {
+        for (var i = 0; i < (forMk.length) / 2; i++) {
+            createRobotsLvls(obj, forMk, i, 1, 1);
+        }
+        for (var i = 12; i < (forMk.length); i++) {
+            createRobotsLvls(obj, forMk, i, (-11), 2);
+        }
+    } else if (forMk.length === 19) {
+        for (var i = 0; i < 7; i++) {
+            createRobotsLvls(obj, forMk, i, 6, 1);
+        }
+        for (var i = 7; i < 19; i++) {
+            createRobotsLvls(obj, forMk, i, (-6), 2);
+        }
+    }
+};
+
+
+
 
 /* создаем объект тяжелых орудий по массиву с оружием */
 for (var i = 0; i < heavyWeaponsArr.length; i++) {
@@ -366,8 +504,45 @@ for (var i = 0; i < lightWeaponsArr.length; i++) {
     createLightWeaponObj(lightWeaponsArr, i);
 }
 
-console.log((heavyWeaponsArr[18].split('/')[0].split(';')));
-console.log((mediumWeaponsArr[15].split('/')[0].split(';')));
-console.log((weaponsObj));
-console.log(weaponsObj.heavy.ancile);
+
+
+/* создаем объект роботов A-F по массиву с роботами */
+for (var i = 0; i < afRobotsArr.length; i++) {
+    createAFRobotsObj(afRobotsArr, i);
+}
+
+
+console.log(weaponsObj);
+console.log(robotsObj);
+
+
+
+
+
+var weaponSelect = document.querySelector('.weapon-select');
+var weaponMKSelect = document.querySelector('.weapon-mk-select');
+var weaponLVLSelect = document.querySelector('.weapon-lvl-select');
+
+var robotSelect = document.querySelector('.robots-select');
+var robotMKSelect = document.querySelector('.robots-mk-select');
+var robotLVLSelect = document.querySelector('.robots-lvl-select');
+
+var result = document.querySelector('.result');
+var confirm = document.querySelector('.confirm');
+
+var calculateDestroyTime = function (robot, mkR, lvlR, weapon, mk, lvl, x) {
+    var robotHP = robotsObj.robotsAF[robot]['mk' + mkR]['lvl' + lvlR].hp;
+    
+    var dps = (weaponsObj.medium[weapon]['mk' + mk]['lvl' + lvl].damage * weaponsObj.medium[weapon].ammo) / weaponsObj.medium[weapon].unloadBurst;
+    console.log(dps);
+    return robotHP / dps;
+    // console.log(dps);
+};
+
+confirm.addEventListener('click', function (evt) {
+    console.log(weaponSelect.value, weaponMKSelect.value, weaponLVLSelect.value);
+    console.log(robotSelect.value, robotMKSelect.value, robotLVLSelect.value);
+    result.textContent = calculateDestroyTime(robotSelect.value, robotMKSelect.value, robotLVLSelect.value, weaponSelect.value, weaponMKSelect.value, weaponLVLSelect.value);
+    
+});
 
