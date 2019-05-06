@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <meta id="meta" name="viewport" content="width=device-width">
     <title>Test</title>
     <link rel="stylesheet" href="css/style.css">
@@ -15,58 +16,104 @@
         
     </header>
 
-    <main class="page-main">        
-        <select class="weapon-select">
-            <option class="orkan" value="orkan">orkan</option>
-            <option class="shocktrain" value="shocktrain">shocktrain</option>
-        </select>
-        <select class="weapon-mk-select">
-            <option class="mk1" value="1">mk1</option>
-            <option class="mk2" value="2">mk2</option>
-        </select>
-        <select class="weapon-lvl-select">
-            <option class="1" value="1">1</option>
-            <option class="2" value="2">2</option>
-            <option class="3" value="3">3</option>
-            <option class="4" value="4">4</option>
-            <option class="5" value="5">5</option>
-            <option class="6" value="6">6</option>
-            <option class="7" value="7">7</option>
-            <option class="8" value="8">8</option>
-            <option class="9" value="9">9</option>
-            <option class="10" value="10">10</option>
-            <option class="11" value="11">11</option>
-            <option class="12" value="12">12</option>
-        </select>
+    <main class="page-main">    
         
-        <div class="result__wrapper">
-            <div class="result">1</div>
-            <button class="confirm">Рассчитать</button>
+        <article class="page-main__robots robots">
+            <!--<template id="robots-similar">-->
+                <article class="robots__item" id="a1">
+                    <button class="robots__add"></button>
+                    <article class="robots__select-wrapper visually-hidden">
+                        <form class="robots__select">
+                            <template class="robots__select-temlate">
+                                <div>                                    
+                                    <input class="robots__select-item" type="radio" name="robots" value="" id="">
+                                    <label for=""></label>
+                                    <div></div>
+                                </div>
+                            </template>                            
+                        </form>
+                        <button class="robots__select-confirm">Выбрать</button>
+                        <div class="robots__select-close-wrapper">
+                            <button class="robots__select-close"></button>
+                        </div>
+                    </article>
+                    <!--<select class="robots__add-select">-->
+                        <!--<template class="robots__add-select-similar">-->
+                            <!--<option class="robots__name" value=""></option>-->
+                        <!--</template>-->
+                    <!--</select>-->
+                </article>
+            <article class="robots__item" id="a2">
+                <button class="robots__add"></button>
+            </article>
+            <article class="robots__item" id="a3">
+                <button class="robots__add"></button>
+            </article>
+            <article class="robots__item" id="a4">
+                <button class="robots__add"></button>
+            </article>
+            <article class="robots__item" id="a5">
+                <button class="robots__add"></button>
+            </article>
+            <!--</template>            -->
+        </article>
+        
+        
+        
+        
+        
+        <div class="old">
+            <select class="weapon-select">
+                <option class="orkan" value="orkan">orkan</option>
+                <option class="shocktrain" value="shocktrain">shocktrain</option>
+            </select>
+            <select class="weapon-mk-select">
+                <option class="mk1" value="1">mk1</option>
+                <option class="mk2" value="2">mk2</option>
+            </select>
+            <select class="weapon-lvl-select">
+                <option class="1" value="1">1</option>
+                <option class="2" value="2">2</option>
+                <option class="3" value="3">3</option>
+                <option class="4" value="4">4</option>
+                <option class="5" value="5">5</option>
+                <option class="6" value="6">6</option>
+                <option class="7" value="7">7</option>
+                <option class="8" value="8">8</option>
+                <option class="9" value="9">9</option>
+                <option class="10" value="10">10</option>
+                <option class="11" value="11">11</option>
+                <option class="12" value="12">12</option>
+            </select>
+            
+            <div class="result__wrapper">
+                <div class="result">1</div>
+                <button class="confirm">Рассчитать</button>
+            </div>
+            
+            <select class="robots-select">
+                <option class="butch" value="butch">butch</option>
+                <option class="bulgasari" value="bulgasari">bulgasari</option>
+            </select>
+            <select class="robots-mk-select">
+                <option class="mk1" value="1">mk1</option>
+                <option class="mk2" value="2">mk2</option>
+            </select>
+            <select class="robots-lvl-select">
+                <option class="1" value="1">1</option>
+                <option class="2" value="2">2</option>
+                <option class="3" value="3">3</option>
+                <option class="4" value="4">4</option>
+                <option class="5" value="5">5</option>
+                <option class="6" value="6">6</option>
+                <option class="7" value="7">7</option>
+                <option class="8" value="8">8</option>
+                <option class="9" value="9">9</option>
+                <option class="10" value="10">10</option>
+                <option class="11" value="11">11</option>
+                <option class="12" value="12">12</option>
+            </select>
         </div>
-        
-        <select class="robots-select">
-            <option class="butch" value="butch">butch</option>
-            <option class="bulgasari" value="bulgasari">bulgasari</option>
-        </select>
-        <select class="robots-mk-select">
-            <option class="mk1" value="1">mk1</option>
-            <option class="mk2" value="2">mk2</option>
-        </select>
-        <select class="robots-lvl-select">
-            <option class="1" value="1">1</option>
-            <option class="2" value="2">2</option>
-            <option class="3" value="3">3</option>
-            <option class="4" value="4">4</option>
-            <option class="5" value="5">5</option>
-            <option class="6" value="6">6</option>
-            <option class="7" value="7">7</option>
-            <option class="8" value="8">8</option>
-            <option class="9" value="9">9</option>
-            <option class="10" value="10">10</option>
-            <option class="11" value="11">11</option>
-            <option class="12" value="12">12</option>
-        </select>
-        
     </main>
 
     

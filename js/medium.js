@@ -15,8 +15,6 @@ var lightWeaponsArr = window.light.weapons.split('/%');       /* массив в
 
 
 
-
-
 var accuracyGust = {
     100: 100,
     150: 90,
@@ -517,8 +515,6 @@ console.log(robotsObj);
 
 
 
-
-
 var weaponSelect = document.querySelector('.weapon-select');
 var weaponMKSelect = document.querySelector('.weapon-mk-select');
 var weaponLVLSelect = document.querySelector('.weapon-lvl-select');
@@ -536,13 +532,83 @@ var calculateDestroyTime = function (robot, mkR, lvlR, weapon, mk, lvl, x) {
     var dps = (weaponsObj.medium[weapon]['mk' + mk]['lvl' + lvl].damage * weaponsObj.medium[weapon].ammo) / weaponsObj.medium[weapon].unloadBurst;
     console.log(dps);
     return robotHP / dps;
-    // console.log(dps);
 };
 
 confirm.addEventListener('click', function (evt) {
     console.log(weaponSelect.value, weaponMKSelect.value, weaponLVLSelect.value);
     console.log(robotSelect.value, robotMKSelect.value, robotLVLSelect.value);
     result.textContent = calculateDestroyTime(robotSelect.value, robotMKSelect.value, robotLVLSelect.value, weaponSelect.value, weaponMKSelect.value, weaponLVLSelect.value);
-    
 });
 
+
+/* массив имен роботов */
+var robotsNamesArr = [];                        /* пустой массив имен */
+var num = 0;                            /* счетчик для цикла, чтобы наполнить массив */
+for (var key in robotsObj.robotsAF) {
+    robotsNamesArr[num++] = key;
+}
+
+var robotsItem = document.querySelectorAll('.robots__item');
+var robotAddArr = document.querySelectorAll('.robots__add');                  /* кнопка добавления робота */
+var robotsSelect = document.querySelector('.robots__select');           /* форма выбора робота */
+var robotsSelectWrapper = document.querySelector('.robots__select-wrapper');    /* все ооткрывающееся окно */
+var similarSelectTemplate = document.querySelector('.robots__select-temlate')   /* темплейт одного радиобаттона */
+    .content
+    .querySelector('div');
+var robotsSelectClose = document.querySelector('.robots__select-close');        /* кнопка закрытия окна роботов */
+var robotComfirm = document.querySelector('.robots__select-confirm');           /* кнопка подтверждения робота */
+var buttonId;
+
+robotsSelectClose.addEventListener('click', function () {
+    robotsSelectWrapper.classList.add('visually-hidden');
+});
+for (var i = 0; i < robotAddArr.length; i++) {
+    robotAddArr[i].addEventListener('click', function (evt) {
+        robotsSelectWrapper.classList.remove('visually-hidden');
+        buttonId = evt.target.parentNode.id;
+    });
+}    
+
+
+robotComfirm.addEventListener('click', function (evt) {
+    var radioArr = robotsSelect.querySelectorAll('.robots__select-item');
+    for (var i = 0; i < radioArr.length; i++) {
+        if (robotsSelect[i].checked) {
+            robotsSelectWrapper.classList.add('visually-hidden');
+            robotsItem[(buttonId.substr(1, 1)) - 1].appendChild(renderSelects(robotsSelect[i].value));
+        } 
+    } 
+});
+    
+var renderSelects = function (robot) {
+    var robotsDiv = similarSelectTemplate.cloneNode(true);
+    robotsDiv.querySelector('input').value = robot;
+    robotsDiv.querySelector('input').id = robot;
+    // robotsDiv.querySelector('input').textContent = robot;
+    // robotsDiv.querySelector('label').textContent = robot;
+    robotsDiv.querySelector('label').setAttribute('for', robot);
+    robotsDiv.querySelector('label').classList.add('label');
+    robotsDiv.querySelector('label').style.background = 'url("../img/' + robot + 'Small.png") 50px 70% no-repeat';
+    robotsDiv.querySelector('label').style.backgroundSize = 'contain';
+    robotsDiv.querySelector('div').textContent = robot;
+    // var robotsRadio = similarRadio.cloneNode(true);
+    // robotsRadio.value = robot;
+    // robotsRadio.id = robot;
+    // // robotsRadio.textContent = robot;
+    // var robotsLabel = similarLabel.cloneNode(true);
+    // robotsLabel.textContent = robot;
+    // robotsLabel.setAttribute('for', robot);
+    // robotsLabel.style.background = 'url("../img/' + robot + 'Small.png") no-repeat';
+    // robotsLabel.style.backgroundSize = 'contain';
+    // return [robotsRadio, robotsLabel];
+    return robotsDiv;
+};
+
+for (var i = 0; i < robotsNamesArr.length; i++) {
+    robotsSelect.appendChild(renderSelects(robotsNamesArr[i]));
+    // robotsSelect.appendChild(renderSelects(robotsNamesArr[i])[1]);
+}
+//
+// robotAdd.addEventListener('click', function () {
+//     robotsSelect.cha
+// });
