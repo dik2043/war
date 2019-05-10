@@ -219,7 +219,7 @@ var createLvlsMk1Lesser = function (obj, forMk, count) {
         upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
         sellingPrice: Number(forMk[count].split(';')[15]),
         effectPower: Number(forMk[count].split(';')[17]),
-        effectDuration: forMk[count].split(';')[18],
+        effectDuration: forMk[count].split(';')[18]
     }
 };
 
@@ -290,8 +290,8 @@ var createMediumWeaponObj = function (arr, count) {
     /* имя объекта = берем массив всех оружий, делим строки по ';;' и берем первую фразу - название оружия */
     weaponsObj.medium[name] = {};
     
-    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';',
-     * третий - одна строчка со всеми свойствами */
+    /* аргументы: obj - объект в объекте по имени, str - массив всех оружий/первая строка/делим по ';',
+     * forMk - одна строчка со всеми свойствами */
     createObjProperties(weaponsObj.medium[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
 };
 
@@ -301,8 +301,8 @@ var createLightWeaponObj = function (arr, count) {
     /* имя объекта = берем массив всех оружий, делим строки по ';;' и берем первую фразу - название оружия */
     weaponsObj.light[name] = {};
 
-    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';',
-     * третий - одна строчка со всеми свойствами */
+    /* аргументы: obj - объект в объекте по имени, str - массив всех оружий/первая строка/делим по ';',
+     * forMk - одна строчка со всеми свойствами */
     createObjProperties(weaponsObj.light[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
 };
 
@@ -358,7 +358,8 @@ var createObjProperties = function (obj, str, forMk) {  /* obj - куда вно
 };
 
 
-//  -------------------------------------------------------------------------------------------------
+//  ----------------------------Роботы-------------------------------------------------------------------
+
 /* как добавлять уровни в роботов (у всех порядок свойств должен быть одинаков, функция одна на всех) */
 var createRobotsLvls = function (obj, forMk, count, step, mk) {
     obj['mk'+ mk]['lvl' + (count + step)] = {
@@ -377,75 +378,7 @@ var createRobotsLvls = function (obj, forMk, count, step, mk) {
 };
 
 
-// /* как добавлять mk1 уровни в роботов, у которого первый уровень - "1" */
-// var createRobotsLvlsMk1Full = function (obj, forMk, count) {
-//     obj.mk1['lvl' + (count + 1)] = {
-//         hp: Number(forMk[count].split(';')[4]),
-//         speed: Number(forMk[count].split(';')[6]),
-//         speedAccelerated: Number(forMk[count].split(';')[7]),
-//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
-//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
-//         regenerationShield: Number(forMk[count].split(';')[11]),
-//         threshold: Number(forMk[count].split(';')[12]),
-//         damageAbility: Number(forMk[count].split(';')[16]),
-//         upgrateCost: Number(forMk[count].split(';')[19]),
-//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
-//         sellingPrice: Number(forMk[count].split(';')[22])
-//     }
-// };
-// /* как добавлять mk1 уровни в роботов, у которого первый уровень - "5" */
-// var createRobotsLvlsMk1Less = function (obj, forMk, count) {
-//     obj.mk1['lvl' + (count + 6)] = {
-//         hp: Number(forMk[count].split(';')[4]),
-//         speed: Number(forMk[count].split(';')[6]),
-//         speedAccelerated: Number(forMk[count].split(';')[7]),
-//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
-//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
-//         regenerationShield: Number(forMk[count].split(';')[11]),
-//         threshold: Number(forMk[count].split(';')[12]),
-//         damageAbility: Number(forMk[count].split(';')[16]),
-//         upgrateCost: Number(forMk[count].split(';')[19]),
-//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
-//         sellingPrice: Number(forMk[count].split(';')[22])
-//     }
-// };
-//
-// /* как добавлять mk2 уровни в роботов, у которого первый уровень - "1" */
-// var createRobotsLvlsMk2Full = function (obj, forMk, count) {
-//     obj.mk2['lvl' + (count - 11)] = {
-//         hp: Number(forMk[count].split(';')[4]),
-//         speed: Number(forMk[count].split(';')[6]),
-//         speedAccelerated: Number(forMk[count].split(';')[7]),
-//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
-//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
-//         regenerationShield: Number(forMk[count].split(';')[11]),
-//         threshold: Number(forMk[count].split(';')[12]),
-//         damageAbility: Number(forMk[count].split(';')[16]),
-//         upgrateCost: Number(forMk[count].split(';')[19]),
-//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
-//         sellingPrice: Number(forMk[count].split(';')[22])
-//     }
-// };
-// /* как добавлять mk2 уровни в роботов, у которого первый уровень - "5" */
-// var createRobotsLvlsMk2Less = function (obj, forMk, count) {
-//     // console.log(getNumberFromTime(forMk[count].split(';')[21].toLowerCase()));
-//     obj.mk2['lvl' + (count - 6)] = {
-//         hp: Number(forMk[count].split(';')[4]),
-//         speed: Number(forMk[count].split(';')[6]),
-//         speedAccelerated: Number(forMk[count].split(';')[7]),
-//         durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
-//         durabilityEnergyShield: Number(forMk[count].split(';')[10]),
-//         regenerationShield: Number(forMk[count].split(';')[11]),
-//         threshold: Number(forMk[count].split(';')[12]),
-//         damageAbility: Number(forMk[count].split(';')[16]),
-//         upgrateCost: Number(forMk[count].split(';')[19]),
-//         upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
-//         sellingPrice: Number(forMk[count].split(';')[22])
-//     }
-// };
-
-
-/* как создать объекты в объекте тяжелых орудий */
+/* как создать объекты в объекте роботов */
 var createAFRobotsObj = function (arr, count) {
     var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива роботов */
     /* имя объекта = берем массив всех роботов, делим строки по ';;' и берем первую фразу - название робота */
@@ -456,7 +389,7 @@ var createAFRobotsObj = function (arr, count) {
     createRobotsObjProperties(robotsObj.robotsAF[name], arr[count].split('//')[0].split(';'), arr[count].split('//'));
 };
 
-
+/*как создавать свойства роботов*/
 var createRobotsObjProperties = function (obj, str, forMk) {  /* obj - куда вносим, str - откуда вносим */
     obj.name = str[0].toLowerCase();
     obj.slots = str[5];
@@ -503,7 +436,6 @@ for (var i = 0; i < lightWeaponsArr.length; i++) {
 }
 
 
-
 /* создаем объект роботов A-F по массиву с роботами */
 for (var i = 0; i < afRobotsArr.length; i++) {
     createAFRobotsObj(afRobotsArr, i);
@@ -515,100 +447,152 @@ console.log(robotsObj);
 
 
 
-var weaponSelect = document.querySelector('.weapon-select');
-var weaponMKSelect = document.querySelector('.weapon-mk-select');
-var weaponLVLSelect = document.querySelector('.weapon-lvl-select');
-
-var robotSelect = document.querySelector('.robots-select');
-var robotMKSelect = document.querySelector('.robots-mk-select');
-var robotLVLSelect = document.querySelector('.robots-lvl-select');
-
-var result = document.querySelector('.result');
-var confirm = document.querySelector('.confirm');
-
-var calculateDestroyTime = function (robot, mkR, lvlR, weapon, mk, lvl, x) {
-    var robotHP = robotsObj.robotsAF[robot]['mk' + mkR]['lvl' + lvlR].hp;
-    
-    var dps = (weaponsObj.medium[weapon]['mk' + mk]['lvl' + lvl].damage * weaponsObj.medium[weapon].ammo) / weaponsObj.medium[weapon].unloadBurst;
-    console.log(dps);
-    return robotHP / dps;
-};
-
-confirm.addEventListener('click', function (evt) {
-    console.log(weaponSelect.value, weaponMKSelect.value, weaponLVLSelect.value);
-    console.log(robotSelect.value, robotMKSelect.value, robotLVLSelect.value);
-    result.textContent = calculateDestroyTime(robotSelect.value, robotMKSelect.value, robotLVLSelect.value, weaponSelect.value, weaponMKSelect.value, weaponLVLSelect.value);
-});
-
-
 /* массив имен роботов */
 var robotsNamesArr = [];                        /* пустой массив имен */
-var num = 0;                            /* счетчик для цикла, чтобы наполнить массив */
+var num = 0;                                    /* счетчик для цикла, чтобы наполнить массив */
 for (var key in robotsObj.robotsAF) {
     robotsNamesArr[num++] = key;
 }
 
-var robotsItem = document.querySelectorAll('.robots__item');
-var robotAddArr = document.querySelectorAll('.robots__add');                  /* кнопка добавления робота */
-var robotsSelect = document.querySelector('.robots__select');           /* форма выбора робота */
-var robotsSelectWrapper = document.querySelector('.robots__select-wrapper');    /* все ооткрывающееся окно */
-var similarSelectTemplate = document.querySelector('.robots__select-temlate')   /* темплейт одного радиобаттона */
+var robotsCell = document.querySelectorAll('.robots__item');                     /* ячейка робота */
+var robotAddArr = document.querySelectorAll('.robots__add');                     /* кнопка добавления робота */
+var robotsSelect = document.querySelector('.robots__select');                    /* форма выбора робота */
+var robotsSelectWrapper = document.querySelector('.robots__select-wrapper');     /* все ооткрывающееся окно выбора*/
+var robotsSelectClose = document.querySelector('.robots__select-close');         /* кнопка закрытия окна роботов */
+var robotComfirm = document.querySelector('.robots__select-confirm');            /* кнопка подтверждения робота */
+var buttonId;                                                                    /* порядковый номер ячейки робота */
+
+var similarSelectTemplate = document.querySelector('.robots__select-temlate')    /* темплейт одного радиобаттона */
     .content
     .querySelector('div');
-var robotsSelectClose = document.querySelector('.robots__select-close');        /* кнопка закрытия окна роботов */
-var robotComfirm = document.querySelector('.robots__select-confirm');           /* кнопка подтверждения робота */
-var buttonId;
-
-robotsSelectClose.addEventListener('click', function () {
-    robotsSelectWrapper.classList.add('visually-hidden');
-});
-for (var i = 0; i < robotAddArr.length; i++) {
-    robotAddArr[i].addEventListener('click', function (evt) {
-        robotsSelectWrapper.classList.remove('visually-hidden');
-        buttonId = evt.target.parentNode.id;
-    });
-}    
-
-
-robotComfirm.addEventListener('click', function (evt) {
-    var radioArr = robotsSelect.querySelectorAll('.robots__select-item');
-    for (var i = 0; i < radioArr.length; i++) {
-        if (robotsSelect[i].checked) {
-            robotsSelectWrapper.classList.add('visually-hidden');
-            robotsItem[(buttonId.substr(1, 1)) - 1].appendChild(renderSelects(robotsSelect[i].value));
-        } 
-    } 
-});
     
+var similarRobotTemlate = document.querySelector('.robots__robot-temlate')       /* темплейт одного робота */
+    .content
+    .querySelector('.robot');
+
+
+    
+/*получить первое свойство в объекте*/
+var getFirstProp = function (obj) {
+    for (var key in obj) {
+        return key;
+    }
+};
+
+/*удалить робота из ячйеки*/
+var deleteRobotInCell = function (evt) {
+    console.log('начал удаление');
+    /*удаляемый элемент (.robot)*/
+    var elem = evt.target.parentNode.parentNode.parentNode;
+    /*кнопка добавления робота (.robots__add)*/
+    var elemParent = elem.parentNode.querySelector('.robots__add');
+    /*костыль для исправления ошибки (удаляем флаг, который добавлялся в ячейке при добавлении робота)*/
+    elem.parentNode.classList.remove('flag');
+    /*удалить (.robot) из  (.robots__item)*/
+    elem.parentNode.removeChild(elem);
+    /*сделать видимой кнопку добавления робота*/
+    elemParent.classList.remove('visually-hidden');    
+    console.log('закончил удаление');
+};
+/*сменить робота в ячейке*/
+var changeRobotInCell = function (evt) {
+    console.log('начал замену');
+    /*удаляемый элемент (.robot)*/
+    var elem = evt.target.parentNode.parentNode.parentNode;
+    /*кнопка добавления робота (.robots__add)*/
+    var elemParent = elem.parentNode.querySelector('.robots__add');
+    /*костыль для исправления ошибки (удаляем флаг, который добавлялся в ячейке при добавлении робота)*/
+    elem.parentNode.classList.remove('flag');
+    /*удалить (.robot) из  (.robots__item)*/
+    elem.parentNode.removeChild(elem);
+    /*сделать видимой кнопку добавления робота*/
+    elemParent.classList.remove('visually-hidden');
+    /*сделать видимой форму выбора робота*/
+    robotsSelectWrapper.classList.remove('visually-hidden');
+    console.log('закончил замену');
+};
+
+/*рендер роботов в форму выбора*/
 var renderSelects = function (robot) {
     var robotsDiv = similarSelectTemplate.cloneNode(true);
     robotsDiv.querySelector('input').value = robot;
     robotsDiv.querySelector('input').id = robot;
-    // robotsDiv.querySelector('input').textContent = robot;
-    // robotsDiv.querySelector('label').textContent = robot;
     robotsDiv.querySelector('label').setAttribute('for', robot);
     robotsDiv.querySelector('label').classList.add('label');
     robotsDiv.querySelector('label').style.background = 'url("../img/' + robot + 'Small.png") 50px 70% no-repeat';
     robotsDiv.querySelector('label').style.backgroundSize = 'contain';
     robotsDiv.querySelector('div').textContent = robot;
-    // var robotsRadio = similarRadio.cloneNode(true);
-    // robotsRadio.value = robot;
-    // robotsRadio.id = robot;
-    // // robotsRadio.textContent = robot;
-    // var robotsLabel = similarLabel.cloneNode(true);
-    // robotsLabel.textContent = robot;
-    // robotsLabel.setAttribute('for', robot);
-    // robotsLabel.style.background = 'url("../img/' + robot + 'Small.png") no-repeat';
-    // robotsLabel.style.backgroundSize = 'contain';
-    // return [robotsRadio, robotsLabel];
+
     return robotsDiv;
 };
 
+/*рендер робота в ячейку*/
+var renderRobotsInCell = function (robot) {
+    var robotElement = similarRobotTemlate.cloneNode(true);
+    /* уровень робота */
+    robotElement.querySelector('.robot__lvl').textContent = getFirstProp(robotsObj.robotsAF[robot].mk1);
+    /* имя робота */
+    robotElement.querySelector('.robot__name').textContent = robotsObj.robotsAF[robot].name;
+    /* здоровье робота */
+    robotElement.querySelector('.robot__hp').textContent = robotsObj.robotsAF[robot].mk1[getFirstProp(robotsObj.robotsAF[robot].mk1)].hp;
+    /* скорость робота */
+    robotElement.querySelector('.robot__speed').textContent = robotsObj.robotsAF[robot].mk1[getFirstProp(robotsObj.robotsAF[robot].mk1)].speed;
+    /* способность робота */
+    robotElement.querySelector('.robot__ability').textContent = robotsObj.robotsAF[robot].ability;
+    /* картинка робота */
+    robotElement.querySelector('.robot__img').src = "../img/" + robot + "Small.png";
+
+    return robotElement;
+};
+
+
+/*добавить циклом всем кнопками "добавить" обработчики открытия окна выбора робота*/
+for (var i = 0; i < robotAddArr.length; i++) {
+    robotAddArr[i].addEventListener('click', function (evt) {
+        robotsSelectWrapper.classList.remove('visually-hidden');
+        /*запомнить, из какой ячейки было нажатие*/
+        buttonId = evt.target.parentNode.id;
+    });
+}
+
+/*спрятать форму выбора по кнопке "закрыть"*/
+robotsSelectClose.addEventListener('click', function () {
+    robotsSelectWrapper.classList.add('visually-hidden');
+});
+
+/*наполнение формы выбора робота роботами :)*/
 for (var i = 0; i < robotsNamesArr.length; i++) {
     robotsSelect.appendChild(renderSelects(robotsNamesArr[i]));
-    // robotsSelect.appendChild(renderSelects(robotsNamesArr[i])[1]);
 }
-//
-// robotAdd.addEventListener('click', function () {
-//     robotsSelect.cha
-// });
+
+/* что делать при подтверждении робота */
+robotComfirm.addEventListener('click', function () {
+    /* все выборы робота */
+    var radioArr = robotsSelect.querySelectorAll('.robots__select-item');
+    for (var i = 0; i < radioArr.length; i++) {
+        if (robotsSelect[i].checked) {
+            /*сделать невидимой кнопку добавления робота*/
+            robotAddArr[buttonId - 1].classList.add('visually-hidden');
+            robotsSelectWrapper.classList.add('visually-hidden');
+            /*прикрепление отрисованного робота в разметку*/
+            robotsCell[buttonId - 1].appendChild(renderRobotsInCell(robotsSelect[i].value));
+            /*добавляем флаг, потому что без него входит в функцию второй раз*/
+            robotsCell[buttonId - 1].classList.add('flag');
+            /*добавление обработчиков на кнопки на очистку и замену роботов*/
+            robotsCell[buttonId - 1].addEventListener('click', function (evt) {
+                if (evt.target.className === 'robot__clear-robot' && evt.currentTarget.classList.contains('flag')) {
+                    deleteRobotInCell(evt);
+                } else if (evt.target.className === 'robot__change-robot' && evt.currentTarget.classList.contains('flag')) {
+                    changeRobotInCell(evt);
+                }
+            });
+        }
+    }
+});
+
+
+
+
+//  1  переписать объекты аккуратности
+//  по идее переделать логику удаления робота из ячейки (кнопка сменить не должна сама удалять его из верстки)
+//    это должна делать функция добавления робота

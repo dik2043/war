@@ -4,9 +4,6 @@ body {
   margin: auto;
   padding: 0;
 }
-body .old {
-  display: none;
-}
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -85,6 +82,7 @@ body .old {
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
+  z-index: 1;
   top: 13%;
   left: 3%;
   width: 94%;
