@@ -1,3 +1,9 @@
+.robots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .robots__item {
   display: flex;
   flex-direction: column;
@@ -5,9 +11,12 @@
   align-items: center;
   flex-grow: 1;
   
-  max-width: 20%;
+  max-width: 19.5%;
+  min-width: 150px;
+  min-height: 370px;
   
-  outline: 1px dashed black;
+  background: linear-gradient(to bottom, #10405b, #19262c);
+  //outline: 1px dashed black;
 }
 
 .robots__add {

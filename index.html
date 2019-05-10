@@ -35,6 +35,29 @@
                 </div>
             </article>
             
+            <article class="robots__improve-wrapper visually-hidden improve">
+                <img class="improve__img">
+                <div class="improve__middle-wrapper">
+                    <div class="improve__name-wrapper">
+                        <div class="improve__lvl"></div>
+                        <div class="improve__name"></div>
+                        <div class="improve__lvl-up"></div>
+                    </div>
+                    <div class="improve__hp-wrapper">
+                        <div class="improve__hp"></div>
+                        <div class="improve__hp-plus"></div>
+                    </div>
+                    <div class="improve__hp-line"></div>
+                    <div class="improve__hp-wrapper">
+                        <div class="improve__speed"></div>
+                        <div class="improve__speed-plus"></div>
+                    </div>
+                    <div class="improve__speed-line"></div>
+                    <div class="improve__time"></div>
+                </div>
+                <div class="robot__right-wrapper"></div>
+            </article>
+            
             <article class="robots__item" id="1">
                 <button class="robots__add"></button>
                 <template class="robots__robot-temlate">
@@ -42,6 +65,19 @@
                         <div class="robot__name-wrapper">
                             <div class="robot__lvl"></div>
                             <div class="robot__name"></div>
+                            <button class="robot__uncover"></button>
+                        </div>
+                        <div class="robot__list">
+                            <div class="robot__weapon-wrapper">
+                                <div class="robot__weapon">
+                                    <div class="robot__weapon-name-wrapper">
+                                        <div class="robot__weapon-lvl"></div>
+                                        <div class="robot__weapon-name"></div>
+                                    </div>
+                                    <img class="robot__weapon-img">
+                                    <div class="robot__weapon-slot"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="robot__wrapper">
                             <div class="robot__top-wrapper">
@@ -68,9 +104,9 @@
                             </div>
                             <div class="robot__bottom-wrapper">
                                 <!--<button class="robot__return"></button>   &lt;!&ndash; скорее всего не нужна &ndash;&gt;-->
-                                <button class="robot__clear-robot">Очистить</button>
+                                <!--<button class="robot__clear-robot">Очистить</button>-->
                                 <button class="robot__change-robot">Сменить робота</button>
-                                <button class="robot__improve">Улучшить</button>
+                                <button class="robot__improve">Улучшить / Настроить</button>
                             </div>
                         </div>
                     </article>
@@ -89,69 +125,10 @@
                 <button class="robots__add"></button>
             </article>
         </article>
-        
-        
-        
-        
-        
-        <!--<div class="old">-->
-            <!--<select class="weapon-select">-->
-                <!--<option class="orkan" value="orkan">orkan</option>-->
-                <!--<option class="shocktrain" value="shocktrain">shocktrain</option>-->
-            <!--</select>-->
-            <!--<select class="weapon-mk-select">-->
-                <!--<option class="mk1" value="1">mk1</option>-->
-                <!--<option class="mk2" value="2">mk2</option>-->
-            <!--</select>-->
-            <!--<select class="weapon-lvl-select">-->
-                <!--<option class="1" value="1">1</option>-->
-                <!--<option class="2" value="2">2</option>-->
-                <!--<option class="3" value="3">3</option>-->
-                <!--<option class="4" value="4">4</option>-->
-                <!--<option class="5" value="5">5</option>-->
-                <!--<option class="6" value="6">6</option>-->
-                <!--<option class="7" value="7">7</option>-->
-                <!--<option class="8" value="8">8</option>-->
-                <!--<option class="9" value="9">9</option>-->
-                <!--<option class="10" value="10">10</option>-->
-                <!--<option class="11" value="11">11</option>-->
-                <!--<option class="12" value="12">12</option>-->
-            <!--</select>-->
-            <!---->
-            <!--<div class="result__wrapper">-->
-                <!--<div class="result">1</div>-->
-                <!--<button class="confirm">Рассчитать</button>-->
-            <!--</div>-->
-            <!---->
-            <!--<select class="robots-select">-->
-                <!--<option class="butch" value="butch">butch</option>-->
-                <!--<option class="bulgasari" value="bulgasari">bulgasari</option>-->
-            <!--</select>-->
-            <!--<select class="robots-mk-select">-->
-                <!--<option class="mk1" value="1">mk1</option>-->
-                <!--<option class="mk2" value="2">mk2</option>-->
-            <!--</select>-->
-            <!--<select class="robots-lvl-select">-->
-                <!--<option class="1" value="1">1</option>-->
-                <!--<option class="2" value="2">2</option>-->
-                <!--<option class="3" value="3">3</option>-->
-                <!--<option class="4" value="4">4</option>-->
-                <!--<option class="5" value="5">5</option>-->
-                <!--<option class="6" value="6">6</option>-->
-                <!--<option class="7" value="7">7</option>-->
-                <!--<option class="8" value="8">8</option>-->
-                <!--<option class="9" value="9">9</option>-->
-                <!--<option class="10" value="10">10</option>-->
-                <!--<option class="11" value="11">11</option>-->
-                <!--<option class="12" value="12">12</option>-->
-            <!--</select>-->
-        <!--</div>-->
+
     </main>
 
-    
-    <!--<script src="js/coats.js"></script>-->
-    <!--<script src="js/script.js "></script>-->
-    <!--<script src="js/filter.js "></script>-->
+
     <script src="js/robots-a-f.js"></script>
 	<script src="js/heavy-weapon.js"></script>
     <script src="js/medium-weapon.js"></script>
