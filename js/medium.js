@@ -613,6 +613,7 @@ var robotsSelectClose = document.querySelector('.robots__select-close');        
 var robotComfirm = document.querySelector('.robots__select-confirm');            /* кнопка подтверждения робота */
 var buttonId;                                                                    /* порядковый номер ячейки робота */
 
+
 var similarSelectTemplate = document.querySelector('.robots__select-temlate')    /* темплейт одного радиобаттона */
     .content
     .querySelector('div');
@@ -668,6 +669,9 @@ var changeRobotInCell = function (evt) {
     elemParent.classList.remove('visually-hidden');
     /*сделать видимой форму выбора робота*/
     robotsSelectWrapper.classList.remove('visually-hidden');
+    robotsCell[buttonId - 1].removeEventListener('click', bubleHandler);
+    /*спрятать форму выбора по esc*/
+    document.addEventListener('keydown', onPopupEscPress);
     console.log('закончил замену');
 };
 
@@ -704,6 +708,15 @@ var renderRobotsInCell = function (robot) {
     return robotElement;
 };
 
+/*показать или спрятать список по нажатию на кнопку*/
+var showOrHideHandler = function (evt) {
+    var robotList = evt.currentTarget.querySelector('.robot__list');
+    if (robotList.classList.contains('visually-hidden')) {
+        robotList.classList.remove('visually-hidden');
+    } else {
+        robotList.classList.add('visually-hidden');
+    }
+};
 
 /*добавить циклом всем кнопками "добавить" обработчики открытия окна выбора робота*/
 for (var i = 0; i < robotAddArr.length; i++) {
@@ -724,10 +737,27 @@ robotsSelectClose.addEventListener('click', function () {
 /*наполнение формы выбора робота роботами :)*/
 for (var i = 0; i < robotsNamesArr.length; i++) {
     robotsSelect.appendChild(renderSelects(robotsNamesArr[i]));
+    /*добавляем слушатели двойного клика*/
+    robotsSelect.childNodes[i].addEventListener('dblclick', function (evt) {
+        workFunc();
+    })
 }
+/*все обработчики на всплытии, которые есть в ячейке робота (отдельно, чтобы нормально удалялись при смене робота*/
+var bubleHandler = function (evt) {
+    if (evt.target.className === 'robot__clear-robot' && evt.currentTarget.classList.contains('flag')) {
+        deleteRobotInCell(evt);
+    } else if (evt.target.className === 'robot__change-robot' && evt.currentTarget.classList.contains('flag')) {
+        changeRobotInCell(evt);
+    } else if (evt.target.className === 'robot__improve') {
+        alert('пока не готово');
+    } else if (evt.target.className === 'robot__uncover') {
+        console.log('pushed');
+        showOrHideHandler(evt);
+    }
+};
 
-/* что делать при подтверждении робота */
-robotComfirm.addEventListener('click', function () {
+/*пока главная функция для работы*/
+var workFunc = function () {
     /* все выборы робота */
     var radioArr = robotsSelect.querySelectorAll('.robots__select-item');
     for (var i = 0; i < radioArr.length; i++) {
@@ -740,17 +770,26 @@ robotComfirm.addEventListener('click', function () {
             /*добавляем флаг, потому что без него входит в функцию второй раз*/
             robotsCell[buttonId - 1].classList.add('flag');
             /*добавление обработчиков на кнопки на очистку и замену роботов*/
-            robotsCell[buttonId - 1].addEventListener('click', function (evt) {
-                if (evt.target.className === 'robot__clear-robot' && evt.currentTarget.classList.contains('flag')) {
-                    deleteRobotInCell(evt);
-                } else if (evt.target.className === 'robot__change-robot' && evt.currentTarget.classList.contains('flag')) {
-                    changeRobotInCell(evt);
-                } else if (evt.target.className === 'robot__improve') {
-                    
-                }
-            });
+            robotsCell[buttonId - 1].addEventListener('click', bubleHandler);
+                // bubleHandler(evt);
+                // if (evt.target.className === 'robot__clear-robot' && evt.currentTarget.classList.contains('flag')) {
+                //     deleteRobotInCell(evt);
+                // } else if (evt.target.className === 'robot__change-robot' && evt.currentTarget.classList.contains('flag')) {
+                //     changeRobotInCell(evt);
+                // } else if (evt.target.className === 'robot__improve') {
+                //     alert('пока не готово');
+                // } else if (evt.target.className === 'robot__uncover') {
+                //     console.log('pushed');
+                //     showOrHideHandler(evt);
+                // }
+            // });
         }
     }
+};
+
+/* что делать при подтверждении робота */
+robotComfirm.addEventListener('click', function (evt) {
+    workFunc();
 });
 
 

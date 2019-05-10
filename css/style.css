@@ -194,6 +194,7 @@ body {
   border: none;
 }
 .robot {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -234,6 +235,17 @@ body {
   border: none;
   background: url("../img/icons/triangle.png") no-repeat 50% 50%;
   background-size: 9px;
+}
+.robot__list {
+  position: absolute;
+  top: 38px;
+  left: 2.5%;
+  width: 95%;
+  height: 75%;
+  border-radius: 5px;
+  background-color: black;
+  opacity: 0.7;
+  transition: 0.3s;
 }
 .robot__wrapper {
   display: flex;
