@@ -669,6 +669,7 @@ var changeRobotInCell = function (evt) {
     elemParent.classList.remove('visually-hidden');
     /*сделать видимой форму выбора робота*/
     robotsSelectWrapper.classList.remove('visually-hidden');
+    /*удалить все обработчики*/
     robotsCell[buttonId - 1].removeEventListener('click', bubleHandler);
     /*спрятать форму выбора по esc*/
     document.addEventListener('keydown', onPopupEscPress);
@@ -737,11 +738,14 @@ robotsSelectClose.addEventListener('click', function () {
 /*наполнение формы выбора робота роботами :)*/
 for (var i = 0; i < robotsNamesArr.length; i++) {
     robotsSelect.appendChild(renderSelects(robotsNamesArr[i]));
+}
+for (var i = 0; i < robotsSelect.childNodes.length; i++) {
     /*добавляем слушатели двойного клика*/
     robotsSelect.childNodes[i].addEventListener('dblclick', function (evt) {
         workFunc();
     })
 }
+
 /*все обработчики на всплытии, которые есть в ячейке робота (отдельно, чтобы нормально удалялись при смене робота*/
 var bubleHandler = function (evt) {
     if (evt.target.className === 'robot__clear-robot' && evt.currentTarget.classList.contains('flag')) {
