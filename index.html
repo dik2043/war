@@ -34,6 +34,22 @@
                     <button class="robots__select-close"></button>
                 </div>
             </article>
+
+            <article class="weapon__select-wrapper visually-hidden">
+                <form class="weapon__select">
+                    <template class="weapon__select-temlate">
+                        <div>
+                            <input class="weapon__select-item" type="radio" name="robots" value="" id="">
+                            <label for=""></label>
+                            <div></div>
+                        </div>
+                    </template>
+                </form>
+                <button class="weapon__select-confirm">Выбрать</button>
+                <div class="weapon__select-close-wrapper">
+                    <button class="weapon__select-close"></button>
+                </div>
+            </article>
             
             <article class="robots__improve-wrapper visually-hidden improve">
                 <img class="improve__img">
@@ -57,6 +73,25 @@
                 </div>
                 <div class="robot__right-wrapper"></div>
             </article>
+
+            <template class="robot__weapon-add-temlate">
+                <article class="robot__weapon-add-wrapper">
+                    <button class="robot__weapon-add"></button>
+                    <div id="slot-" class="robot__weapon-add-slot"></div>
+                </article>
+            </template>
+            <template class="weapon__temlate">
+                <div class="robot__weapon-wrapper">
+                    <div class="robot__weapon">
+                        <div class="robot__weapon-name-wrapper">
+                            <div class="robot__weapon-lvl"></div>
+                            <div class="robot__weapon-name"></div>
+                        </div>
+                        <img class="robot__weapon-img">
+                        <div class="robot__weapon-slot"></div>
+                    </div>
+                </div>
+            </template>
             
             <article class="robots__item" id="1">
                 <button class="robots__add"></button>
@@ -67,18 +102,11 @@
                             <div class="robot__name"></div>
                             <button class="robot__uncover"></button>
                         </div>
-                        <div class="robot__list visually-hidden">
-                            <div class="robot__weapon-add"></div>
-                            <div class="robot__weapon-wrapper">
-                                <div class="robot__weapon">
-                                    <div class="robot__weapon-name-wrapper">
-                                        <div class="robot__weapon-lvl"></div>
-                                        <div class="robot__weapon-name"></div>
-                                    </div>
-                                    <img class="robot__weapon-img">
-                                    <div class="robot__weapon-slot"></div>
-                                </div>
-                            </div>
+                        <div class="robot__list hidden">
+                            <!--<article class="robot__weapon-add-wrapper">-->
+                                <!--<button class="robot__weapon-add"></button>-->
+                                <!--<div class="robot__weapon-add-slot">Средний</div>-->
+                            <!--</article>-->
                         </div>
                         <div class="robot__wrapper">
                             <div class="robot__top-wrapper">
