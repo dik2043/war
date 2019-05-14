@@ -173,7 +173,7 @@ var getNumberFromTime = function (elem) {
     return (timeD * 24 * 60) + (timeH * 60) + +timeM;    /* + для перевода в число */
 };
 
-
+// переписать все эти функции одной нормальной
 /* как добавлять mk1 уровни в оружие, у которого первый уровень - "1" */
 var createLvlsMk1Full = function (obj, forMk, count) {
     obj.mk1['lvl' + (count + 1)] = {
@@ -251,8 +251,6 @@ var createLvlsMk2NotWeapon = function (obj, forMk, count) {
         upgradeCost: Number(forMk[count].split(';')[14]),
         upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
         sellingPrice: Number(forMk[count].split(';')[15]),
-        // effectPower: Number(forMk[count].split(';')[17]),
-        // effectDuration: forMk[count].split(';')[18],
         durabilityRegeneration: Number(forMk[count].split(';')[18]),
         regenerationSpeed: Number(forMk[count].split(';')[19]),
         reactivation: Number(forMk[count].split(';')[20])
@@ -272,6 +270,7 @@ var createLvlsMk2Lesser = function (obj, forMk, count) {
 
 
 
+// переписать эти функции одной нормальной
 /* как создать объекты в объекте тяжелых орудий */
 var createHeavyWeaponObj = function (arr, count) {
     var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива оружий */
@@ -305,7 +304,7 @@ var createLightWeaponObj = function (arr, count) {
     createObjProperties(weaponsObj.light[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
 };
 
-/* как создать свойства в объекте, который в объекте :) */
+/* как создать свойства в объекте оружия, который в объекте :) */
 var createObjProperties = function (obj, str, forMk) {  /* obj - куда вносим, str - откуда вносим */
     obj.name = str[0].toLowerCase();
     obj.slot = str[4].toLowerCase();
@@ -482,7 +481,10 @@ var buttonId;                                                                   
 
 var similarSelectTemplate = document.querySelector('.robots__select-temlate')    /* темплейт одного радиобаттона */
     .content
-    .querySelector('div');    
+    .querySelector('div');
+var similarWeaponSelectTemplate = document.querySelector('.weapon__select-temlate')    /* темплейт одного радиобаттона */
+    .content
+    .querySelector('div');
 var similarRobotTemlate = document.querySelector('.robots__robot-temlate')       /* темплейт одного робота */
     .content
     .querySelector('.robot');
@@ -490,7 +492,7 @@ var similarWeaponAdd = document.querySelector('.robot__weapon-add-temlate')
     .content
     .querySelector('.robot__weapon-add-wrapper');
 
-    
+//переписать на угиверсальный (добавить класс в разметку, и работать по нему)
 var onPopupEscPress = function (evt) {
     if (evt.keyCode === 27) {
         robotsSelectWrapper.classList.add('visually-hidden');
@@ -506,8 +508,8 @@ var getFirstProp = function (obj) {
 };
 
 /* разделить строку по "-" */
-var splitStr = function (str) {
-    return str.split('-')[1];
+var splitStr = function (str, number) {
+    return str.split('-')[number];
 };
 
 /*удалить робота из ячйеки*/
@@ -549,33 +551,20 @@ var changeRobotInCell = function (evt) {
     console.log('закончил замену');
 };
 
-/*рендер роботов в форму выбора*/
-var renderSelects = function (robot) {
-    var robotsDiv = similarSelectTemplate.cloneNode(true);
-    robotsDiv.querySelector('input').value = robot;
-    robotsDiv.querySelector('input').id = robot;
-    robotsDiv.querySelector('label').setAttribute('for', robot);
-    robotsDiv.querySelector('label').classList.add('label');
-    robotsDiv.querySelector('label').style.background = 'url("../img/' + robot + 'Small.png") 50px 70% no-repeat';
-    robotsDiv.querySelector('label').style.backgroundSize = 'contain';
-    robotsDiv.querySelector('div').textContent = robot;
+/*рендер елементов в форму выбора*/
+var renderSelects = function (elem, template) {
+    var div = template.cloneNode(true);
+    div.querySelector('input').value = elem;
+    div.querySelector('input').id = elem;
+    div.querySelector('label').setAttribute('for', elem);
+    div.querySelector('label').classList.add('label');
+    // div.querySelector('label').style.background = 'url("../img/' + elem + 'Small.png") 50px 70% no-repeat';
+    div.querySelector('label').style.backgroundSize = 'contain';
+    div.querySelector('div').textContent = elem;
 
-    return robotsDiv;
+    return div;
 };
 
-/*рендер оружия в форму выбора*/
-var renderWeaponSelects = function (weapon) {
-    var weaponDiv = similarSelectTemplate.cloneNode(true);
-    weaponDiv.querySelector('input').value = weapon;
-    weaponDiv.querySelector('input').id = weapon;
-    weaponDiv.querySelector('label').setAttribute('for', weapon);
-    weaponDiv.querySelector('label').classList.add('label');
-    weaponDiv.querySelector('label').style.background = 'url("../img/' + weapon + 'Small.png") 50px 70% no-repeat';
-    weaponDiv.querySelector('label').style.backgroundSize = 'contain';
-    weaponDiv.querySelector('div').textContent = weapon;
-
-    return weaponDiv;
-};
 
 /*рендер робота в ячейку*/
 var renderRobotsInCell = function (robot) {
@@ -605,6 +594,12 @@ var slotObj = {
     2: 'heavy'
 };
 
+var weaponTrObj = {
+    light: lightWeaponArr,
+    medium: mediumWeaponArr,
+    heavy: heavyWeaponArr
+};
+
 /*возвращает фрагмент с контентом*/
 var renderRobotList = function (robot) {
     var fragment = document.createDocumentFragment();
@@ -626,14 +621,28 @@ var renderRobotSlot = function (slot, count) {
     var similarWeapon = similarWeaponAdd.cloneNode(true);
     var weaponAdd = similarWeapon.querySelector('.robot__weapon-add');
     similarWeapon.querySelector('.robot__weapon-add-slot').textContent = slot;
-    similarWeapon.querySelector('.robot__weapon-add').id = buttonId + '-' + (count + 1) + '-' + slot.substr(0, 1);
+    similarWeapon.querySelector('.robot__weapon-add').id = buttonId + '-' + (count + 1) + '-' + slot;
     weaponAdd.addEventListener('click', onWeaponAddHandler);
     
     return similarWeapon;
 };
 
+
 var onWeaponAddHandler = function (evt) {
-    console.log(evt.target.id);
+    /*что делать по нажатию на кнопку '.weapon__select-close'*/
+    var onWeaponCloseHandler = function () {
+        weaponSelectWrapper.classList.add('visually-hidden');
+        weaponSelectClose.removeEventListener('click', onWeaponCloseHandler);
+    };
+    var localId = splitStr(evt.target.id, 2);
+    /*наполнение формы выбора оружия*/
+    // if (!weaponSelect.querySelector('.weapon__select-item')) {
+        for (var i = 0; i < weaponTrObj[localId].length; i++) {
+            weaponSelect.appendChild(renderSelects(weaponTrObj[localId][i], similarWeaponSelectTemplate));
+        }
+    // }
+    var weaponSelectClose = weaponSelectWrapper.querySelector('.weapon__select-close');
+    weaponSelectClose.addEventListener('click', onWeaponCloseHandler);
     weaponSelectWrapper.classList.remove('visually-hidden');
 };
 
@@ -649,6 +658,16 @@ var showOrHideHandler = function (evt) {
         robotList.style = 'opacity: 0;';
     }
 };
+
+// var robotList = evt.currentTarget.querySelector('.robot__list');
+// if (robotList.classList.contains('hidden')) {
+//     robotList.classList.remove('hidden');
+//     robotList.style = 'opacity: 1;';
+// } else {
+//     // robotList.classList.add('visually-hidden');
+//     robotList.classList.add('hidden');
+//     robotList.style = 'opacity: 0;';
+// }
 
 /*добавить циклом всем кнопками "добавить" обработчики открытия окна выбора робота*/
 for (var i = 0; i < robotAddArr.length; i++) {
@@ -668,7 +687,7 @@ robotsSelectClose.addEventListener('click', function () {
 
 /*наполнение формы выбора робота */
 for (var i = 0; i < robotsNamesArr.length; i++) {
-    robotsSelect.appendChild(renderSelects(robotsNamesArr[i]));
+    robotsSelect.appendChild(renderSelects(robotsNamesArr[i], similarSelectTemplate));
 }
 for (var i = 0; i < robotsSelect.childNodes.length; i++) {
     /*добавляем слушатели двойного клика*/
@@ -677,10 +696,6 @@ for (var i = 0; i < robotsSelect.childNodes.length; i++) {
     })
 }
 
-/*наполнение формы выбора оружия*/
-for (var i = 0; i < lightWeaponArr.length; i++) {
-    weaponSelect.appendChild(renderWeaponSelects(lightWeaponArr[i]));
-}
 
 /*все обработчики на всплытии, которые есть в ячейке робота (отдельно, чтобы нормально удалялись при смене робота*/
 var bubleHandler = function (evt) {
