@@ -165,6 +165,7 @@ var accuracy = {
     }
 };
 
+
 /* как получить количество минут из формата "*d *h *m" */
 var getNumberFromTime = function (elem) {
     var timeD = elem.split('d')[0];
@@ -173,135 +174,34 @@ var getNumberFromTime = function (elem) {
     return (timeD * 24 * 60) + (timeH * 60) + +timeM;    /* + для перевода в число */
 };
 
-// переписать все эти функции одной нормальной
-/* как добавлять mk1 уровни в оружие, у которого первый уровень - "1" */
-var createLvlsMk1Full = function (obj, forMk, count) {
-    obj.mk1['lvl' + (count + 1)] = {
-        damage: Number(forMk[count].split(';')[8]),
-        upgradeCost: Number(forMk[count].split(';')[14]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[15]),
-        effectPower: Number(forMk[count].split(';')[17]),
-        effectDuration: forMk[count].split(';')[18]
+/*как создавать уровни в оружии*/
+var createWeaponLvls = function (obj, forMk, startCount, length, step, mk) {
+    for (var i = startCount; i < length; i++) {
+        obj['mk' + mk]['lvl' + (i + step)] = {
+            damage: Number(forMk[i].split(';')[8]),
+            upgradeCost: Number(forMk[i].split(';')[14]),
+            upgradeTime: getNumberFromTime(forMk[i].split(';')[16].toLowerCase()),
+            sellingPrice: Number(forMk[i].split(';')[15]),
+            effectPower: Number(forMk[i].split(';')[17]),
+            effectDuration: forMk[i].split(';')[18]
+        }
     }
 };
-/* как добавлять mk1 уровни в оружие, у которого первый уровень - "5" */
-var createLvlsMk1Less = function (obj, forMk, count) {
-     obj.mk1['lvl' + (count + 5)] = {
-         damage: Number(forMk[count].split(';')[8]),
-         upgradeCost: Number(forMk[count].split(';')[14]),
-         upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-         sellingPrice: Number(forMk[count].split(';')[15]),
-         effectPower: Number(forMk[count].split(';')[17]),
-         effectDuration: forMk[count].split(';')[18]
+/*как создавать уровни в ecu и ancile (не доделан ancile)*/
+var createNotWeaponLvls = function (obj, forMk, startCount, length, step, mk) {
+    for (var i = startCount; i < length; i++) {
+        obj['mk' + mk]['lvl' + (i + step)] = {
+            damage: Number(forMk[i].split(';')[8]),
+            upgradeCost: Number(forMk[i].split(';')[14]),
+            upgradeTime: getNumberFromTime(forMk[i].split(';')[16].toLowerCase()),
+            sellingPrice: Number(forMk[i].split(';')[15]),
+            // effectPower: Number(forMk[count].split(';')[17]),
+            // effectDuration: forMk[count].split(';')[18],
+            durability: forMk[i].split(';')[18],
+            regenerationSpeed: Number(forMk[i].split(';')[19]),
+            reactivation: Number(forMk[i].split(';')[20])
+        }
     }
-};
-/* как добавлять mk1 уровни в не-оружие, у которого первый уровень - "3" (скорее всего только для ecu/ancile) */
-var createLvlsMk1NotWeapon = function (obj, forMk, count) {
-    obj.mk1['lvl' + (count + 3)] = {
-        damage: Number(forMk[count].split(';')[8]),
-        upgradeCost: Number(forMk[count].split(';')[14]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[15]),
-        // effectPower: Number(forMk[count].split(';')[17]),
-        // effectDuration: forMk[count].split(';')[18],
-        durability: forMk[count].split(';')[18],
-        regenerationSpeed: Number(forMk[count].split(';')[19]),
-        reactivation: Number(forMk[count].split(';')[20])
-    }
-};
-/* как добавлять mk2 уровни в оружие, у которого первый уровень - "3" (скорее всего только для nashorn) */
-var createLvlsMk1Lesser = function (obj, forMk, count) {
-    obj.mk1['lvl' + (count + 3)] = {
-        damage: Number(forMk[count].split(';')[8]),
-        upgradeCost: Number(forMk[count].split(';')[14]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[15]),
-        effectPower: Number(forMk[count].split(';')[17]),
-        effectDuration: forMk[count].split(';')[18]
-    }
-};
-
-/* как добавлять mk2 уровни в оружие, у которого первый уровень - "1" */
-var createLvlsMk2Full = function (obj, forMk, count) {
-    obj.mk2['lvl' + (count - 11)] = {
-        damage: Number(forMk[count].split(';')[8]),
-        upgradeCost: Number(forMk[count].split(';')[14]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[15]),
-        effectPower: Number(forMk[count].split(';')[17]),
-        effectDuration: forMk[count].split(';')[18]
-    }
-};
-/* как добавлять mk2 уровни в оружие, у которого первый уровень - "5" */
-var createLvlsMk2Less = function (obj, forMk, count) {
-    obj.mk2['lvl' + (count - 7)] = {
-        damage: Number(forMk[count].split(';')[8]),
-        upgradeCost: Number(forMk[count].split(';')[14]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[15]),
-        effectPower: Number(forMk[count].split(';')[17]),
-        effectDuration: forMk[count].split(';')[18]
-    }
-};
-/* как добавлять mk2 уровни в не-оружие, у которого первый уровень - "3" (скорее всего только для ecu/ancile) */
-var createLvlsMk2NotWeapon = function (obj, forMk, count) {
-    obj.mk2['lvl' + (count - 9)] = {
-        damage: Number(forMk[count].split(';')[8]),
-        upgradeCost: Number(forMk[count].split(';')[14]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[15]),
-        durabilityRegeneration: Number(forMk[count].split(';')[18]),
-        regenerationSpeed: Number(forMk[count].split(';')[19]),
-        reactivation: Number(forMk[count].split(';')[20])
-    }
-};
-/* как добавлять mk2 уровни в оружие, у которого первый уровень - "3" (скорее всего только для nashorn) */
-var createLvlsMk2Lesser = function (obj, forMk, count) {
-    obj.mk2['lvl' + (count - 9)] = {
-        damage: Number(forMk[count].split(';')[8]),
-        upgradeCost: Number(forMk[count].split(';')[14]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[16].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[15]),
-        effectPower: Number(forMk[count].split(';')[17]),
-        effectDuration: forMk[count].split(';')[18]
-    }
-};
-
-
-
-// переписать эти функции одной нормальной
-/* как создать объекты в объекте тяжелых орудий */
-var createHeavyWeaponObj = function (arr, count) {
-    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива оружий */
-    /* имя объекта = берем массив всех оружий, делим строки по ';;' и берем первую фразу - название оружия */
-    weaponsObj.heavy[name] = {};
-
-    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';',
-     * третий - одна строчка со всеми свойствами */
-    createObjProperties(weaponsObj.heavy[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
-};
-
-/* как создать объекты в объекте средних орудий */
-var createMediumWeaponObj = function (arr, count) {
-    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива оружий */
-    /* имя объекта = берем массив всех оружий, делим строки по ';;' и берем первую фразу - название оружия */
-    weaponsObj.medium[name] = {};
-    
-    /* аргументы: obj - объект в объекте по имени, str - массив всех оружий/первая строка/делим по ';',
-     * forMk - одна строчка со всеми свойствами */
-    createObjProperties(weaponsObj.medium[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
-};
-
-/* как создать объекты в объекте легких орудий */
-var createLightWeaponObj = function (arr, count) {
-    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива оружий */
-    /* имя объекта = берем массив всех оружий, делим строки по ';;' и берем первую фразу - название оружия */
-    weaponsObj.light[name] = {};
-
-    /* аргументы: obj - объект в объекте по имени, str - массив всех оружий/первая строка/делим по ';',
-     * forMk - одна строчка со всеми свойствами */
-    createObjProperties(weaponsObj.light[name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
 };
 
 /* как создать свойства в объекте оружия, который в объекте :) */
@@ -323,68 +223,59 @@ var createObjProperties = function (obj, str, forMk) {  /* obj - куда вно
 
     obj.mk1 = {};
     obj.mk2 = {};
-    if (forMk.length === 24) {      
-        for (var i = 0; i < (forMk.length) / 2; i++) {
-            createLvlsMk1Full(obj, forMk, i);
-        }
-        for (var i = 12; i < (forMk.length); i++) {
-            createLvlsMk2Full(obj, forMk, i);
-        }
-    } else if (forMk.length === 20) {
-        for (var i = 0; i < 8; i++) {
-            createLvlsMk1Less(obj, forMk, i);
-        }
-        for (var i = 8; i < 20; i++) {
-            createLvlsMk2Less(obj, forMk, i);
-        }
-    } else if (!(forMk[0].split(';')[8])) {
-        for (var i = 0; i < 10; i++) {
-            createLvlsMk1NotWeapon(obj, forMk, i);
-        }
-        for (var i = 10; i < 22; i++) {
-            createLvlsMk2NotWeapon(obj, forMk, i);
-        }
-        obj.reloadRound = 0;
-    } else {
-        for (var i = 0; i < 10; i++) {
-            createLvlsMk1Lesser(obj, forMk, i);
-        }
-        for (var i = 10; i < 22; i++) {
-            createLvlsMk2Lesser(obj, forMk, i);
-        }
-    }
+    switch(forMk.length) {
+        case 24:
+            createWeaponLvls(obj, forMk, 0, (forMk.length) / 2, 1, 1);
+            createWeaponLvls(obj, forMk, 12, forMk.length, (-11), 2);
+            break;
+        case 20:
+            createWeaponLvls(obj, forMk, 0, 8, 5, 1);
+            createWeaponLvls(obj, forMk, 8, 20, (-7), 2);
+            break;
+        case !(forMk[0].split(';')[8]):
+            createNotWeaponLvls(obj, forMk, 0, 10, 3, 1);
+            createNotWeaponLvls(obj, forMk, 10, 22, (-9), 2);
+            obj.reloadRound = 0;
+            break;
+        default:
+            createWeaponLvls(obj, forMk, 0, 10, 3, 1);
+            createWeaponLvls(obj, forMk, 10, 22, (-9), 2);
+            break;
+    };
+};
+
+/* как создать объекты в объекте каких-либо орудий */
+var createWeaponObj = function (arr, count) {
+    /*key - элемент массива (строка со свойствами), разделенный на отдельные свойства. 4 св-во - всегда тип слота*/
+    var key = arr[count].split(';')[4].toLowerCase();
+    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива оружий */
+    /* имя объекта = массив всех оружий разедить строки по ';;' и взять первую фразу - название оружия */
+    weaponsObj[key][name] = {};
+    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';',
+     * третий - одна строчка со всеми свойствами */
+    createObjProperties(weaponsObj[key][name], arr[count].split('/')[0].split(';'), arr[count].split('/'));
 };
 
 
 //  ----------------------------Роботы-------------------------------------------------------------------
 
 /* как добавлять уровни в роботов (у всех порядок свойств должен быть одинаков, функция одна на всех) */
-var createRobotsLvls = function (obj, forMk, count, step, mk) {
-    obj['mk'+ mk]['lvl' + (count + step)] = {
-        hp: Number(forMk[count].split(';')[4]),
-        speed: Number(forMk[count].split(';')[6]),
-        speedAccelerated: Number(forMk[count].split(';')[7]),
-        durabilityPhysicalShield: Number(forMk[count].split(';')[9]),
-        durabilityEnergyShield: Number(forMk[count].split(';')[10]),
-        regenerationShield: Number(forMk[count].split(';')[11]),
-        threshold: Number(forMk[count].split(';')[12]),
-        damageAbility: Number(forMk[count].split(';')[16]),
-        upgrateCost: Number(forMk[count].split(';')[19]),
-        upgradeTime: getNumberFromTime(forMk[count].split(';')[21].toLowerCase()),
-        sellingPrice: Number(forMk[count].split(';')[22])
+var createRobotsLvls = function (obj, forMk, startCount, length, step, mk) {
+    for (var i = startCount; i < length; i++) {
+        obj['mk' + mk]['lvl' + (i + step)] = {
+            hp: Number(forMk[i].split(';')[4]),
+            speed: Number(forMk[i].split(';')[6]),
+            speedAccelerated: Number(forMk[i].split(';')[7]),
+            durabilityPhysicalShield: Number(forMk[i].split(';')[9]),
+            durabilityEnergyShield: Number(forMk[i].split(';')[10]),
+            regenerationShield: Number(forMk[i].split(';')[11]),
+            threshold: Number(forMk[i].split(';')[12]),
+            damageAbility: Number(forMk[i].split(';')[16]),
+            upgrateCost: Number(forMk[i].split(';')[19]),
+            upgradeTime: getNumberFromTime(forMk[i].split(';')[21].toLowerCase()),
+            sellingPrice: Number(forMk[i].split(';')[22])
+        }
     }
-};
-
-
-/* как создать объекты в объекте роботов */
-var createAFRobotsObj = function (arr, count) {
-    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива роботов */
-    /* имя объекта = берем массив всех роботов, делим строки по ';;' и берем первую фразу - название робота */
-    robotsObj.robotsAF[name] = {};
-
-    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';',
-     * третий - одна строчка со всеми свойствами */
-    createRobotsObjProperties(robotsObj.robotsAF[name], arr[count].split('//')[0].split(';'), arr[count].split('//'));
 };
 
 /*как создавать свойства роботов*/
@@ -401,34 +292,38 @@ var createRobotsObjProperties = function (obj, str, forMk) {  /* obj - куда 
     obj.mk1 = {};
     obj.mk2 = {};
     if (forMk.length === 24) {
-        for (var i = 0; i < (forMk.length) / 2; i++) {
-            createRobotsLvls(obj, forMk, i, 1, 1);
-        }
-        for (var i = 12; i < (forMk.length); i++) {
-            createRobotsLvls(obj, forMk, i, (-11), 2);
-        }
+        createRobotsLvls(obj, forMk, 0, (forMk.length) / 2, 1, 1);
+        createRobotsLvls(obj, forMk, 12, forMk.length, (-11), 2);
     } else if (forMk.length === 19) {
-        for (var i = 0; i < 7; i++) {
-            createRobotsLvls(obj, forMk, i, 6, 1);
-        }
-        for (var i = 7; i < 19; i++) {
-            createRobotsLvls(obj, forMk, i, (-6), 2);
-        }
+        createRobotsLvls(obj, forMk, 0, 7, 6, 1);
+        createRobotsLvls(obj, forMk, 7, 19, (-6), 2);
     }
 };
 
+/* как создать объекты в объекте роботов */
+var createAFRobotsObj = function (arr, count) {
+    var name = (arr[count].split(';;')[0]).toLowerCase();   /* первая фраза из строки массива роботов */
+    /* имя объекта = берем массив всех роботов, делим строки по ';;' и берем первую фразу - название робота */
+    robotsObj.robotsAF[name] = {};
+    /* аргументы: первый - объект в объекте по имени, второй - массив всех оружий/первая строка/делим по ';',
+     * третий - одна строчка со всеми свойствами */
+    createRobotsObjProperties(robotsObj.robotsAF[name], arr[count].split('//')[0].split(';'), arr[count].split('//'));
+};
+
+
+//  ----------------------------Вызовы-------------------------------------------------------------------
 
 /* создаем объект тяжелых орудий по массиву с оружием */
 for (var i = 0; i < heavyWeaponsArr.length; i++) {
-    createHeavyWeaponObj(heavyWeaponsArr, i);
+    createWeaponObj(heavyWeaponsArr, i);
 }
 /* создаем объект средних орудий по массиву с оружием */
 for (var i = 0; i < mediumWeaponsArr.length; i++) {
-    createMediumWeaponObj(mediumWeaponsArr, i);
+    createWeaponObj(mediumWeaponsArr, i);
 }
 /* создаем объект легких орудий по массиву с оружием */
 for (var i = 0; i < lightWeaponsArr.length; i++) {
-    createLightWeaponObj(lightWeaponsArr, i);
+    createWeaponObj(lightWeaponsArr, i);
 }
 
 
@@ -436,7 +331,6 @@ for (var i = 0; i < lightWeaponsArr.length; i++) {
 for (var i = 0; i < afRobotsArr.length; i++) {
     createAFRobotsObj(afRobotsArr, i);
 }
-
 
 console.log(weaponsObj);
 console.log(robotsObj);
