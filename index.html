@@ -16,7 +16,7 @@
         
     </header>
 
-    <main class="page-main">    
+    <main class="page-main">
         
         <article class="page-main__robots robots">
             <article class="robots__select-wrapper visually-hidden">
@@ -29,10 +29,16 @@
                         </div>
                     </template>
                 </form>
-                <button class="robots__select-confirm">Выбрать</button>
+                <button class="robots__select-confirm select-confirm">Выбрать</button>
                 <div class="robots__select-close-wrapper">
                     <button class="robots__select-close"></button>
                 </div>
+            </article>
+
+            <article class="robots__choice visually-hidden">
+                    <button class="robots-choice-AF" id="robotsAF">Роботы с A по F</button>
+                    <button class="robots-choice-GK" id="robotsGK">Роботы с G по K</button>
+                    <button class="robots-choice-LZ" id="robotsLZ">Роботы с L по Z</button>
             </article>
 
             <article class="weapon__select-wrapper visually-hidden">
@@ -47,7 +53,7 @@
                 </form>
                 <button class="weapon__select-confirm">Выбрать</button>
                 <div class="weapon__select-close-wrapper">
-                    <button class="weapon__select-close"></button>
+                    <button class="weapon__select-close select-confirm"></button>
                 </div>
             </article>
             
@@ -159,10 +165,13 @@
 
 
     <script src="js/robots-a-f.js"></script>
+    <script src="js/robots-g-k.js"></script>
+    <script src="js/robots-l-z.js"></script>
 	<script src="js/heavy-weapon.js"></script>
     <script src="js/medium-weapon.js"></script>
     <script src="js/light-weapon.js"></script>
-    <script src="js/medium.js"></script>
+    <script src="js/objects-creater.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
