@@ -18,6 +18,7 @@ var robotsSelectClose = document.querySelector('.robots__select-close');        
 var robotComfirm = document.querySelector('.robots__select-confirm');            /* кнопка подтверждения робота */
 var robotsChoice = document.querySelector('.robots__choice');
 var buttonId;                                                                    /* порядковый номер ячейки робота */
+var robotType;
 
 
 var similarSelectTemplate = document.querySelector('.robots__select-temlate')    /* темплейт одного радиобаттона */
@@ -45,9 +46,46 @@ var splitStr = function (str, number) {
     return str.split('-')[number];
 };
 
+//Открыть/Закрыть попапы
+//---------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/*аргумент - показываемый эл-т, удалить у него "visually-hidden", добавить"opened". Добавить обработчики закрытия по esc и по клику*/
+var showPopup = function (evt, hiddenElement) {
+    hiddenElement.classList.remove('visually-hidden');
+    hiddenElement.classList.add('opened');
+    document.addEventListener('click', onClosePopupHandler);
+    document.addEventListener('keydown', onPopupEscPress);
+};
+/*убрать класс "opened", добавить "visually-hidden"*/
+var closePopup = function (element) {
+    element.classList.remove('opened');
+    element.classList.add('visually-hidden');
+};
+/*если esc - удаляет "opened" и добавляет "visually-hidden" к элементу с классом "opened". Удаляет обработчики закрытия*/
+var onPopupEscPress = function (evt) {
+    if (evt.keyCode === 27) {
+        var itemToClose = document.querySelector('.opened');
+        itemToClose.classList.remove('opened');
+        itemToClose.classList.add('visually-hidden');
+        document.removeEventListener('click', onClosePopupHandler);
+        document.removeEventListener('keydown', onPopupEscPress);
+    }
+};
+/*находит в разметке эл-т с классом "opened" и прячет его. Удаляет обработчки закрытия*/
+var onClosePopupHandler = function (evt) {
+    try {
+        if (evt.target./*parentNode.parentNode.parentNode.*/classList.contains('close')) {
+            closePopup(evt.target.parentNode.parentNode);
+            document.removeEventListener('click', closePopup);
+            document.removeEventListener('keydown', onPopupEscPress);
+        }
+    } catch (err) {
+        console.log('(ошибка): клик за пределами окна');
+    }    
+};
+//----------------------------------------<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 /*рендер елементов в форму выбора*/
-var renderSelects = function (elem, template) {
+var renderOneSelect = function (elem, template) {
     var div = template.cloneNode(true);
     div.querySelector('input').value = elem;
     div.querySelector('input').id = elem;
@@ -59,6 +97,75 @@ var renderSelects = function (elem, template) {
     
     return div;
 };
+/*показать окно выбора типа робота*/
+var showRobotsChoice = function (evt) {
+    if (document.documentElement.clientWidth - evt.clientX < 150) {
+        robotsChoice.style = 'right: ' + (document.documentElement.clientWidth - evt.clientX) + 'px; top: '
+            + (evt.clientY + window.pageYOffset - 50) + 'px;';
+    } else {
+        robotsChoice.style = 'left: ' + (evt.clientX + 20) + 'px; top: '
+            + (evt.clientY + window.pageYOffset - 50) + 'px;';
+    }
+    showPopup(evt, robotsChoice);
+    robotsChoice.addEventListener('click', onRobotsChoiceHandler);
+};
+/*что делать по нажатию на элементы из окна выбора типа робота*/
+var onRobotsChoiceHandler = function (evt) {
+    robotType = evt.target.id;
+    if (evt.target.className === 'robots__choice-close') {
+        onClosePopupHandler(evt);       /*закрыть, если класс, который у кнопки "закрыть"*/
+    } else {
+        closePopup(robotsChoice);       
+        renderSelects(evt, robotsNames, robotsSelect, similarSelectTemplate, nestedRobotFunc, robotType);
+    }
+};
+/*прикрепляет отрисованные элементы к окну выбора роботов/оружия. Показывает это окно*/
+var renderSelects = function (evt, robOrWeap, base, template, func, robotType) {
+    deleteAllChild(base);         /*сначала удалит все, что было в окне, чтобы не дублировать*/
+    var key = evt.target.id;
+    try {
+        for (var i = 0; i < robOrWeap[key].length; i++) {
+            base.appendChild(renderOneSelect(robOrWeap[key][i], template));
+            base.lastChild.addEventListener('dblclick', function (evt) {
+                var choosenRobot = evt.currentTarget.querySelector('input');
+                deleteAllChild(base);
+                closePopup(base.parentNode);
+                console.log(choosenRobot.value);
+                func(choosenRobot, robotType);
+            })
+        }
+        showPopup(evt, base.parentNode);
+    } catch (err) {
+        console.log('(ошибка): с этого элемента не отрисуется список роботов');
+    }    
+};
+/*удаляет все дочение элементы в родителе*/
+var deleteAllChild = function (base) {
+    while (base.firstChild) {
+        base.removeChild(base.firstChild);
+    }
+};
+
+/*что делать при подтверждении выбора робота*/
+var confirmSelectHandler = function (evt, func) {
+    var flag;               /*записывает в себя выбранный эл-т из окна выбора*/
+    var form = evt.target.parentNode.querySelector('form');
+    var formParent = evt.target.parentNode;     /*все окно выбора*/
+    var inpitArr = form.querySelectorAll('input');
+    for (var i = 0; i < inpitArr.length; i++) {
+        if (form[i].checked) {
+            flag = form[i];
+        }
+    }
+    /*закрыть окно и продолжить работу только если есть выбранный эл-т*/
+    if (flag) {
+        deleteAllChild(form);
+        closePopup(formParent);
+        func(flag);
+    }
+};
+
+
 
 /*возвращает фрагмент с контентом в робота в разметке*/
 var renderRobotList = function (robot) {
@@ -72,17 +179,20 @@ var renderRobotList = function (robot) {
     return fragment;
 };
 
+
+
 /*рендер робота в ячейку*/
-var renderRobotsInCell = function (robot) {
+var renderRobotsInCell = function (robot, robotType) {
+    console.log(robotType);
     var robotElement = similarRobotTemlate.cloneNode(true);
     var robotList = robotElement.querySelector('.robot__list');
-    robotElement.querySelector('.robot__lvl').textContent = (getFirstProp(robotsObj.robotsAF[robot].mk1)).substr(3,1);
-    robotElement.querySelector('.robot__name').textContent = robotsObj.robotsAF[robot].name;
-    robotElement.querySelector('.robot__hp').textContent = robotsObj.robotsAF[robot].mk1[getFirstProp(robotsObj.robotsAF[robot].mk1)].hp;
-    robotElement.querySelector('.robot__speed').textContent = robotsObj.robotsAF[robot].mk1[getFirstProp(robotsObj.robotsAF[robot].mk1)].speed;
-    robotElement.querySelector('.robot__ability').textContent = robotsObj.robotsAF[robot].ability;
+    robotElement.querySelector('.robot__lvl').textContent = (getFirstProp(robotsObj[robotType][robot].mk1)).substr(3,1);
+    robotElement.querySelector('.robot__name').textContent = robotsObj[robotType][robot].name;
+    robotElement.querySelector('.robot__hp').textContent = robotsObj[robotType][robot].mk1[getFirstProp(robotsObj[robotType][robot].mk1)].hp;
+    robotElement.querySelector('.robot__speed').textContent = robotsObj[robotType][robot].mk1[getFirstProp(robotsObj[robotType][robot].mk1)].speed;
+    robotElement.querySelector('.robot__ability').textContent = robotsObj[robotType][robot].ability;
     robotElement.querySelector('.robot__img').src = "../img/" + robot + "Small.png";
-    robotList.appendChild(renderRobotList(robotsObj.robotsAF[robot]));
+    robotList.appendChild(renderRobotList(robotsObj[robotType][robot]));
     
     return robotElement;
 };
@@ -111,30 +221,17 @@ var slotObj = {
 };
 
 
-var showSelect = function (evt, hiddenElement) {
-    hiddenElement.classList.remove('visually-hidden');
-    hiddenElement.classList.add('opened');
-    document.addEventListener('click', closeSelectHandler);
-    document.addEventListener('keydown', onPopupEscPress);
-};
-var closeSelectHandler = function (evt) {
-    if (evt.target.parentNode.parentNode.classList.contains('opened')) {
-        evt.target.parentNode.parentNode.classList.remove('opened');
-        evt.target.parentNode.parentNode.classList.add('visually-hidden');
-        document.removeEventListener('keydown', closeSelectHandler);
-        document.removeEventListener('keydown', onPopupEscPress);
-    }
-};
-//переписать на универсальный (добавить класс в разметку, и работать по нему)
-var onPopupEscPress = function (evt) {
-    if (evt.keyCode === 27) {
-        var itemToClose = document.querySelector('.opened');
-        itemToClose.classList.remove('opened');
-        itemToClose.classList.add('visually-hidden');
-        document.removeEventListener('keydown', closeSelectHandler);
-        document.removeEventListener('keydown', onPopupEscPress);
-    }
-};
+//----------------------------------------------------------------------
+
+
+/*добавить всем кнопками "добавить" обработчики открытия окна выбора робота*/
+for (var i = 0; i < robotAddArr.length; i++) {
+    robotAddArr[i].addEventListener('click', function (evt) {
+        buttonId = evt.target.parentNode.id;                  /*запомнить, из какой ячейки было нажатие*/
+        showRobotsChoice(evt);
+    });
+}
+
 
 var onWeaponAddHandler = function (evt) {
     /*что делать по нажатию на кнопку '.weapon__select-close'*/
@@ -146,7 +243,7 @@ var onWeaponAddHandler = function (evt) {
     /*наполнение формы выбора оружия*/
     // if (!weaponSelect.querySelector('.weapon__select-item')) {
     for (var i = 0; i < weaponNames[localId].length; i++) {
-        weaponSelect.appendChild(renderSelects(weaponNames[localId][i], similarWeaponSelectTemplate));
+        weaponSelect.appendChild(renderOneSelect(weaponNames[localId][i], similarWeaponSelectTemplate));
     }
     // }
     var weaponSelectClose = weaponSelectWrapper.querySelector('.weapon__select-close');
@@ -188,17 +285,19 @@ var showOrHideHandler = function (evt) {
 // }
 
 /*добавить циклом всем кнопками "добавить" обработчики открытия окна выбора робота*/
-for (var i = 0; i < robotAddArr.length; i++) {
-    robotAddArr[i].addEventListener('click', function (evt) {
-        // robotsSelectWrapper.classList.remove('visually-hidden');
-        // /*спрятать форму выбора по esc*/
-        // document.addEventListener('keydown', onPopupEscPress);
-        
-        showSelect(evt, robotsSelectWrapper);
-        // /*запомнить, из какой ячейки было нажатие*/
-        buttonId = evt.target.parentNode.id;
-    });
-}
+// for (var i = 0; i < robotAddArr.length; i++) {
+//     robotAddArr[i].addEventListener('click', function (evt) {
+//         // robotsSelectWrapper.classList.remove('visually-hidden');
+//         // /*спрятать форму выбора по esc*/
+//         // document.addEventListener('keydown', onPopupEscPress);
+//        
+//         showSelect(evt, robotsSelectWrapper);
+//         // /*запомнить, из какой ячейки было нажатие*/
+//         buttonId = evt.target.parentNode.id;
+//     });
+// }
+
+
 
 /*спрятать форму выбора по кнопке "закрыть"*/
 // robotsSelectClose.addEventListener('click', function () {
@@ -206,16 +305,36 @@ for (var i = 0; i < robotAddArr.length; i++) {
 // });
 
 /*наполнение формы выбора робота */
-for (var i = 0; i < robotsNames.robotsAF.length; i++) {
-    robotsSelect.appendChild(renderSelects(robotsNames.robotsAF[i], similarSelectTemplate));
-}
-for (var i = 0; i < robotsSelect.childNodes.length; i++) {
-    /*добавляем слушатели двойного клика*/
-    robotsSelect.childNodes[i].addEventListener('dblclick', function (evt) {
-        workFunc();
-    })
-}
+// for (var i = 0; i < robotsNames.robotsAF.length; i++) {
+//     robotsSelect.appendChild(renderOneSelect(robotsNames.robotsAF[i], similarSelectTemplate));
+// }
 
+
+
+
+
+
+// renderSelects(evt, robotsNames, robotsSelect, similarSelectTemplate);
+// for (var i = 0; i < robotsSelect.childNodes.length; i++) {
+//     /*добавляем слушатели двойного клика*/
+//     robotsSelect.childNodes[i].addEventListener('dblclick', function (evt) {
+//         workFunc();
+//     })
+// }
+
+
+
+var nestedRobotFunc = function (input, robotType) {
+    /*сделать невидимой кнопку добавления робота*/
+    robotAddArr[buttonId - 1].classList.add('visually-hidden');
+    // robotsSelectWrapper.classList.add('visually-hidden');
+    /*прикрепление отрисованного робота в разметку*/
+    robotsCell[buttonId - 1].appendChild(renderRobotsInCell(input.value, robotType));
+    /*добавляем флаг, потому что без него входит в функцию второй раз*/
+    // robotsCell[buttonId - 1].classList.add('flag');
+    /*добавление обработчиков на кнопки на очистку и замену роботов*/
+    // robotsCell[buttonId - 1].addEventListener('click', bubleHandler);
+};
 
 /*все обработчики на всплытии, которые есть в ячейке робота (отдельно, чтобы нормально удалялись при смене робота*/
 var bubleHandler = function (evt) {
@@ -227,30 +346,9 @@ var bubleHandler = function (evt) {
         showOrHideHandler(evt);
     } else if (evt.target.className === 'robot__clear-robot' && evt.currentTarget.classList.contains('flag')) {
         // deleteRobotInCell(evt);
-    } 
-};
-
-var confirmSelectHandler = function (evt, func) {
-    var form = evt.target.parentNode.querySelector('form');
-    var inpitArr = form.querySelectorAll('input');
-    for (var i = 0; i < inpitArr.length; i++) {
-        if (form[i].checked) {
-            func(form[i]);
-        }
     }
 };
 
-var nestedRobotFunc = function (input) {
-    /*сделать невидимой кнопку добавления робота*/
-    robotAddArr[buttonId - 1].classList.add('visually-hidden');
-    robotsSelectWrapper.classList.add('visually-hidden');
-    /*прикрепление отрисованного робота в разметку*/
-    robotsCell[buttonId - 1].appendChild(renderRobotsInCell(input.value));
-    /*добавляем флаг, потому что без него входит в функцию второй раз*/
-    // robotsCell[buttonId - 1].classList.add('flag');
-    /*добавление обработчиков на кнопки на очистку и замену роботов*/
-    robotsCell[buttonId - 1].addEventListener('click', bubleHandler);
-};
 
 // /*пока главная функция для работы*/
 // var workFunc = function () {
