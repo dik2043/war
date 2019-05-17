@@ -65,7 +65,7 @@ body {
   flex-grow: 1;
   max-width: 19.5%;
   min-width: 150px;
-  min-height: 370px;
+  min-height: 420px;
   background: linear-gradient(to bottom, #10405b, #19262c);
 }
 .robots__add {
@@ -300,17 +300,27 @@ body {
 }
 .robot__weapon-add-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-end;
 }
+.robot__weapon-add-wrapper-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+}
 .robot__weapon-add {
-  width: 70px;
+  width: 30%;
+  min-width: 55px;
   height: 70px;
   padding: 0;
   background: url("../img/icons/plusWhite.png") no-repeat 50% 50%;
   border: none;
 }
 .robot__weapon-add-slot {
+  width: 60%;
   font-size: 15px;
   color: #657d89;
 }
@@ -374,6 +384,58 @@ body {
   background: linear-gradient(to bottom, #1c86d0, #006ab4);
 }
 .robot__improve {
+  background: linear-gradient(to bottom, #18b66b, #018f47);
+}
+.robot__weapon-wrapper {
+  width: 100%;
+}
+.robot__weapon {
+  display: flex;
+  flex-direction: row;
+}
+.robot__weapon-name-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.robot__weapon-lvl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  background-color: #28a3f3;
+}
+.robot__weapon-name {
+  padding: 3px;
+  font-size: 14px;
+}
+.robot__weapon-name:first-letter {
+  text-transform: uppercase;
+}
+.robot__weapon-img {
+  width: 60%;
+}
+.robot__weapon-bottom-wrapper button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: white;
+  border-radius: 3px;
+  border: none;
+}
+.robot__weapon-change-weapon {
+  margin-right: 3px;
+  background: linear-gradient(to bottom, #1c86d0, #006ab4);
+}
+.robot__weapon-improve {
   background: linear-gradient(to bottom, #18b66b, #018f47);
 }
 .weapon__select-wrapper {
