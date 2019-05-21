@@ -28,6 +28,9 @@ var similarSelectTemplate = document.querySelector('.robots__select-temlate')   
 var similarSelectTemlateConfirm = document.querySelector('.robots__select-confirm-temlate')
     .content
     .querySelector('.robots__select-confirm');
+var similarWeaponSelectTemlateConfirm = document.querySelector('.weapon__select-confirm-temlate')
+    .content
+    .querySelector('.weapon__select-confirm');
 var similarWeaponSelectTemplate = document.querySelector('.weapon__select-temlate')    /* темплейт одного радиобаттона */
     .content
     .querySelector('div');
@@ -276,7 +279,7 @@ var weaponCallback = function (input, param) {
     // console.log('"weaponCallback" начало работы колбэка для оружия >>>>>>>>>>>>>>>>>>>>>>>>>');
     // console.log(param);
     /*сделать невидимой кнопку добавления робота*/
-    // document.getElementById(param).classList.add('visually-hidden');
+    document.getElementById(param).classList.add('visually-hidden');
     // console.log('"weaponCallback"   скрыть кнопку добавления оружия');
     /*прикрепление отрисованного оружия в разметку*/
     document.getElementById(param).parentNode.appendChild(renderWeaponInCell(input.value, splitStr(param, 2)));
@@ -346,7 +349,7 @@ var renderRobotSlot = function (slot, count) {
     weaponAdd.addEventListener('click', function (evt) {
         weaponId = splitStr(evt.target.id, 1);
         console.log(evt.target.id);
-        renderSelects(evt, weaponNames, weaponSelect, similarWeaponSelectTemplate, weaponCallback, evt.target.id, splitStr(evt.target.id, 2));
+        renderSelects(evt, weaponNames, weaponSelect, similarWeaponSelectTemplate, weaponCallback, evt.target.id, splitStr(evt.target.id, 2), similarWeaponSelectTemlateConfirm);
     });
     return similarWeapon;
 };
