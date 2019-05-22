@@ -17,6 +17,7 @@ var weaponSelectWrapper = document.querySelector('.weapon__select-wrapper');    
 var robotsSelectClose = document.querySelector('.robots__select-close');         /* кнопка закрытия окна роботов */
 var robotComfirm = document.querySelector('.robots__select-confirm');            /* кнопка подтверждения робота */
 var robotsChoice = document.querySelector('.robots__choice');
+var lvlChoose = document.querySelector('.lvl__change-wrapper');
 var buttonId;                                                                    /* порядковый номер ячейки робота */
 var weaponId;
 var robotType;
@@ -43,6 +44,9 @@ var similarWeaponAdd = document.querySelector('.robot__weapon-add-temlate')     
 var similarWeaponTemplate = document.querySelector('.weapon__temlate')
     .content
     .querySelector('.robot__weapon-wrapper');
+var lvlTemplate = lvlChoose.querySelector('.lvl__template')
+    .content
+    .querySelector('.lvl');
 
 
 
@@ -116,11 +120,12 @@ var showRobotsChoice = function (evt) {
 /*что делать по нажатию на элементы из окна выбора типа робота*/
 var onRobotsChoiceHandler = function (evt) {
     robotType = evt.target.id;
-    if (evt.target.className === 'robots__choice-close') {
+    if (evt.target.className === 'robots__choice-close close') {
         onClosePopupHandler(evt);       /*закрыть, если класс, который у кнопки "закрыть"*/
     } else {
         closePopup(robotsChoice);
-        renderSelects(evt, robotsNames, robotsSelect, similarSelectTemplate, robotsCallback, robotType, robotType, similarSelectTemlateConfirm);
+        renderSelects(evt, robotsNames, robotsSelect, similarSelectTemplate, robotsCallback, robotType,
+                      robotType, similarSelectTemlateConfirm);
     }
 };
 /*рендер одного элемента в форму выбора*/
@@ -130,7 +135,7 @@ var renderOneSelect = function (elem, template) {
     selectItem.querySelector('input').id = elem;
     selectItem.querySelector('label').setAttribute('for', elem);
     selectItem.querySelector('label').classList.add('label');
-    // div.querySelector('label').style.background = 'url("img/' + elem + 'Small.png") 50px 70% no-repeat';
+    selectItem.querySelector('label').style.background = 'url("img/' + elem + 'Small.png") 50px 70% no-repeat';
     selectItem.querySelector('label').style.backgroundSize = 'contain';
     selectItem.querySelector('div').textContent = elem;
     return selectItem;
@@ -147,7 +152,7 @@ var renderSelects = function (evt, robOrWeap/*массив имен*/, base, tem
                               callback/*функция для роботов или оружия*/, param/*для колбэка()*/, key,
                               temlateConfirm/*шаблон кнопки подтверждерния*/) {
     
-    try {
+    // try {
         deleteAllChild(base);         /*сначала удалит все, что было в окне, чтобы не дублировать*/
         base.parentNode.removeChild(base.parentNode.lastChild);     /*удалить кнопку подтверждения, чтобы с ней удалился обработчик*/
         base.parentNode.appendChild(returnNode(temlateConfirm));    /*добавить кнопку подтверждения*/
@@ -168,12 +173,13 @@ var renderSelects = function (evt, robOrWeap/*массив имен*/, base, tem
         base.parentNode.lastChild.addEventListener('click', function (evt1) {
             confirmSelectHandler(evt1, callback, param);
         });        
-    } catch (err) {
-        console.log('(ошибка): с этого элемента не отрисуется список роботов');
-    }
+    // } catch (err) {
+    //     console.log('(ошибка): с этого элемента не отрисуется список роботов');
+    // }
 };
 /*функция подтверждения выбора*/
 var confirmSelectHandler = function (evt, callback /*для роботов и оружия разная функция*/, param) {
+    
     var flag;               /*записывает в себя выбранный эл-т из окна выбора*/
     var form = evt.target.parentNode.querySelector('form');         /*форма выбора*/
     var formParent = evt.target.parentNode;     /*все окно выбора*/
@@ -195,6 +201,7 @@ var confirmSelectHandler = function (evt, callback /*для роботов и о
 
 /*функция, выполняющаяся при выборе робота*/
 var robotsCallback = function (input, param) {
+    
     /*сделать невидимой кнопку добавления робота*/
     robotAddArr[buttonId - 1].classList.add('visually-hidden');
     /*прикрепление отрисованного робота в разметку*/
@@ -205,40 +212,60 @@ var robotsCallback = function (input, param) {
 
 /*рендер робота в ячейку*/
 var renderRobotsInCell = function (robot, robotType) {
+    
     var robotElement = similarRobotTemlate.cloneNode(true);
     var robotList = robotElement.querySelector('.robot__list');
     robotElement.querySelector('.robot__lvl').textContent = (getFirstProp(robotsObj[robotType][robot].mk1)).substr(3,1);
     robotElement.querySelector('.robot__name').textContent = robotsObj[robotType][robot].name;
+    robotElement.querySelector('.robot__name').id = robotType;
     robotElement.querySelector('.robot__hp').textContent = robotsObj[robotType][robot].mk1[getFirstProp(robotsObj[robotType][robot].mk1)].hp;
     robotElement.querySelector('.robot__speed').textContent = robotsObj[robotType][robot].mk1[getFirstProp(robotsObj[robotType][robot].mk1)].speed;
     robotElement.querySelector('.robot__ability').textContent = robotsObj[robotType][robot].ability;
-    // robotElement.querySelector('.robot__img').src = "img/" + robot + "Small.png";
+    robotElement.querySelector('.robot__img').src = "img/" + robot + "Small.png";
     robotList.appendChild(renderRobotList(robotsObj[robotType][robot]));
     return robotElement;
 };
 
 /*функция, выполняющаяся при выборе оружия*/
 var weaponCallback = function (input, param/*для идентификации нужной ячейки оружия и поиска в объекте*/) {
+    
+    var weaponAddButton = document.getElementById(param);
     /*сделать невидимой кнопку добавления робота*/
-    document.getElementById(param).classList.add('visually-hidden');
+    weaponAddButton.classList.add('visually-hidden');
     /*прикрепление отрисованного оружия в разметку*/
-    document.getElementById(param).parentNode.appendChild(renderWeaponInCell(input.value, splitStr(param, 2)));
+    weaponAddButton.parentNode.appendChild(renderWeaponInCell(input.value, splitStr(param, 2)));
+    
 };
 /*рендер оружия в ячейку*/
 var renderWeaponInCell = function (weapon, weaponType) {
+    
     var weaponElement = similarWeaponTemplate.cloneNode(true);
     weaponElement.querySelector('.robot__weapon-lvl').textContent = (getFirstProp(weaponsObj[weaponType][weapon].mk1)).substr(3,1);
     weaponElement.querySelector('.robot__weapon-name').textContent = weaponsObj[weaponType][weapon].name;
-    // weaponElement.querySelector('.robot__weapon-img').src = "img/" + weapon + "Small.png";
+    weaponElement.querySelector('.robot__weapon-img').src = "img/" + weapon + "Small.png";
+    weaponElement.addEventListener('click', ascentWeaponListener);
     return weaponElement;
 };
 
+
 /*сменить елемент в ячейке*/
-var changeElemInCell = function (evt, elem /*заменяемый элемент*/, buttonArr/*кнопка, которую показать*/, elemId/*элемент, с которого взять id*/) {
+var changeRobotInCell = function (evt, elem /*заменяемый элемент*/, buttonArr/*кнопка, которую показать*/, 
+                                  elemId/*элемент, с которого взять id*/) {
+    
     elem.parentNode.removeChild(elem.parentNode.lastChild);     /*удалить елемент из ячейки*/
     buttonId = elemId.id;
     buttonArr[buttonId - 1].classList.remove('visually-hidden');    /*сделать кнопку добавления робота видимой*/
     showRobotsChoice(evt);
+};
+
+var changeWeaponInCell = function (evt, elem /*заменяемый элемент*/, buttonArr/*кнопка, которую показать*/) {
+    
+    var weaponCell = evt.currentTarget.parentNode;      /*вся ячейка оружия*/
+    /*показать кнопку*/
+    weaponCell.querySelector('.robot__weapon-add').classList.remove('visually-hidden');
+    weaponCell.removeChild(evt.currentTarget.parentNode.querySelector('.robot__weapon-wrapper'));       /*удалить оружие из ячейки*/
+    renderSelects(evt, weaponNames, weaponSelect, similarWeaponSelectTemplate, weaponCallback, weaponCell.childNodes[1].id,
+                  splitStr(weaponCell.childNodes[1].id, 2), similarWeaponSelectTemlateConfirm);
 };
 
 /*добавить всем кнопками "добавить" обработчики открытия окна выбора робота*/
@@ -273,37 +300,17 @@ var renderRobotList = function (robot) {
 /*возвращает один отрисованный слот (с кнопкой добавления)*/
 var renderRobotSlot = function (slot, count) {
     var similarWeapon = similarWeaponAdd.cloneNode(true);
-    var weaponAdd = similarWeapon.querySelector('.robot__weapon-add');
-    
+    var weaponAdd = similarWeapon.querySelector('.robot__weapon-add');    
     similarWeapon.querySelector('.robot__weapon-add-slot').textContent = slot;
     similarWeapon.querySelector('.robot__weapon-add').id = buttonId + '-' + (count + 1) + '-' + slot;
     weaponAdd.addEventListener('click', function (evt) {
         weaponId = splitStr(evt.target.id, 1);
-        renderSelects(evt, weaponNames, weaponSelect, similarWeaponSelectTemplate, weaponCallback, evt.target.id, splitStr(evt.target.id, 2), similarWeaponSelectTemlateConfirm);
+        renderSelects(evt, weaponNames, weaponSelect, similarWeaponSelectTemplate, weaponCallback, evt.target.id, 
+                      splitStr(evt.target.id, 2), similarWeaponSelectTemlateConfirm);
     });
     return similarWeapon;
 };
 //----------------------------------------------------------------------
-
-
-
-// var onWeaponAddHandler = function (evt) {
-//     /*что делать по нажатию на кнопку '.weapon__select-close'*/
-//     var onWeaponCloseHandler = function () {
-//         weaponSelectWrapper.classList.add('visually-hidden');
-//         weaponSelectClose.removeEventListener('click', onWeaponCloseHandler);
-//     };
-//     var localId = splitStr(evt.target.id, 2);
-//     /*наполнение формы выбора оружия*/
-//     // if (!weaponSelect.querySelector('.weapon__select-item')) {
-//     for (var i = 0; i < weaponNames[localId].length; i++) {
-//         weaponSelect.appendChild(renderOneSelect(weaponNames[localId][i], similarWeaponSelectTemplate));
-//     }
-//     // }
-//     var weaponSelectClose = weaponSelectWrapper.querySelector('.weapon__select-close');
-//     weaponSelectClose.addEventListener('click', onWeaponCloseHandler);
-//     weaponSelectWrapper.classList.remove('visually-hidden');
-// };
 
 
 
@@ -312,32 +319,96 @@ var showOrHideHandler = function (evt) {
     var robotList = evt.currentTarget.querySelector('.robot__list');
     if (robotList.classList.contains('hidden')) {
         robotList.classList.remove('hidden');
-        robotList.style = 'opacity: 1;';
+        robotList.style = 'z-index: 1;';
     } else {
-        // robotList.classList.add('visually-hidden');
         robotList.classList.add('hidden');
-        robotList.style = 'opacity: 0;';
+        setTimeout(function () {
+            robotList.style = 'z-index: -1;';
+        }, 500)
     }
 };
 
+var renderLvl = function (count, mk, cellId) {    
+    var similarLvl = lvlTemplate.cloneNode(true);
+    similarLvl.textContent = count;
+    similarLvl.id = mk + '-' + count;
+    similarLvl.addEventListener('click', function () {
+        console.log(similarLvl.textContent);
+        console.log('cellId2 ' + cellId);
+    });
+    return similarLvl;
+};
 
+var renderAllLvls = function (evt, robOrWeap, robotCategory, robotName, cellId) {
+    console.log('cellId ' + cellId);
+    var divWrapper = document.createElement("div");
+    divWrapper.style = 'position: fixed; z-index: 21; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);';
+    document.querySelector('.page-main').appendChild(divWrapper);
+    if (document.documentElement.clientWidth - evt.clientX < 153) {
+        lvlChoose.style = 'right: ' + (document.documentElement.clientWidth - evt.clientX) + 'px; top: '
+            + (evt.clientY + window.pageYOffset + 20) + 'px;';
+    } else {
+        lvlChoose.style = 'left: ' + (evt.clientX + 20) + 'px; top: '
+            + (evt.clientY + window.pageYOffset + 20) + 'px;';
+    }
+    lvlChoose.classList.remove('visually-hidden');
+    var lvlWrapperMk1 = lvlChoose.querySelector('.lvl__wrapper-mk1');
+    var lvlWrapperMk2 = lvlChoose.querySelector('.lvl__wrapper-mk2');
+    for (var key in robOrWeap[robotCategory][robotName].mk1) {
+        lvlWrapperMk1.appendChild(renderLvl(key.substr(3), '1', cellId));
+    }
+    for (var key in robOrWeap[robotCategory][robotName].mk2) {
+        lvlWrapperMk2.appendChild(renderLvl(key.substr(3), '2', cellId));
+    }
+};
+
+//переписать на switch
 /*все обработчики на всплытии, которые есть в ячейке робота (отдельно, чтобы нормально удалялись при смене робота)*/
 var ascentRobotsListener = function (evt) {
     var elemForChenage = evt.target.parentNode.parentNode.parentNode;
     if (evt.target.className === 'robot__change-robot' /*&& evt.currentTarget.classList.contains('flag')*/) {
-        changeElemInCell(evt, elemForChenage, robotAddArr, elemForChenage.parentNode);
+        changeRobotInCell(evt, elemForChenage, robotAddArr, elemForChenage.parentNode);
     } else if (evt.target.className === 'robot__improve') {
         alert('пока не готово');
     } else if (evt.target.className === 'robot__uncover') {
         showOrHideHandler(evt);
     } else if (evt.target.className === 'robot__clear-robot' && evt.currentTarget.classList.contains('flag')) {
         // deleteRobotInCell(evt);
+    } else if (evt.target.className === 'robot__lvl') {
+        var cellId = evt.currentTarget.id;
+        var robotName = evt.target.nextElementSibling.textContent;
+        var robotCategory = evt.target.nextElementSibling.id;
+        var lvlArr = Array.from(robotsObj[robotCategory][robotName].mk1);
+        renderAllLvls(evt, robotsObj, robotCategory, robotName, cellId);
+        // var div = document.createElement("div");
+        // var divWrapper = document.createElement("div");
+        // div.style = 'position: absolute; z-index: 21; top: 30px;  left: ' + evt.clientX + '; ' +
+        //     'display: flex; justify-content: space-between; ' +
+        //     'width: 100px;  height: 30px;  background-color: white;  border: 1px dashed white';
+        // div.addEventListener('click', function (evt) {
+        //     console.log(robotsObj[robotCategory][robotName].mk1);
+        //     // console.log();
+        // });
+        // divWrapper.style = 'position: absolute; z-index: 21; width: 300%; height: 1000%; background-color: rgba(0, 0, 0, 0.2);'
+        //
+        // evt.currentTarget.appendChild(divWrapper);
+        // evt.currentTarget.appendChild(div);
+        
     }
 };
 
+/*все обработчики на всплытии, которые есть в ячейке оружия*/
+var ascentWeaponListener = function (evt) {
+    if (evt.target.className === 'robot__weapon-change-weapon' /*&& evt.currentTarget.classList.contains('flag')*/) {
+        changeWeaponInCell(evt);
+    } else if (evt.target.className === 'robot__weapon-improve') {
+        alert('пока не готово');
+    }
+};
 
 //  1  переписать объекты аккуратности   +
 //  2 по идее переделать логику удаления робота из ячейки (кнопка сменить не должна сама удалять его из верстки)
 //    это должна делать функция добавления робота
 //  3 надо бы добавить слушатели на кнопки для закрытия
 //  4 добавить обработчики на выбор робота (enter и двойнок клик) (двойной клик +)
+//  5 может быть добавить на роботов слайдер

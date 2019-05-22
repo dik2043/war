@@ -28,6 +28,8 @@
 
   padding: 0 10px;
 
+  cursor: pointer;
+
   background-color: #28a3f3;
 }
 
@@ -57,27 +59,41 @@
 
 .robot__list {
   position: absolute;
+  z-index: -1;
   top: 38px;
-  left: 2.5%;
+  left: 1%;
   
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   
-  width: 95%;
+  width: 98%;
   height: 75%;
   border-radius: 5px;
   background-color: black;
   background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transition: 0.5s;
+}
+.hidden {
+  
+  
   opacity: 0;
   transition: 0.5s;
 }
 
 .robot__weapon-add-wrapper {
+  position: relative;
+  
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-end;
+  
+  padding-bottom: 3px;
+  
+  border-radius: 3px;
+  border: 1px solid #006ab4;
 }
 
 .robot__weapon-add-wrapper-wrapper {
@@ -103,6 +119,7 @@
 
 .robot__weapon-add-slot {
   width: 60%;
+  padding-left: 3px;
   
   font-size: 15px;
   color: #657d89;
@@ -148,6 +165,18 @@
   color: #657d89;
   font-size: 11px;
 }
+//.robot__ability-speed {
+//  margin-bottom: 2px;
+//  padding: 3px 0 3px 35px;
+
+  //background: url("../img/icons/speed.png") no-repeat 5px;
+  //background-size: contain;
+//}
+//.robot__ability-speed::after {
+//  content: " км/ч";
+//  color: #657d89;
+//  font-size: 11px;
+//}
 .robot__ability {
   padding: 3px 0 3px 35px;
   
@@ -190,10 +219,15 @@
 }
 
 .robot__improve {
+  flex-grow: 1;
+  
   background: linear-gradient(to bottom, #18b66b, #018f47);
 }
 
 .robot__weapon-wrapper {
+  position: relative;
+  z-index: 3;
+  
   width: 100%;
 }
 
@@ -204,6 +238,8 @@
 
 .robot__weapon-name-wrapper {
   position: relative;
+  z-index: 3;
+  
   display: flex;
   justify-content: flex-start;
 
@@ -221,6 +257,8 @@
 
   padding: 0 5px;
 
+  cursor: pointer;
+
   background-color: #28a3f3;
 }
 
@@ -234,14 +272,32 @@
 }
 
 .robot__weapon-img {
-  width: 60%;
+  position: absolute;
+  top: -25px;
+  right: 0;
+  z-index: 10;
+  width: auto;
+  max-height: 70px;
+}
+
+.robot__weapon-bottom-wrapper {
+  position: relative;
+  z-index: 20;
+  
+  display: flex;
+  justify-content: space-around;
+  
+  width: 95%;
+  margin: auto;
+  padding-top: 3px;
 }
 
 .robot__weapon-bottom-wrapper button {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-grow: 1;
+  
   //height: 50px;
 
   //margin: 0;
@@ -261,5 +317,8 @@
 }
 
 .robot__weapon-improve {
+  position: relative;
+  z-index: 3;
+  
   background: linear-gradient(to bottom, #18b66b, #018f47);
 }

@@ -29,26 +29,26 @@
         'Nashorn MK2;;2;11;HEAVY;Kinetic;Straight;1100;12600;1;1.00;0.00;9.00;x2;13000000;8620000.00;2D 9H 00M;;/' +
         'Nashorn MK2;;2;12;HEAVY;Kinetic;Straight;1100;13860;1;1.00;0.00;9.00;x2;0;10620000.00;0D 0H 00M;;/%' +
         /*-----------------17 ур эфф/18 длит эфф/19 пер во вр стр/20 врем пер одн пули/21 врем разр обоймы/22 рассеив*/
-        'Kang Dae;;1;5;HEAVY;Kinetic;Straight;800;5070;1;1.00;0.00;6.00;x2;800000;116000.00;0D 16H 48M;;;0;;;/' +
-        'Kang Dae;;1;6;HEAVY;Kinetic;Straight;800;5570;1;1.00;0.00;6.00;x2;1600000;276000.00;1D 9H 00M;;/' +
-        'Kang Dae;;1;7;HEAVY;Kinetic;Straight;800;6120;1;1.00;0.00;6.00;x2;3000000;436000.00;1D 18H 00M;;/' +
-        'Kang Dae;;1;8;HEAVY;Kinetic;Straight;800;6720;1;1.00;0.00;6.00;x2;6000000;716000.00;2D 2H 24M;;/' +
-        'Kang Dae;;1;9;HEAVY;Kinetic;Straight;800;7390;1;1.00;0.00;6.00;x2;10000000;1316000.00;2D 12H 00M;;/' +
-        'Kang Dae;;1;10;HEAVY;Kinetic;Straight;800;8120;1;1.00;0.00;6.00;x2;16000000;2116000.00;3D 12H 00M;;/' +
-        'Kang Dae;;1;11;HEAVY;Kinetic;Straight;800;8920;1;1.00;0.00;6.00;x2;26000000;3316000.00;4D 18H 00M;;/' +
-        'Kang Dae;;1;12;HEAVY;Kinetic;Straight;800;9800;1;1.00;0.00;6.00;x2;0;5316000.00;0D 0H 00M;;/' +
-        'Kang Dae MK2;;2;1;HEAVY;Kinetic;Straight;800;4180;1;1.00;0.00;6.00;x2;20000;5516000.00;0D 0H 10M;;/' +
-        'Kang Dae MK2;;2;2;HEAVY;Kinetic;Straight;800;4590;1;1.00;0.00;6.00;x2;40000;5520000.00;0D 1H 00M;;/' +
-        'Kang Dae MK2;;2;3;HEAVY;Kinetic;Straight;800;5040;1;1.00;0.00;6.00;x2;80000;5524000.00;0D 2H 00M;;/' +
-        'Kang Dae MK2;;2;4;HEAVY;Kinetic;Straight;800;5540;1;1.00;0.00;6.00;x2;400000;5532000.00;0D 8H 00M;;/' +
-        'Kang Dae MK2;;2;5;HEAVY;Kinetic;Straight;800;6084;1;1.00;0.00;6.00;x2;800000;5596000.00;0D 16H 48M;;/' +
-        'Kang Dae MK2;;2;6;HEAVY;Kinetic;Straight;800;6684;1;1.00;0.00;6.00;x2;1600000;5676000.00;1D 9H 00M;;/' +
-        'Kang Dae MK2;;2;7;HEAVY;Kinetic;Straight;800;7344;1;1.00;0.00;6.00;x2;3000000;5836000.00;1D 18H 00M;;/' +
-        'Kang Dae MK2;;2;8;HEAVY;Kinetic;Straight;800;8064;1;1.00;0.00;6.00;x2;6000000;6116000.00;2D 2H 24M;;/' +
-        'Kang Dae MK2;;2;9;HEAVY;Kinetic;Straight;800;8868;1;1.00;0.00;6.00;x2;10000000;6716000.00;2D 12H 00M;;/' +
-        'Kang Dae MK2;;2;10;HEAVY;Kinetic;Straight;800;9744;1;1.00;0.00;6.00;x2;16000000;7516000.00;3D 12H 00M;;/' +
-        'Kang Dae MK2;;2;11;HEAVY;Kinetic;Straight;800;10704;1;1.00;0.00;6.00;x2;26000000;8716000.00;4D 18H 00M;;/' +
-        'Kang Dae MK2;;2;12;HEAVY;Kinetic;Straight;800;11760;1;1.00;0.00;6.00;x2;0;10716000.00;0D 0H 00M;;/%' +
+        'KangDae;;1;5;HEAVY;Kinetic;Straight;800;5070;1;1.00;0.00;6.00;x2;800000;116000.00;0D 16H 48M;;;0;;;/' +
+        'KangDae;;1;6;HEAVY;Kinetic;Straight;800;5570;1;1.00;0.00;6.00;x2;1600000;276000.00;1D 9H 00M;;/' +
+        'KangDae;;1;7;HEAVY;Kinetic;Straight;800;6120;1;1.00;0.00;6.00;x2;3000000;436000.00;1D 18H 00M;;/' +
+        'KangDae;;1;8;HEAVY;Kinetic;Straight;800;6720;1;1.00;0.00;6.00;x2;6000000;716000.00;2D 2H 24M;;/' +
+        'KangDae;;1;9;HEAVY;Kinetic;Straight;800;7390;1;1.00;0.00;6.00;x2;10000000;1316000.00;2D 12H 00M;;/' +
+        'KangDae;;1;10;HEAVY;Kinetic;Straight;800;8120;1;1.00;0.00;6.00;x2;16000000;2116000.00;3D 12H 00M;;/' +
+        'KangDae;;1;11;HEAVY;Kinetic;Straight;800;8920;1;1.00;0.00;6.00;x2;26000000;3316000.00;4D 18H 00M;;/' +
+        'KangDae;;1;12;HEAVY;Kinetic;Straight;800;9800;1;1.00;0.00;6.00;x2;0;5316000.00;0D 0H 00M;;/' +
+        'KangDae MK2;;2;1;HEAVY;Kinetic;Straight;800;4180;1;1.00;0.00;6.00;x2;20000;5516000.00;0D 0H 10M;;/' +
+        'KangDae MK2;;2;2;HEAVY;Kinetic;Straight;800;4590;1;1.00;0.00;6.00;x2;40000;5520000.00;0D 1H 00M;;/' +
+        'KangDae MK2;;2;3;HEAVY;Kinetic;Straight;800;5040;1;1.00;0.00;6.00;x2;80000;5524000.00;0D 2H 00M;;/' +
+        'KangDae MK2;;2;4;HEAVY;Kinetic;Straight;800;5540;1;1.00;0.00;6.00;x2;400000;5532000.00;0D 8H 00M;;/' +
+        'KangDae MK2;;2;5;HEAVY;Kinetic;Straight;800;6084;1;1.00;0.00;6.00;x2;800000;5596000.00;0D 16H 48M;;/' +
+        'KangDae MK2;;2;6;HEAVY;Kinetic;Straight;800;6684;1;1.00;0.00;6.00;x2;1600000;5676000.00;1D 9H 00M;;/' +
+        'KangDae MK2;;2;7;HEAVY;Kinetic;Straight;800;7344;1;1.00;0.00;6.00;x2;3000000;5836000.00;1D 18H 00M;;/' +
+        'KangDae MK2;;2;8;HEAVY;Kinetic;Straight;800;8064;1;1.00;0.00;6.00;x2;6000000;6116000.00;2D 2H 24M;;/' +
+        'KangDae MK2;;2;9;HEAVY;Kinetic;Straight;800;8868;1;1.00;0.00;6.00;x2;10000000;6716000.00;2D 12H 00M;;/' +
+        'KangDae MK2;;2;10;HEAVY;Kinetic;Straight;800;9744;1;1.00;0.00;6.00;x2;16000000;7516000.00;3D 12H 00M;;/' +
+        'KangDae MK2;;2;11;HEAVY;Kinetic;Straight;800;10704;1;1.00;0.00;6.00;x2;26000000;8716000.00;4D 18H 00M;;/' +
+        'KangDae MK2;;2;12;HEAVY;Kinetic;Straight;800;11760;1;1.00;0.00;6.00;x2;0;10716000.00;0D 0H 00M;;/%' +
         /*-----------------17 ур эфф/18 длит эфф/19 пер во вр стр/20 врем пер одн пули/21 врем разр обоймы/22 рассеив*/
         'Thunder;;1;5;HEAVY;Kinetic;Straight;500;7600;5;1.00;7.00;10.00;x2;400000;116000.00;0D 8H 00M;;;1;2;4;1/' +
         'Thunder;;1;6;HEAVY;Kinetic;Straight;500;8352;5;1.00;7.00;10.00;x2;800000;276000.00;0D 17H 00M;;/' +
