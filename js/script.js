@@ -99,7 +99,7 @@ var onClosePopupHandler = function (evt) {
         }
     } catch (err) {
         console.log('(ошибка): клик за пределами окна');
-    }    
+    }
 };
 //----------------------------------------<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -165,14 +165,13 @@ var renderSelects = function (evt, robOrWeap/*массив имен*/, base, tem
                 closePopup(base.parentNode);
                 callback(choosenElem, param);
             });
-
         }
         /*показать само окно выбора*/
         showPopup(base.parentNode);
         /*добавить обработчик клика на кнопку подтверждения*/
         base.parentNode.lastChild.addEventListener('click', function (evt1) {
             confirmSelectHandler(evt1, callback, param);
-        });        
+        });
     // } catch (err) {
     //     console.log('(ошибка): с этого элемента не отрисуется список роботов');
     // }
@@ -252,6 +251,7 @@ var renderWeaponInCell = function (weapon, weaponType) {
 var changeRobotInCell = function (evt, elem /*заменяемый элемент*/, buttonArr/*кнопка, которую показать*/, 
                                   elemId/*элемент, с которого взять id*/) {
     
+    console.log('1');
     elem.parentNode.removeChild(elem.parentNode.lastChild);     /*удалить елемент из ячейки*/
     buttonId = elemId.id;
     buttonArr[buttonId - 1].classList.remove('visually-hidden');    /*сделать кнопку добавления робота видимой*/
@@ -333,6 +333,9 @@ var renderLvl = function (count, mk, cellId) {
     similarLvl.textContent = count;
     similarLvl.id = mk + '-' + count;
     similarLvl.addEventListener('click', function () {
+        var elem = document.getElementById(cellId).querySelector('.robot__lvl');
+        document.getElementById(cellId).querySelector('.robot__lvl').textContent = count;
+        console.log(elem);
         console.log(similarLvl.textContent);
         console.log('cellId2 ' + cellId);
     });
